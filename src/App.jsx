@@ -33,13 +33,18 @@ export default function App() {
     setSyncError(null);
     try {
       await openDb();
+      try {
+        const data = await fetchWordsData();
+        await syncWordsFromData(data.words);
+        await ensureReviewsExist();
+      } catch (err) {
+        console.error('Data sync error:', err);
+        setSyncError(err.message || '데이터 동기화 실패');
+      }
       setReady(true);
-      const data = await fetchWordsData();
-      await syncWordsFromData(data.words);
-      await ensureReviewsExist();
     } catch (err) {
-      console.error('Data sync error:', err);
-      setSyncError(err.message || '데이터 동기화 실패');
+      console.error('DB open error:', err);
+      setSyncError(err.message || 'DB 초기화 실패');
     }
   }, []);
 
