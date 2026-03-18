@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../lib/db';
 
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+}
+
 export default function Dashboard() {
   const words = useLiveQuery(() => db.words.toArray(), [], []);
   const reviews = useLiveQuery(() => db.reviews.toArray(), [], []);
+  const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
   const today = new Date().toISOString().split('T')[0];
   const wordIds = new Set(words.map(w => w.id));
@@ -31,6 +37,21 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-slate-800">J-VOCA</h1>
+
+      {showInstall && (
+        <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 relative">
+          <button
+            onClick={() => { setShowInstall(false); sessionStorage.setItem('hide-install', '1'); }}
+            className="absolute top-2 right-3 text-slate-400 text-lg"
+          >&times;</button>
+          <p className="text-sm font-medium text-indigo-800 mb-1">홈 화면에 추가하기</p>
+          <p className="text-xs text-indigo-600 leading-relaxed">
+            <strong>iPhone</strong>: Safari 하단 공유(↑) &rarr; "홈 화면에 추가"<br/>
+            <strong>Android</strong>: Chrome 메뉴(&#8942;) &rarr; "홈 화면에 추가"<br/>
+            앱처럼 전체 화면으로 사용할 수 있습니다.
+          </p>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">

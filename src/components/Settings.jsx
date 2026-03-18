@@ -4,16 +4,28 @@ import { getGithubToken, setGithubToken, hasGithubToken, resetWordsInRepo } from
 import { exportData, importReviews, clearAllReviews, clearAllData } from '../lib/db';
 
 const FONT_SIZES = [
-  { id: 'small', label: '작게' },
-  { id: 'medium', label: '보통' },
+  { id: 'base', label: '보통' },
   { id: 'large', label: '크게' },
+  { id: 'xlarge', label: '더 크게' },
+  { id: 'xxlarge', label: '최대' },
 ];
+
+function ExtLink({ href, children }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-indigo-500 underline">
+      {children}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.75a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.31l-5.47 5.47a.75.75 0 01-1.06-1.06l5.47-5.47H12.25a.75.75 0 01-.75-.75z" clipRule="evenodd" />
+      </svg>
+    </a>
+  );
+}
 
 export default function Settings() {
   const [apiKey, setApiKeyState] = useState(getApiKey());
   const [selectedModel, setSelectedModel] = useState(getModel());
   const [githubToken, setGithubTokenState] = useState(getGithubToken());
-  const [fontSize, setFontSize] = useState(localStorage.getItem('font-size') || 'medium');
+  const [fontSize, setFontSize] = useState(localStorage.getItem('font-size') || 'base');
   const [message, setMessage] = useState('');
 
   function handleFontSize(size) {
@@ -78,7 +90,7 @@ export default function Settings() {
       <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
         <h2 className="font-medium text-slate-700">Gemini API</h2>
         <p className="text-xs text-slate-400">
-          Google AI Studio에서 무료 API 키를 발급받으세요.
+          <ExtLink href="https://aistudio.google.com/apikey">Google AI Studio</ExtLink>에서 무료 API 키를 발급받으세요.
         </p>
         <input
           type="password"
@@ -108,7 +120,8 @@ export default function Settings() {
       <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
         <h2 className="font-medium text-slate-700">GitHub 연동</h2>
         <p className="text-xs text-slate-400">
-          단어를 GitHub에 저장합니다. Fine-grained PAT를 발급받으세요.
+          단어를 GitHub에 저장합니다.{' '}
+          <ExtLink href="https://github.com/settings/personal-access-tokens/new">Fine-grained PAT</ExtLink>를 발급받으세요.
         </p>
         <input
           type="password"
@@ -127,7 +140,7 @@ export default function Settings() {
 
       <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
         <h2 className="font-medium text-slate-700">글자 크기</h2>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-4 gap-2">
           {FONT_SIZES.map(s => (
             <button
               key={s.id}

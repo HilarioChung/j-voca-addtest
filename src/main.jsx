@@ -5,7 +5,7 @@ import App from './App';
 import './styles/index.css';
 
 // Apply saved font size
-const savedSize = localStorage.getItem('font-size') || 'medium';
+const savedSize = localStorage.getItem('font-size') || 'base';
 document.documentElement.className = `font-${savedSize}`;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
