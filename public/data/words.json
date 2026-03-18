@@ -1,4 +1,375 @@
 {
-  "lastId": 0,
-  "words": []
+  "lastId": 37,
+  "words": [
+    {
+      "word": "きのう",
+      "reading": "きのう",
+      "meaning": "어제",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 1
+    },
+    {
+      "word": "おととい",
+      "reading": "おととい",
+      "meaning": "그저께",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 2
+    },
+    {
+      "word": "せんしゅう",
+      "reading": "せんしゅう",
+      "meaning": "지난주",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 3
+    },
+    {
+      "word": "きょねん",
+      "reading": "きょねん",
+      "meaning": "작년",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 4
+    },
+    {
+      "word": "あつい",
+      "reading": "あつい",
+      "meaning": "덥다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 5
+    },
+    {
+      "word": "ふるい",
+      "reading": "ふるい",
+      "meaning": "낡다, 오래되다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 6
+    },
+    {
+      "word": "いい・よい",
+      "reading": "いい・よい",
+      "meaning": "좋다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 7
+    },
+    {
+      "word": "すずしい",
+      "reading": "すずしい",
+      "meaning": "시원하다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 8
+    },
+    {
+      "word": "あかるい",
+      "reading": "あかるい",
+      "meaning": "밝다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 9
+    },
+    {
+      "word": "みじかい",
+      "reading": "みじかい",
+      "meaning": "짧다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 10
+    },
+    {
+      "word": "ひくい",
+      "reading": "ひくい",
+      "meaning": "낮다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 11
+    },
+    {
+      "word": "くろい",
+      "reading": "くろい",
+      "meaning": "검다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 12
+    },
+    {
+      "word": "おおきい",
+      "reading": "おおきい",
+      "meaning": "크다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 13
+    },
+    {
+      "word": "ひまだ",
+      "reading": "ひまだ",
+      "meaning": "한가하다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 14
+    },
+    {
+      "word": "にぎやかだ",
+      "reading": "にぎやかだ",
+      "meaning": "번화하다, 활기차다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 15
+    },
+    {
+      "word": "ふべんだ",
+      "reading": "ふべんだ",
+      "meaning": "불편하다",
+      "pos": "형용사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 16
+    },
+    {
+      "word": "あめ",
+      "reading": "あめ",
+      "meaning": "비",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 17
+    },
+    {
+      "word": "いえ",
+      "reading": "いえ",
+      "meaning": "집",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 18
+    },
+    {
+      "word": "えき",
+      "reading": "えき",
+      "meaning": "역",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 19
+    },
+    {
+      "word": "せ",
+      "reading": "せ",
+      "meaning": "키",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 20
+    },
+    {
+      "word": "ちち",
+      "reading": "ちち",
+      "meaning": "아버지",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 21
+    },
+    {
+      "word": "はは",
+      "reading": "はは",
+      "meaning": "어머니",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 22
+    },
+    {
+      "word": "ふく",
+      "reading": "ふく",
+      "meaning": "옷",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 23
+    },
+    {
+      "word": "まち",
+      "reading": "まち",
+      "meaning": "마을, 동네",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 24
+    },
+    {
+      "word": "えいご",
+      "reading": "えいご",
+      "meaning": "영어",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 25
+    },
+    {
+      "word": "やすみ",
+      "reading": "やすみ",
+      "meaning": "휴식, 쉬는 날",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 26
+    },
+    {
+      "word": "しんごう",
+      "reading": "しんごう",
+      "meaning": "신호",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 27
+    },
+    {
+      "word": "あさごはん",
+      "reading": "あさごはん",
+      "meaning": "아침밥",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 28
+    },
+    {
+      "word": "おとうさん",
+      "reading": "おとうさん",
+      "meaning": "아버지",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 29
+    },
+    {
+      "word": "おかあさん",
+      "reading": "おかあさん",
+      "meaning": "어머니",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 30
+    },
+    {
+      "word": "べんきょう",
+      "reading": "べんきょう",
+      "meaning": "공부",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 31
+    },
+    {
+      "word": "あか",
+      "reading": "あか",
+      "meaning": "빨강",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 32
+    },
+    {
+      "word": "パン",
+      "reading": "パン",
+      "meaning": "빵",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 33
+    },
+    {
+      "word": "ゲーム",
+      "reading": "ゲーム",
+      "meaning": "게임",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 34
+    },
+    {
+      "word": "テスト",
+      "reading": "テスト",
+      "meaning": "시험",
+      "pos": "명사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 35
+    },
+    {
+      "word": "ただいま",
+      "reading": "ただいま",
+      "meaning": "다녀왔습니다",
+      "pos": "감탄사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 36
+    },
+    {
+      "word": "おかえりなさい",
+      "reading": "おかえりなさい",
+      "meaning": "다녀오세요, 어서 와요",
+      "pos": "감탄사",
+      "chapter": 4,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 37
+    }
+  ]
 }
