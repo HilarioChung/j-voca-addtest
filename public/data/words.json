@@ -1,4 +1,335 @@
 {
-  "lastId": 36,
-  "words": []
+  "lastId": 69,
+  "words": [
+    {
+      "word": "おおい",
+      "reading": "おおい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 37
+    },
+    {
+      "word": "かるい",
+      "reading": "かるい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 38
+    },
+    {
+      "word": "せまい",
+      "reading": "せまい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 39
+    },
+    {
+      "word": "しろい",
+      "reading": "しろい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 40
+    },
+    {
+      "word": "たかい",
+      "reading": "たかい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 41
+    },
+    {
+      "word": "ながい",
+      "reading": "ながい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 42
+    },
+    {
+      "word": "ひろい",
+      "reading": "ひろい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 43
+    },
+    {
+      "word": "ほそい",
+      "reading": "ほそい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 44
+    },
+    {
+      "word": "やすい",
+      "reading": "やすい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 45
+    },
+    {
+      "word": "あぶない",
+      "reading": "あぶない",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 46
+    },
+    {
+      "word": "おいしい",
+      "reading": "おいしい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 47
+    },
+    {
+      "word": "たのしい",
+      "reading": "たのしい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 48
+    },
+    {
+      "word": "つめたい",
+      "reading": "つめたい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 49
+    },
+    {
+      "word": "あたらしい",
+      "reading": "あたらしい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 50
+    },
+    {
+      "word": "おもしろい",
+      "reading": "おもしろい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 51
+    },
+    {
+      "word": "むずかしい",
+      "reading": "むずかしい",
+      "meaning": "",
+      "pos": "い형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 52
+    },
+    {
+      "word": "きれいだ",
+      "reading": "きれいだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 53
+    },
+    {
+      "word": "げんきだ",
+      "reading": "げんきだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 54
+    },
+    {
+      "word": "しずかだ",
+      "reading": "しずかだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 55
+    },
+    {
+      "word": "べんりだ",
+      "reading": "べんりだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 56
+    },
+    {
+      "word": "すてきだ",
+      "reading": "すてきだ",
+      "meaning": "별로",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 57
+    },
+    {
+      "word": "しんせつだ",
+      "reading": "しんせつだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 58
+    },
+    {
+      "word": "ゆうめいだ",
+      "reading": "ゆうめいだ",
+      "meaning": "",
+      "pos": "な형용사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 59
+    },
+    {
+      "word": "さくら",
+      "reading": "さくら",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 60
+    },
+    {
+      "word": "えいが",
+      "reading": "えいが",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 61
+    },
+    {
+      "word": "かぞく",
+      "reading": "かぞく",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 62
+    },
+    {
+      "word": "まいにち",
+      "reading": "まいにち",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 63
+    },
+    {
+      "word": "りょうり",
+      "reading": "りょうり",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 64
+    },
+    {
+      "word": "きょうしつ",
+      "reading": "きょうしつ",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 65
+    },
+    {
+      "word": "たまごやき",
+      "reading": "たまごやき",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 66
+    },
+    {
+      "word": "チゲ",
+      "reading": "チゲ",
+      "meaning": "찌개",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 67
+    },
+    {
+      "word": "ラーメン",
+      "reading": "ラーメン",
+      "meaning": "",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 68
+    },
+    {
+      "word": "べんきょう",
+      "reading": "べんきょう",
+      "meaning": "공부",
+      "pos": "명사",
+      "chapter": 3,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-18",
+      "id": 69
+    }
+  ]
 }
