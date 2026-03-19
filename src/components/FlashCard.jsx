@@ -1,12 +1,5 @@
 import { useState } from 'react';
-
-function speak(text) {
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'ja-JP';
-  u.rate = 0.8;
-  speechSynthesis.speak(u);
-}
+import { speak } from '../lib/speech';
 
 export default function FlashCard({ word, onGrade, onPrev, onNext }) {
   const [flipped, setFlipped] = useState(false);

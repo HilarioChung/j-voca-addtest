@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db, putReview } from '../lib/db';
 import { sm2, createInitialReview } from '../lib/sm2';
+import { getDueWords } from '../lib/review-utils';
 import FlashCard from './FlashCard';
 
 export default function ReviewSession() {
@@ -13,21 +14,12 @@ export default function ReviewSession() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    db.reviews.where('nextReview').belowOrEqual(today).toArray().then(async (dueReviews) => {
-      if (dueReviews.length === 0) {
-        setDone(true);
-        setLoading(false);
-        return;
-      }
-      const wordIds = dueReviews.map(r => r.wordId);
-      const words = await db.words.where('id').anyOf(wordIds).toArray();
+    getDueWords().then(words => {
       if (words.length === 0) {
         setDone(true);
-        setLoading(false);
-        return;
+      } else {
+        setQueue(words.sort(() => Math.random() - 0.5));
       }
-      setQueue(words.sort(() => Math.random() - 0.5));
       setLoading(false);
     }).catch((err) => {
       console.error('ReviewSession load error:', err);

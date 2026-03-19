@@ -1,29 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, syncWordsFromData, deleteReview } from '../lib/db';
 import { hasGithubToken, updateWordInRepo, deleteWordFromRepo, deleteChapterFromRepo } from '../lib/github';
 import FlashCard from './FlashCard';
-
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function speak(text) {
-  return new Promise(resolve => {
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ja-JP';
-    u.rate = 0.8;
-    u.onend = resolve;
-    u.onerror = resolve;
-    speechSynthesis.speak(u);
-  });
-}
+import { useBrowseMode } from '../hooks/useBrowseMode';
 
 export default function WordList() {
   const words = useLiveQuery(() => db.words.toArray(), [], []);
@@ -31,11 +11,7 @@ export default function WordList() {
   const [editingId, setEditingId] = useState(null);
   const [editForm, setEditForm] = useState({});
   const [saving, setSaving] = useState(false);
-  const [browseIndex, setBrowseIndex] = useState(null);
-  const [browseQueue, setBrowseQueue] = useState([]);
-  const [listening, setListening] = useState(false);
-  const listeningRef = useRef(false);
-  const wakeLockRef = useRef(null);
+  const browse = useBrowseMode();
 
   const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
   const filtered = selectedChapter !== null
@@ -43,57 +19,6 @@ export default function WordList() {
     : words;
 
   const canEdit = hasGithubToken();
-
-  function openBrowse() {
-    setBrowseQueue(shuffle(filtered));
-    setBrowseIndex(0);
-  }
-
-  function closeBrowse() {
-    stopListening();
-    setBrowseIndex(null);
-    setBrowseQueue([]);
-  }
-
-  const stopListening = useCallback(() => {
-    listeningRef.current = false;
-    setListening(false);
-    speechSynthesis.cancel();
-    if (wakeLockRef.current) {
-      wakeLockRef.current.release().catch(() => {});
-      wakeLockRef.current = null;
-    }
-  }, []);
-
-  const startListening = useCallback(async (queue, startIdx) => {
-    listeningRef.current = true;
-    setListening(true);
-    try {
-      if (navigator.wakeLock) {
-        wakeLockRef.current = await navigator.wakeLock.request('screen');
-      }
-    } catch {}
-
-    for (let i = startIdx; i < queue.length; i++) {
-      if (!listeningRef.current) return;
-      setBrowseIndex(i);
-      await speak(queue[i].word);
-      if (!listeningRef.current) return;
-      await new Promise(r => setTimeout(r, 3000));
-    }
-    stopListening();
-  }, [stopListening]);
-
-  useEffect(() => {
-    if (browseIndex !== null) {
-      document.body.style.overflow = 'hidden';
-      return () => { document.body.style.overflow = ''; };
-    }
-  }, [browseIndex !== null]);
-
-  useEffect(() => {
-    return () => { stopListening(); };
-  }, [stopListening]);
 
   function startEdit(word) {
     setEditingId(word.id);
@@ -141,6 +66,11 @@ export default function WordList() {
     setSaving(false);
   }
 
+  function selectChapter(ch) {
+    setSelectedChapter(ch);
+    browse.close();
+  }
+
   return (
     <div className="space-y-4">
       <h1 className="text-xl font-bold text-slate-800">단어 목록</h1>
@@ -148,7 +78,7 @@ export default function WordList() {
       {chapters.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-2">
           <button
-            onClick={() => { setSelectedChapter(null); closeBrowse(); }}
+            onClick={() => selectChapter(null)}
             className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
               selectedChapter === null ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
             }`}
@@ -158,7 +88,7 @@ export default function WordList() {
           {chapters.map(ch => (
             <button
               key={ch}
-              onClick={() => { setSelectedChapter(ch); closeBrowse(); }}
+              onClick={() => selectChapter(ch)}
               className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
                 selectedChapter === ch ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
               }`}
@@ -172,13 +102,13 @@ export default function WordList() {
       {filtered.length > 0 && (
         <div className="flex gap-2">
           <button
-            onClick={openBrowse}
+            onClick={() => browse.open(filtered)}
             className="flex-1 py-2 bg-indigo-50 border border-indigo-200 rounded-xl text-sm text-indigo-600 font-medium"
           >
             플래시카드 ({filtered.length}개)
           </button>
           <button
-            onClick={() => { const q = shuffle(filtered); setBrowseQueue(q); setBrowseIndex(0); startListening(q, 0); }}
+            onClick={() => browse.openWithListening(filtered)}
             className="flex-1 py-2 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-600 font-medium"
           >
             듣기 모드
@@ -186,28 +116,28 @@ export default function WordList() {
         </div>
       )}
 
-      {browseIndex !== null && browseQueue.length > 0 && browseIndex < browseQueue.length && (
+      {browse.isOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-hidden touch-none"
-          onClick={closeBrowse}
+          onClick={browse.close}
         >
           <div className="bg-slate-50 rounded-2xl p-4 w-full max-w-lg space-y-4" onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-slate-400">{browseIndex + 1} / {browseQueue.length}</span>
+              <span className="text-sm text-slate-400">{browse.browseIndex + 1} / {browse.browseQueue.length}</span>
               <div className="flex items-center gap-3">
-                {listening ? (
-                  <button onClick={stopListening} className="text-emerald-500 text-sm font-medium">■ 정지</button>
+                {browse.listening ? (
+                  <button onClick={browse.stopListening} className="text-emerald-500 text-sm font-medium">■ 정지</button>
                 ) : (
-                  <button onClick={() => startListening(browseQueue, browseIndex)} className="text-emerald-500 text-sm font-medium">▶ 듣기</button>
+                  <button onClick={() => browse.startListening(browse.browseQueue, browse.browseIndex)} className="text-emerald-500 text-sm font-medium">▶ 듣기</button>
                 )}
-                <button onClick={closeBrowse} className="text-slate-400 text-lg">&times;</button>
+                <button onClick={browse.close} className="text-slate-400 text-lg">&times;</button>
               </div>
             </div>
             <FlashCard
-              key={browseQueue[browseIndex].id}
-              word={browseQueue[browseIndex]}
-              onPrev={browseIndex > 0 ? () => { stopListening(); setBrowseIndex(browseIndex - 1); } : null}
-              onNext={browseIndex < browseQueue.length - 1 ? () => { stopListening(); setBrowseIndex(browseIndex + 1); } : null}
+              key={browse.currentWord.id}
+              word={browse.currentWord}
+              onPrev={browse.prev}
+              onNext={browse.next}
             />
           </div>
         </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../lib/db';
+import { getDueCount } from '../lib/review-utils';
 
 function isStandalone() {
   return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
@@ -12,9 +13,7 @@ export default function Dashboard() {
   const reviews = useLiveQuery(() => db.reviews.toArray(), [], []);
   const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
-  const today = new Date().toISOString().split('T')[0];
-  const wordIds = new Set(words.map(w => w.id));
-  const dueCount = reviews.filter(r => wordIds.has(r.wordId) && r.nextReview <= today).length;
+  const dueCount = getDueCount(words, reviews);
 
   const chapters = [];
   const chapterMap = {};

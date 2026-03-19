@@ -1,3 +1,5 @@
+import { getTodayString } from './dates';
+
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 export const MODELS = [
@@ -129,7 +131,7 @@ JSON 배열만 반환하고 다른 텍스트는 포함하지 마세요:
   if (!jsonMatch) throw new Error(`JSON 파싱 실패. Gemini 응답: "${text.slice(0, 200)}"`);
 
   const words = JSON.parse(jsonMatch[0]);
-  const today = new Date().toISOString().split('T')[0];
+  const today = getTodayString();
 
   return words.map(w => ({
     word: w.word,

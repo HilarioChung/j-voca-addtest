@@ -1,3 +1,4 @@
+import { getTodayString } from './dates';
 // SM-2 algorithm implementation
 // quality: 0-5 (Again=1, Hard=2, Good=3, Easy=4 mapped to SM-2 scale)
 
@@ -43,12 +44,12 @@ export function sm2(review, grade) {
     interval,
     repetitions,
     nextReview: nextReview.toISOString().split('T')[0],
-    lastReview: today.toISOString().split('T')[0],
+    lastReview: getTodayString(),
   };
 }
 
 export function createInitialReview(wordId) {
-  const today = new Date().toISOString().split('T')[0];
+  const today = getTodayString();
   return {
     wordId,
     easiness: 2.5,
