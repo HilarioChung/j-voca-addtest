@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, syncWordsFromData, deleteReview } from '../lib/db';
 import { hasGithubToken, updateWordInRepo, deleteWordFromRepo, deleteChapterFromRepo } from '../lib/github';
+import FlashCard from './FlashCard';
 
 export default function WordList() {
   const words = useLiveQuery(() => db.words.toArray(), [], []);
@@ -9,6 +10,7 @@ export default function WordList() {
   const [editingId, setEditingId] = useState(null);
   const [editForm, setEditForm] = useState({});
   const [saving, setSaving] = useState(false);
+  const [browseIndex, setBrowseIndex] = useState(null);
 
   const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
   const filtered = selectedChapter !== null
@@ -16,6 +18,13 @@ export default function WordList() {
     : words;
 
   const canEdit = hasGithubToken();
+
+  useEffect(() => {
+    if (browseIndex !== null) {
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = ''; };
+    }
+  }, [browseIndex !== null]);
 
   function startEdit(word) {
     setEditingId(word.id);
@@ -70,7 +79,7 @@ export default function WordList() {
       {chapters.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-2">
           <button
-            onClick={() => setSelectedChapter(null)}
+            onClick={() => { setSelectedChapter(null); setBrowseIndex(null); }}
             className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
               selectedChapter === null ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
             }`}
@@ -80,7 +89,7 @@ export default function WordList() {
           {chapters.map(ch => (
             <button
               key={ch}
-              onClick={() => setSelectedChapter(ch)}
+              onClick={() => { setSelectedChapter(ch); setBrowseIndex(null); }}
               className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
                 selectedChapter === ch ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
               }`}
@@ -88,6 +97,35 @@ export default function WordList() {
               Lesson {ch} ({words.filter(w => w.chapter === ch).length})
             </button>
           ))}
+        </div>
+      )}
+
+      {filtered.length > 0 && (
+        <button
+          onClick={() => setBrowseIndex(0)}
+          className="w-full py-2 bg-indigo-50 border border-indigo-200 rounded-xl text-sm text-indigo-600 font-medium"
+        >
+          플래시카드로 보기 ({filtered.length}개)
+        </button>
+      )}
+
+      {browseIndex !== null && filtered.length > 0 && browseIndex < filtered.length && (
+        <div
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-hidden touch-none"
+          onClick={() => setBrowseIndex(null)}
+        >
+          <div className="bg-slate-50 rounded-2xl p-4 w-full max-w-lg space-y-4" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-slate-400">{browseIndex + 1} / {filtered.length}</span>
+              <button onClick={() => setBrowseIndex(null)} className="text-slate-400 text-lg">&times;</button>
+            </div>
+            <FlashCard
+              key={filtered[browseIndex].id}
+              word={filtered[browseIndex]}
+              onPrev={browseIndex > 0 ? () => setBrowseIndex(browseIndex - 1) : null}
+              onNext={browseIndex < filtered.length - 1 ? () => setBrowseIndex(browseIndex + 1) : null}
+            />
+          </div>
         </div>
       )}
 

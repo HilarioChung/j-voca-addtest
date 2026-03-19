@@ -8,8 +8,9 @@ function speak(text) {
   speechSynthesis.speak(u);
 }
 
-export default function FlashCard({ word, onGrade }) {
+export default function FlashCard({ word, onGrade, onPrev, onNext }) {
   const [flipped, setFlipped] = useState(false);
+  const browseMode = !onGrade;
 
   function handleFlip() {
     if (!flipped) setFlipped(true);
@@ -18,6 +19,11 @@ export default function FlashCard({ word, onGrade }) {
   function handleGrade(grade) {
     setFlipped(false);
     onGrade(grade);
+  }
+
+  function handleNav(fn) {
+    setFlipped(false);
+    fn();
   }
 
   return (
@@ -50,7 +56,7 @@ export default function FlashCard({ word, onGrade }) {
         </div>
       </div>
 
-      {flipped && (
+      {flipped && !browseMode && (
         <div className="grid grid-cols-4 gap-2 w-full">
           {[
             { grade: 'again', label: '다시', color: 'bg-red-500' },
@@ -66,6 +72,25 @@ export default function FlashCard({ word, onGrade }) {
               {label}
             </button>
           ))}
+        </div>
+      )}
+
+      {browseMode && (
+        <div className="flex gap-3 w-full">
+          <button
+            onClick={() => handleNav(onPrev)}
+            disabled={!onPrev}
+            className="flex-1 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 disabled:opacity-30"
+          >
+            ← 이전
+          </button>
+          <button
+            onClick={() => handleNav(onNext)}
+            disabled={!onNext}
+            className="flex-1 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 disabled:opacity-30"
+          >
+            다음 →
+          </button>
         </div>
       )}
     </div>
