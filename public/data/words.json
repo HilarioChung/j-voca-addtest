@@ -1,5 +1,5 @@
 {
-  "lastId": 67,
+  "lastId": 102,
   "words": [
     {
       "word": "おおい",
@@ -670,6 +670,356 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 67
+    },
+    {
+      "word": "かさ",
+      "reading": "かさ",
+      "meaning": "우산",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 68
+    },
+    {
+      "word": "かぎ",
+      "reading": "かぎ",
+      "meaning": "열쇠",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 69
+    },
+    {
+      "word": "くつ",
+      "reading": "くつ",
+      "meaning": "신발",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 70
+    },
+    {
+      "word": "のり",
+      "reading": "のり",
+      "meaning": "풀",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 71
+    },
+    {
+      "word": "かばん",
+      "reading": "かばん",
+      "meaning": "가방",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 72
+    },
+    {
+      "word": "めがね",
+      "reading": "めがね",
+      "meaning": "안경",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 73
+    },
+    {
+      "word": "おみやげ",
+      "reading": "おみやげ",
+      "meaning": "선물, 기념품",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 74
+    },
+    {
+      "word": "ほん",
+      "reading": "ほん",
+      "meaning": "책",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 75
+    },
+    {
+      "word": "くすり",
+      "reading": "くすり",
+      "meaning": "약",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 76
+    },
+    {
+      "word": "くるま",
+      "reading": "くるま",
+      "meaning": "차",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 77
+    },
+    {
+      "word": "とけい",
+      "reading": "とけい",
+      "meaning": "시계",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 78
+    },
+    {
+      "word": "おかし",
+      "reading": "おかし",
+      "meaning": "과자",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 79
+    },
+    {
+      "word": "しゃしん",
+      "reading": "しゃしん",
+      "meaning": "사진",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 80
+    },
+    {
+      "word": "キムチ",
+      "reading": "キムチ",
+      "meaning": "김치",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 81
+    },
+    {
+      "word": "プレゼント",
+      "reading": "プレゼント",
+      "meaning": "선물",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 82
+    },
+    {
+      "word": "ボールペン",
+      "reading": "ボールペン",
+      "meaning": "볼펜",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 83
+    },
+    {
+      "word": "がっこう",
+      "reading": "がっこう",
+      "meaning": "학교",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 84
+    },
+    {
+      "word": "たてもの",
+      "reading": "たてもの",
+      "meaning": "건물",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 85
+    },
+    {
+      "word": "しょくどう",
+      "reading": "しょくどう",
+      "meaning": "식당",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 86
+    },
+    {
+      "word": "びょういん",
+      "reading": "びょういん",
+      "meaning": "병원",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 87
+    },
+    {
+      "word": "ゆうびんきょく",
+      "reading": "ゆうびんきょく",
+      "meaning": "우체국",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 88
+    },
+    {
+      "word": "トイレ",
+      "reading": "トイレ",
+      "meaning": "화장실",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 89
+    },
+    {
+      "word": "レストラン",
+      "reading": "レストラン",
+      "meaning": "레스토랑",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 90
+    },
+    {
+      "word": "へや",
+      "reading": "へや",
+      "meaning": "방",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 91
+    },
+    {
+      "word": "みず",
+      "reading": "みず",
+      "meaning": "물",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 92
+    },
+    {
+      "word": "よこ",
+      "reading": "よこ",
+      "meaning": "옆",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 93
+    },
+    {
+      "word": "おんがく",
+      "reading": "おんがく",
+      "meaning": "음악",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 94
+    },
+    {
+      "word": "りょこう",
+      "reading": "りょこう",
+      "meaning": "여행",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 95
+    },
+    {
+      "word": "にほんご",
+      "reading": "にほんご",
+      "meaning": "일본어",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 96
+    },
+    {
+      "word": "たんじょうび",
+      "reading": "たんじょうび",
+      "meaning": "생일",
+      "pos": "명사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 97
+    },
+    {
+      "word": "どうぞ",
+      "reading": "どうぞ",
+      "meaning": "부디, 아무쪼록, 어서",
+      "pos": "부사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 98
+    },
+    {
+      "word": "すみません",
+      "reading": "すみません",
+      "meaning": "죄송합니다, 실례합니다, 저기요",
+      "pos": "감탄사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 99
+    },
+    {
+      "word": "しつれいします",
+      "reading": "しつれいします",
+      "meaning": "실례하겠습니다",
+      "pos": "동사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 100
+    },
+    {
+      "word": "ありがとう",
+      "reading": "ありがとう",
+      "meaning": "고마워",
+      "pos": "감탄사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 101
+    },
+    {
+      "word": "ありがとうございます",
+      "reading": "ありがとうございます",
+      "meaning": "고맙습니다",
+      "pos": "감탄사",
+      "chapter": 1,
+      "textbook": "일본어수업",
+      "createdAt": "2026-03-19",
+      "id": 102
     }
   ]
 }
