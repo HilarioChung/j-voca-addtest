@@ -33,14 +33,7 @@ export default function ReviewSession() {
   async function handleGrade(grade) {
     if (!currentWord) return;
 
-    // DB 저장 실패와 무관하게 다음 카드로 진행
-    setResults(prev => ({ ...prev, [grade]: prev[grade] + 1 }));
-    if (currentIndex + 1 < queue.length) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setDone(true);
-    }
-
+    // DB 저장을 먼저 완료하여 페이지 이동 시에도 결과가 유실되지 않도록 한다
     try {
       let review = await db.reviews.get(currentWord.id);
       if (!review) review = createInitialReview(currentWord.id);
@@ -53,6 +46,14 @@ export default function ReviewSession() {
       });
     } catch (err) {
       console.error('Review save error:', err);
+    }
+
+    // DB 저장 성공/실패 무관하게 다음 카드로 진행
+    setResults(prev => ({ ...prev, [grade]: prev[grade] + 1 }));
+    if (currentIndex + 1 < queue.length) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setDone(true);
     }
   }
 
