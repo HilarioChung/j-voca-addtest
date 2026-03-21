@@ -23,12 +23,23 @@ if ('serviceWorker' in navigator) {
 }
 
 // 서버의 version.json과 로컬 빌드 시각을 비교하여 새 버전 감지
-fetch('/j-voca/version.json?' + Date.now())
-  .then(r => r.json())
-  .then(({ build }) => {
-    if (build && build !== __BUILD_TIME__) {
-      window.__HAS_UPDATE__ = true;
-      window.dispatchEvent(new Event('version-updated'));
-    }
-  })
-  .catch(() => {});
+function checkForUpdate() {
+  if (window.__HAS_UPDATE__) return;
+  fetch('/j-voca/version.json?' + Date.now())
+    .then(r => r.json())
+    .then(({ build }) => {
+      if (build && build !== __BUILD_TIME__) {
+        window.__HAS_UPDATE__ = true;
+        window.dispatchEvent(new Event('version-updated'));
+      }
+    })
+    .catch(() => {});
+}
+
+// 최초 로드 시 체크
+checkForUpdate();
+
+// 앱이 포그라운드로 돌아올 때마다 체크
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') checkForUpdate();
+});
