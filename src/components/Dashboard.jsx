@@ -28,6 +28,15 @@ export default function Dashboard() {
 
   // 마운트 시마다 DB에서 최신 데이터를 직접 읽음
   useEffect(() => { loadData(); }, [loadData]);
+
+  // SW 업데이트 감지 — 새 배포 시 안내 배너 표시
+  const [hasUpdate, setHasUpdate] = useState(() => !!window.__SW_UPDATED__);
+  useEffect(() => {
+    const handler = () => setHasUpdate(true);
+    window.addEventListener('sw-updated', handler);
+    return () => window.removeEventListener('sw-updated', handler);
+  }, []);
+
   const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
   const dueCount = getDueCount(words, reviews);
@@ -55,6 +64,25 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-slate-800">J-VOCA</h1>
+
+      {hasUpdate && (
+        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+          <p className="text-sm font-medium text-emerald-800 mb-1">새 버전이 있습니다</p>
+          <p className="text-xs text-emerald-600">
+            {isStandalone()
+              ? '앱을 완전히 종료한 후 다시 실행해주세요.'
+              : '페이지를 새로고침해주세요.'}
+          </p>
+          {!isStandalone() && (
+            <button
+              onClick={() => window.location.reload()}
+              className="mt-2 px-3 py-1 bg-emerald-600 text-white text-xs rounded-lg"
+            >
+              새로고침
+            </button>
+          )}
+        </div>
+      )}
 
       {showInstall && (
         <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 relative">
