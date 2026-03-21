@@ -29,12 +29,12 @@ export default function Dashboard() {
   // 마운트 시마다 DB에서 최신 데이터를 직접 읽음
   useEffect(() => { loadData(); }, [loadData]);
 
-  // SW 업데이트 감지 — 새 배포 시 안내 배너 표시
-  const [hasUpdate, setHasUpdate] = useState(() => !!window.__SW_UPDATED__);
+  // 새 버전 감지 — version.json과 로컬 빌드 시각 비교
+  const [hasUpdate, setHasUpdate] = useState(() => !!window.__HAS_UPDATE__);
   useEffect(() => {
     const handler = () => setHasUpdate(true);
-    window.addEventListener('sw-updated', handler);
-    return () => window.removeEventListener('sw-updated', handler);
+    window.addEventListener('version-updated', handler);
+    return () => window.removeEventListener('version-updated', handler);
   }, []);
 
   const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));

@@ -27,6 +27,7 @@ self.addEventListener('fetch', (event) => {
   if (event.request.url.includes('googleapis.com')) return;
   if (event.request.url.includes('raw.githubusercontent.com')) return;
   if (event.request.url.includes('api.github.com')) return;
+  if (event.request.url.includes('version.json')) return;
 
   const url = new URL(event.request.url);
   const isAsset = /\.[a-f0-9]{8,}\.(js|css)$/.test(url.pathname);

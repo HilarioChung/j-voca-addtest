@@ -1,24 +1,24 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { readFileSync, writeFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 
-// 빌드 시 sw.js에 타임스탬프를 주입하여 매 배포마다 SW 업데이트를 트리거
-function swTimestamp() {
+const buildTime = new Date().toISOString();
+
+// 빌드 시 version.json을 생성하여 클라이언트에서 새 버전 감지에 사용
+function versionFile() {
   return {
-    name: 'sw-timestamp',
+    name: 'version-file',
     writeBundle() {
-      const path = 'dist/sw.js';
-      const content = readFileSync(path, 'utf-8');
-      writeFileSync(path, `// build: ${new Date().toISOString()}\n${content}`);
+      writeFileSync('dist/version.json', JSON.stringify({ build: buildTime }));
     },
   };
 }
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), swTimestamp()],
+  plugins: [react(), tailwindcss(), versionFile()],
   base: '/j-voca/',
   define: {
-    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+    __BUILD_TIME__: JSON.stringify(buildTime),
   },
 })
