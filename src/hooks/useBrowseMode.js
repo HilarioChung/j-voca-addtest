@@ -98,11 +98,11 @@ export function useBrowseMode() {
   }
 
   useEffect(() => {
-    if (browseIndex !== null) {
+    if (isOpen) {
       document.body.style.overflow = 'hidden';
       return () => { document.body.style.overflow = ''; };
     }
-  }, [browseIndex !== null]);
+  }, [isOpen]);
 
   useEffect(() => {
     return () => { stopListening(); };
