@@ -60,7 +60,12 @@ export function gradeCard(review, grade) {
     throw new Error(`알 수 없는 grade: ${grade}`);
   }
 
-  const card = reviewToCard(review);
+  // SM-2 마이그레이션에서 difficulty>0 + stability=0 조합은 FSRS에서 유효하지 않음
+  // 새 카드로 리셋하여 정상적으로 채점
+  const isInvalid = review.stability === 0 && review.difficulty > 0;
+  const card = isInvalid
+    ? createEmptyCard(new Date())
+    : reviewToCard(review);
   const now = new Date();
   const result = f.repeat(card, now);
   const updated = result[rating].card;
