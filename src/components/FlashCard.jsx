@@ -1,26 +1,15 @@
 import { useState } from 'react';
 import { speak } from '../lib/speech';
-import { getAutoPronounce } from '../lib/settings';
 
 export default function FlashCard({ word, onGrade, onPrev, onNext }) {
   const [flipped, setFlipped] = useState(false);
   const browseMode = !onGrade;
 
   function handleFlip() {
-    if (!flipped) {
-      setFlipped(true);
-      // 카드 뒤집기 시 자동 발음: cancel() 없이 직접 speak하여 iOS Safari 차단 회피
-      if (getAutoPronounce()) {
-        const u = new SpeechSynthesisUtterance(word.word);
-        u.lang = 'ja-JP';
-        u.rate = 0.8;
-        speechSynthesis.speak(u);
-      }
-    }
+    if (!flipped) setFlipped(true);
   }
 
   function handleGrade(grade) {
-    speechSynthesis.cancel();
     setFlipped(false);
     onGrade(grade);
   }
