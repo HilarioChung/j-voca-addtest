@@ -14,15 +14,12 @@ function getLast14Days() {
   return days;
 }
 
-/** 등급별 색상 매핑 */
-const GRADE_COLORS = {
-  again: 'bg-red-400',
-  hard: 'bg-orange-400',
-  good: 'bg-emerald-400',
-  easy: 'bg-blue-400',
-};
-
-const GRADE_ORDER = ['again', 'hard', 'good', 'easy'];
+/** 등급별 색상 및 라벨 매핑 (모름/애매/앎) */
+const GRADES = [
+  { key: 'again', color: 'bg-red-400', label: '모름' },
+  { key: 'good', color: 'bg-emerald-400', label: '애매' },
+  { key: 'easy', color: 'bg-blue-400', label: '앎' },
+];
 
 export default function Statistics() {
   const reviewLogs = useLiveQuery(() => db.reviewLogs.toArray(), [], []);
@@ -93,14 +90,14 @@ export default function Statistics() {
                   style={{ height: '140px' }}
                 >
                   {total > 0 ? (
-                    GRADE_ORDER.map(grade => {
-                      const count = day[grade] ?? 0;
+                    GRADES.map(({ key, color }) => {
+                      const count = day[key] ?? 0;
                       if (count === 0) return null;
                       const segmentPct = (count / total) * heightPct;
                       return (
                         <div
-                          key={grade}
-                          className={`${GRADE_COLORS[grade]} w-full`}
+                          key={key}
+                          className={`${color} w-full`}
                           style={{ height: `${segmentPct}%` }}
                         />
                       );
@@ -117,11 +114,12 @@ export default function Statistics() {
         </div>
 
         {/* 범례 */}
-        <div className="flex justify-center gap-3 mt-4 text-[10px] text-slate-500">
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-400" />again</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-orange-400" />hard</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-400" />good</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-blue-400" />easy</span>
+        <div className="flex justify-center gap-4 mt-4 text-[10px] text-slate-500">
+          {GRADES.map(({ key, color, label }) => (
+            <span key={key} className="flex items-center gap-1">
+              <span className={`w-2 h-2 rounded-full ${color}`} />{label}
+            </span>
+          ))}
         </div>
       </div>
     </div>
