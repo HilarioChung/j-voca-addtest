@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { db, putReview, putReviewLog } from '../lib/db';
 import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
+import { shuffle } from '../lib/shuffle';
 import FlashCard from './FlashCard';
 
 export default function ReviewSession() {
@@ -20,7 +21,7 @@ export default function ReviewSession() {
       if (words.length === 0) {
         setDone(true);
       } else {
-        setQueue(words.sort(() => Math.random() - 0.5));
+        setQueue(shuffle(words));
       }
       setLoading(false);
     }).catch((err) => {
@@ -52,6 +53,8 @@ export default function ReviewSession() {
     } catch (err) {
       console.error('Review save error:', err);
       setSaveError(err.message || '저장 실패');
+      setSaving(false);
+      return;
     }
 
     setSaving(false);

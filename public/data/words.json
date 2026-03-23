@@ -9,7 +9,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 1
+      "id": 1,
+      "kanji": "多い"
     },
     {
       "word": "かるい",
@@ -19,7 +20,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 2
+      "id": 2,
+      "kanji": "軽い"
     },
     {
       "word": "せまい",
@@ -29,7 +31,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 3
+      "id": 3,
+      "kanji": "狭い"
     },
     {
       "word": "しろい",
@@ -39,7 +42,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 4
+      "id": 4,
+      "kanji": "白い"
     },
     {
       "word": "たかい",
@@ -49,7 +53,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 5
+      "id": 5,
+      "kanji": "高い"
     },
     {
       "word": "ながい",
@@ -59,7 +64,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 6
+      "id": 6,
+      "kanji": "長い"
     },
     {
       "word": "ひろい",
@@ -69,7 +75,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 7
+      "id": 7,
+      "kanji": "広い"
     },
     {
       "word": "ほそい",
@@ -79,7 +86,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 8
+      "id": 8,
+      "kanji": "細い"
     },
     {
       "word": "やすい",
@@ -89,7 +97,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 9
+      "id": 9,
+      "kanji": "安い"
     },
     {
       "word": "あぶない",
@@ -99,7 +108,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 10
+      "id": 10,
+      "kanji": "危ない"
     },
     {
       "word": "おいしい",
@@ -109,7 +119,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 11
+      "id": 11,
+      "kanji": "美味しい"
     },
     {
       "word": "たのしい",
@@ -119,7 +130,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 12
+      "id": 12,
+      "kanji": "楽しい"
     },
     {
       "word": "つめたい",
@@ -129,7 +141,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 13
+      "id": 13,
+      "kanji": "冷たい"
     },
     {
       "word": "あたらしい",
@@ -139,7 +152,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 14
+      "id": 14,
+      "kanji": "新しい"
     },
     {
       "word": "おもしろい",
@@ -149,7 +163,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 15
+      "id": 15,
+      "kanji": "面白い"
     },
     {
       "word": "むずかしい",
@@ -159,7 +174,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 16
+      "id": 16,
+      "kanji": "難しい"
     },
     {
       "word": "きれいだ",
@@ -179,7 +195,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 18
+      "id": 18,
+      "kanji": "元気だ"
     },
     {
       "word": "しずかだ",
@@ -189,7 +206,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 19
+      "id": 19,
+      "kanji": "静かだ"
     },
     {
       "word": "べんりだ",
@@ -199,7 +217,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 20
+      "id": 20,
+      "kanji": "便利だ"
     },
     {
       "word": "すてきだ",
@@ -209,7 +228,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 21
+      "id": 21,
+      "kanji": "素敵だ"
     },
     {
       "word": "しんせつだ",
@@ -219,7 +239,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 22
+      "id": 22,
+      "kanji": "親切だ"
     },
     {
       "word": "ゆうめいだ",
@@ -229,7 +250,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 23
+      "id": 23,
+      "kanji": "有名だ"
     },
     {
       "word": "さくら",
@@ -239,7 +261,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 24
+      "id": 24,
+      "kanji": "桜"
     },
     {
       "word": "えいが",
@@ -249,7 +272,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 25
+      "id": 25,
+      "kanji": "映画"
     },
     {
       "word": "かぞく",
@@ -259,7 +283,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 26
+      "id": 26,
+      "kanji": "家族"
     },
     {
       "word": "まいにち",
@@ -269,7 +294,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 27
+      "id": 27,
+      "kanji": "毎日"
     },
     {
       "word": "りょうり",
@@ -279,7 +305,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 28
+      "id": 28,
+      "kanji": "料理"
     },
     {
       "word": "きょうしつ",
@@ -289,7 +316,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 29
+      "id": 29,
+      "kanji": "教室"
     },
     {
       "word": "たまごやき",
@@ -299,7 +327,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 30
+      "id": 30,
+      "kanji": "卵焼き"
     },
     {
       "word": "チゲ",
@@ -329,7 +358,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 33
+      "id": 33,
+      "kanji": "勉強"
     },
     {
       "word": "いただきます",
@@ -359,7 +389,8 @@
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
-      "id": 36
+      "id": 36,
+      "kanji": "お元気で"
     },
     {
       "word": "わたし",
@@ -369,7 +400,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 37
+      "id": 37,
+      "kanji": "私"
     },
     {
       "word": "かれ",
@@ -379,7 +411,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 38
+      "id": 38,
+      "kanji": "彼"
     },
     {
       "word": "かのじょ",
@@ -389,7 +422,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 39
+      "id": 39,
+      "kanji": "彼女"
     },
     {
       "word": "かんこくじん",
@@ -399,7 +433,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 40
+      "id": 40,
+      "kanji": "韓国人"
     },
     {
       "word": "にほんじん",
@@ -409,7 +444,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 41
+      "id": 41,
+      "kanji": "日本人"
     },
     {
       "word": "ちゅうごくじん",
@@ -419,7 +455,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 42
+      "id": 42,
+      "kanji": "中国人"
     },
     {
       "word": "がいこくじん",
@@ -429,7 +466,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 43
+      "id": 43,
+      "kanji": "外国人"
     },
     {
       "word": "アメリカじん",
@@ -439,7 +477,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 44
+      "id": 44,
+      "kanji": "アメリカ人"
     },
     {
       "word": "イギリスじん",
@@ -449,7 +488,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 45
+      "id": 45,
+      "kanji": "イギリス人"
     },
     {
       "word": "がくせい",
@@ -459,7 +499,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 46
+      "id": 46,
+      "kanji": "学生"
     },
     {
       "word": "しょうがくせい",
@@ -469,7 +510,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 47
+      "id": 47,
+      "kanji": "小学生"
     },
     {
       "word": "ちゅうがくせい",
@@ -479,7 +521,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 48
+      "id": 48,
+      "kanji": "中学生"
     },
     {
       "word": "こうこうせい",
@@ -489,7 +532,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 49
+      "id": 49,
+      "kanji": "高校生"
     },
     {
       "word": "だいがくせい",
@@ -499,7 +543,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 50
+      "id": 50,
+      "kanji": "大学生"
     },
     {
       "word": "りゅうがくせい",
@@ -509,7 +554,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 51
+      "id": 51,
+      "kanji": "留学生"
     },
     {
       "word": "いしゃ",
@@ -519,7 +565,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 52
+      "id": 52,
+      "kanji": "医者"
     },
     {
       "word": "かしゅ",
@@ -529,7 +576,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 53
+      "id": 53,
+      "kanji": "歌手"
     },
     {
       "word": "せんせい",
@@ -539,7 +587,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 54
+      "id": 54,
+      "kanji": "先生"
     },
     {
       "word": "かんごし",
@@ -549,7 +598,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 55
+      "id": 55,
+      "kanji": "看護師"
     },
     {
       "word": "かいしゃいん",
@@ -559,7 +609,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 56
+      "id": 56,
+      "kanji": "会社員"
     },
     {
       "word": "ぎんこういん",
@@ -569,7 +620,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 57
+      "id": 57,
+      "kanji": "銀行員"
     },
     {
       "word": "やきゅうせんしゅ",
@@ -579,7 +631,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 58
+      "id": 58,
+      "kanji": "野球選手"
     },
     {
       "word": "サッカーせんしゅ",
@@ -589,7 +642,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 59
+      "id": 59,
+      "kanji": "サッカー選手"
     },
     {
       "word": "モデル",
@@ -609,7 +663,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 61
+      "id": 61,
+      "kanji": "男"
     },
     {
       "word": "おんな",
@@ -619,7 +674,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 62
+      "id": 62,
+      "kanji": "女"
     },
     {
       "word": "おとうと",
@@ -629,7 +685,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 63
+      "id": 63,
+      "kanji": "弟"
     },
     {
       "word": "いもうと",
@@ -639,7 +696,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 64
+      "id": 64,
+      "kanji": "妹"
     },
     {
       "word": "こんにちは",
@@ -669,7 +727,8 @@
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 67
+      "id": 67,
+      "kanji": "よろしくお願いします"
     },
     {
       "word": "かさ",
@@ -679,7 +738,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 68
+      "id": 68,
+      "kanji": "傘"
     },
     {
       "word": "かぎ",
@@ -689,7 +749,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 69
+      "id": 69,
+      "kanji": "鍵"
     },
     {
       "word": "くつ",
@@ -699,7 +760,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 70
+      "id": 70,
+      "kanji": "靴"
     },
     {
       "word": "のり",
@@ -709,7 +771,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 71
+      "id": 71,
+      "kanji": "海苔"
     },
     {
       "word": "かばん",
@@ -729,7 +792,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 73
+      "id": 73,
+      "kanji": "眼鏡"
     },
     {
       "word": "おみやげ",
@@ -739,7 +803,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 74
+      "id": 74,
+      "kanji": "お土産"
     },
     {
       "word": "ほん",
@@ -749,7 +814,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 75
+      "id": 75,
+      "kanji": "本"
     },
     {
       "word": "くすり",
@@ -759,7 +825,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 76
+      "id": 76,
+      "kanji": "薬"
     },
     {
       "word": "くるま",
@@ -769,7 +836,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 77
+      "id": 77,
+      "kanji": "車"
     },
     {
       "word": "とけい",
@@ -779,7 +847,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 78
+      "id": 78,
+      "kanji": "時計"
     },
     {
       "word": "おかし",
@@ -789,7 +858,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 79
+      "id": 79,
+      "kanji": "お菓子"
     },
     {
       "word": "しゃしん",
@@ -799,7 +869,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 80
+      "id": 80,
+      "kanji": "写真"
     },
     {
       "word": "キムチ",
@@ -839,7 +910,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 84
+      "id": 84,
+      "kanji": "学校"
     },
     {
       "word": "たてもの",
@@ -849,7 +921,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 85
+      "id": 85,
+      "kanji": "建物"
     },
     {
       "word": "しょくどう",
@@ -859,7 +932,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 86
+      "id": 86,
+      "kanji": "食堂"
     },
     {
       "word": "びょういん",
@@ -869,7 +943,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 87
+      "id": 87,
+      "kanji": "病院"
     },
     {
       "word": "ゆうびんきょく",
@@ -879,7 +954,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 88
+      "id": 88,
+      "kanji": "郵便局"
     },
     {
       "word": "トイレ",
@@ -909,7 +985,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 91
+      "id": 91,
+      "kanji": "部屋"
     },
     {
       "word": "みず",
@@ -919,7 +996,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 92
+      "id": 92,
+      "kanji": "水"
     },
     {
       "word": "よこ",
@@ -929,7 +1007,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 93
+      "id": 93,
+      "kanji": "横"
     },
     {
       "word": "おんがく",
@@ -939,7 +1018,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 94
+      "id": 94,
+      "kanji": "音楽"
     },
     {
       "word": "りょこう",
@@ -949,7 +1029,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 95
+      "id": 95,
+      "kanji": "旅行"
     },
     {
       "word": "にほんご",
@@ -959,7 +1040,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 96
+      "id": 96,
+      "kanji": "日本語"
     },
     {
       "word": "たんじょうび",
@@ -969,7 +1051,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 97
+      "id": 97,
+      "kanji": "誕生日"
     },
     {
       "word": "どうぞ",
@@ -989,7 +1072,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 99
+      "id": 99,
+      "kanji": "済みません"
     },
     {
       "word": "しつれいします",
@@ -999,7 +1083,8 @@
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 100
+      "id": 100,
+      "kanji": "失礼します"
     },
     {
       "word": "ありがとう",
@@ -1029,7 +1114,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 103
+      "id": 103,
+      "kanji": "昨日"
     },
     {
       "word": "おととい",
@@ -1039,7 +1125,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 104
+      "id": 104,
+      "kanji": "一昨日"
     },
     {
       "word": "せんしゅう",
@@ -1049,7 +1136,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 105
+      "id": 105,
+      "kanji": "先週"
     },
     {
       "word": "きょねん",
@@ -1059,7 +1147,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 106
+      "id": 106,
+      "kanji": "去年"
     },
     {
       "word": "あつい",
@@ -1069,7 +1158,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 107
+      "id": 107,
+      "kanji": "暑い"
     },
     {
       "word": "ふるい",
@@ -1079,7 +1169,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 108
+      "id": 108,
+      "kanji": "古い"
     },
     {
       "word": "いい・よい",
@@ -1089,7 +1180,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 109
+      "id": 109,
+      "kanji": "良い"
     },
     {
       "word": "すずしい",
@@ -1099,7 +1191,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 110
+      "id": 110,
+      "kanji": "涼しい"
     },
     {
       "word": "あかるい",
@@ -1109,7 +1202,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 111
+      "id": 111,
+      "kanji": "明るい"
     },
     {
       "word": "みじかい",
@@ -1119,7 +1213,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 112
+      "id": 112,
+      "kanji": "短い"
     },
     {
       "word": "ひくい",
@@ -1129,7 +1224,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 113
+      "id": 113,
+      "kanji": "低い"
     },
     {
       "word": "くろい",
@@ -1139,7 +1235,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 114
+      "id": 114,
+      "kanji": "黒い"
     },
     {
       "word": "おおきい",
@@ -1149,7 +1246,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 115
+      "id": 115,
+      "kanji": "大きい"
     },
     {
       "word": "ひまだ",
@@ -1159,7 +1257,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 116
+      "id": 116,
+      "kanji": "暇だ"
     },
     {
       "word": "にぎやかだ",
@@ -1169,7 +1268,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 117
+      "id": 117,
+      "kanji": "賑やかだ"
     },
     {
       "word": "ふべんだ",
@@ -1179,7 +1279,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 118
+      "id": 118,
+      "kanji": "不便だ"
     },
     {
       "word": "あめ",
@@ -1189,7 +1290,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 119
+      "id": 119,
+      "kanji": "雨"
     },
     {
       "word": "いえ",
@@ -1199,7 +1301,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 120
+      "id": 120,
+      "kanji": "家"
     },
     {
       "word": "えき",
@@ -1209,7 +1312,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 121
+      "id": 121,
+      "kanji": "駅"
     },
     {
       "word": "せ",
@@ -1219,7 +1323,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 122
+      "id": 122,
+      "kanji": "背"
     },
     {
       "word": "ちち",
@@ -1229,7 +1334,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 123
+      "id": 123,
+      "kanji": "父"
     },
     {
       "word": "はは",
@@ -1239,7 +1345,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 124
+      "id": 124,
+      "kanji": "母"
     },
     {
       "word": "ふく",
@@ -1249,7 +1356,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 125
+      "id": 125,
+      "kanji": "服"
     },
     {
       "word": "まち",
@@ -1259,7 +1367,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 126
+      "id": 126,
+      "kanji": "町"
     },
     {
       "word": "えいご",
@@ -1269,7 +1378,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 127
+      "id": 127,
+      "kanji": "英語"
     },
     {
       "word": "やすみ",
@@ -1279,7 +1389,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 128
+      "id": 128,
+      "kanji": "休み"
     },
     {
       "word": "しんごう",
@@ -1289,7 +1400,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 129
+      "id": 129,
+      "kanji": "信号"
     },
     {
       "word": "あさごはん",
@@ -1299,7 +1411,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 130
+      "id": 130,
+      "kanji": "朝ご飯"
     },
     {
       "word": "おとうさん",
@@ -1309,7 +1422,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 131
+      "id": 131,
+      "kanji": "お父さん"
     },
     {
       "word": "おかあさん",
@@ -1319,7 +1433,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 132
+      "id": 132,
+      "kanji": "お母さん"
     },
     {
       "word": "べんきょう",
@@ -1329,7 +1444,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 133
+      "id": 133,
+      "kanji": "勉強"
     },
     {
       "word": "あか",
@@ -1339,7 +1455,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 134
+      "id": 134,
+      "kanji": "赤"
     },
     {
       "word": "パン",
@@ -1379,7 +1496,8 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
-      "id": 138
+      "id": 138,
+      "kanji": "ただ今"
     },
     {
       "word": "おかえりなさい",

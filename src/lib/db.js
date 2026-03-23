@@ -74,11 +74,42 @@ function createDb() {
 
 const SCHEMA_ERRORS = ['VersionError', 'UpgradeError'];
 
+async function backupBeforeDelete() {
+  try {
+    const idb = await new Promise((resolve, reject) => {
+      const req = indexedDB.open('j-voca');
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+    const names = [...idb.objectStoreNames];
+    if (names.length === 0) { idb.close(); return; }
+    const tx = idb.transaction(names, 'readonly');
+    const backup = {};
+    await Promise.all(names.map(name =>
+      new Promise(resolve => {
+        const req = tx.objectStore(name).getAll();
+        req.onsuccess = () => { backup[name] = req.result; resolve(); };
+        req.onerror = () => resolve();
+      })
+    ));
+    idb.close();
+    if (Object.values(backup).some(arr => arr?.length > 0)) {
+      localStorage.setItem(
+        'j-voca-db-backup-' + Date.now(),
+        JSON.stringify({ ...backup, backedUpAt: new Date().toISOString() })
+      );
+    }
+  } catch (_) {
+    // Best-effort backup
+  }
+}
+
 export async function openDb() {
   try {
     await db.open();
   } catch (err) {
     if (SCHEMA_ERRORS.includes(err.name)) {
+      await backupBeforeDelete();
       await Dexie.delete('j-voca');
       db = createDb();
       await db.open();

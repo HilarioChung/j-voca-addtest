@@ -46,8 +46,14 @@ export default function WeakWords() {
             <div key={word.id} className="bg-white rounded-xl p-3 shadow-sm border border-slate-100">
               <div className="flex justify-between items-start">
                 <div>
-                  <span className="font-medium text-slate-800">{word.word}</span>
-                  <span className="text-slate-400 text-sm ml-2">{word.reading}</span>
+                  {word.kanji ? (
+                    <>
+                      <span className="font-medium text-slate-800">{word.kanji}</span>
+                      <span className="text-indigo-500 text-sm ml-2">{word.reading}</span>
+                    </>
+                  ) : (
+                    <span className="font-medium text-slate-800">{word.word}</span>
+                  )}
                   <p className="text-sm text-slate-500">{word.meaning}</p>
                 </div>
                 {/* 오답률 배지: 비율에 따라 색상 변화 */}

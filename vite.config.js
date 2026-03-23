@@ -17,7 +17,7 @@ function versionFile() {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), versionFile()],
-  base: '/j-voca/',
+  base: '/j-voca-addtest/',
   define: {
     __BUILD_TIME__: JSON.stringify(buildTime),
   },

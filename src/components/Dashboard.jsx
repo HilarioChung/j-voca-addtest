@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../lib/db';
 import { getDueCount } from '../lib/review-utils';
@@ -39,27 +39,30 @@ export default function Dashboard() {
 
   const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
-  const dueCount = getDueCount(words, reviews);
-  const { streak, totalReviews, overallAccuracy } = calculateStats(reviewLogs);
-  const weakCount = calculateWeakWords(words, reviews, reviewLogs).length;
+  const dueCount = useMemo(() => getDueCount(words, reviews), [words, reviews]);
+  const { streak, totalReviews, overallAccuracy } = useMemo(() => calculateStats(reviewLogs), [reviewLogs]);
+  const weakCount = useMemo(() => calculateWeakWords(words, reviews, reviewLogs).length, [words, reviews, reviewLogs]);
 
-  const chapters = [];
-  const chapterMap = {};
-  for (const w of words) {
-    if (!chapterMap[w.chapter]) chapterMap[w.chapter] = { total: 0, reviewed: 0 };
-    chapterMap[w.chapter].total++;
-  }
-  const wordById = new Map(words.map(w => [w.id, w]));
-  for (const r of reviews) {
-    const word = wordById.get(r.wordId);
-    if (word && chapterMap[word.chapter] && r.reps > 0) {
-      chapterMap[word.chapter].reviewed++;
+  const chapters = useMemo(() => {
+    const chapterMap = {};
+    for (const w of words) {
+      if (!chapterMap[w.chapter]) chapterMap[w.chapter] = { total: 0, reviewed: 0 };
+      chapterMap[w.chapter].total++;
     }
-  }
-  for (const [ch, data] of Object.entries(chapterMap)) {
-    chapters.push({ chapter: Number(ch), ...data });
-  }
-  chapters.sort((a, b) => a.chapter - b.chapter);
+    const wordById = new Map(words.map(w => [w.id, w]));
+    for (const r of reviews) {
+      const word = wordById.get(r.wordId);
+      if (word && chapterMap[word.chapter] && r.reps > 0) {
+        chapterMap[word.chapter].reviewed++;
+      }
+    }
+    const result = [];
+    for (const [ch, data] of Object.entries(chapterMap)) {
+      result.push({ chapter: Number(ch), ...data });
+    }
+    result.sort((a, b) => a.chapter - b.chapter);
+    return result;
+  }, [words, reviews]);
 
   return (
     <div className="space-y-6">

@@ -1,3 +1,10 @@
+function toLocalDateStr(date) {
+  const d = date instanceof Date ? date : new Date(date);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
 
 /**
  * 리뷰 로그를 일별로 그룹핑하고 통계를 계산한다.
@@ -9,11 +16,10 @@ export function calculateStats(reviewLogs) {
     return { dailyStats: [], streak: 0, totalReviews: 0, overallAccuracy: 0 };
   }
 
-  // 날짜별 그룹핑
+  // 날짜별 그룹핑 (로컬 타임존 기준)
   const byDate = {};
   for (const log of reviewLogs) {
-    // review_date는 ISO 문자열이므로 YYYY-MM-DD 부분만 추출
-    const date = log.review_date.split('T')[0];
+    const date = toLocalDateStr(log.review_date);
     if (!byDate[date]) {
       byDate[date] = { date, total: 0, again: 0, hard: 0, good: 0, easy: 0 };
     }
@@ -51,7 +57,7 @@ function calculateStreak(dailyStats) {
     dailyStats.filter(d => d.total > 0).map(d => d.date),
   );
 
-  const today = new Date().toISOString().split('T')[0];
+  const today = toLocalDateStr(new Date());
 
   // 오늘 학습 기록이 없으면 streak = 0
   if (!datesWithReviews.has(today)) return 0;

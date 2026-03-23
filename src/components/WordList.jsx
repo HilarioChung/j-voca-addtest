@@ -23,7 +23,7 @@ export default function WordList() {
 
   function startEdit(word) {
     setEditingId(word.id);
-    setEditForm({ word: word.word, reading: word.reading, meaning: word.meaning });
+    setEditForm({ word: word.word, kanji: word.kanji, reading: word.reading, meaning: word.meaning });
   }
 
   async function saveEdit(id) {
@@ -149,16 +149,25 @@ export default function WordList() {
                   <input
                     value={editForm.word}
                     onChange={e => setEditForm(f => ({ ...f, word: e.target.value }))}
+                    placeholder="단어 (히라가나)"
+                    className="w-full px-2 py-1 border border-slate-200 rounded-lg text-sm"
+                  />
+                  <input
+                    value={editForm.kanji || ''}
+                    onChange={e => setEditForm(f => ({ ...f, kanji: e.target.value || undefined }))}
+                    placeholder="한자 (없으면 비워두기)"
                     className="w-full px-2 py-1 border border-slate-200 rounded-lg text-sm"
                   />
                   <input
                     value={editForm.reading}
                     onChange={e => setEditForm(f => ({ ...f, reading: e.target.value }))}
+                    placeholder="읽기"
                     className="w-full px-2 py-1 border border-slate-200 rounded-lg text-sm"
                   />
                   <input
                     value={editForm.meaning}
                     onChange={e => setEditForm(f => ({ ...f, meaning: e.target.value }))}
+                    placeholder="뜻"
                     className="w-full px-2 py-1 border border-slate-200 rounded-lg text-sm"
                   />
                   <div className="flex gap-2">
@@ -171,8 +180,14 @@ export default function WordList() {
               ) : (
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="font-medium text-slate-800">{w.word}</span>
-                    <span className="text-slate-400 text-sm ml-2">{w.reading}</span>
+                    {w.kanji ? (
+                      <>
+                        <span className="font-medium text-slate-800">{w.kanji}</span>
+                        <span className="text-indigo-500 text-sm ml-2">{w.reading}</span>
+                      </>
+                    ) : (
+                      <span className="font-medium text-slate-800">{w.word}</span>
+                    )}
                     <p className="text-sm text-slate-500">{w.meaning}</p>
                   </div>
                   {canEdit && (

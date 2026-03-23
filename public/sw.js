@@ -1,9 +1,9 @@
 const CACHE_NAME = 'j-voca-v4';
 
 const PRECACHE_URLS = [
-  '/j-voca/',
-  '/j-voca/index.html',
-  '/j-voca/data/words.json',
+  '/j-voca-addtest/',
+  '/j-voca-addtest/index.html',
+  '/j-voca-addtest/data/words.json',
 ];
 
 self.addEventListener('install', (event) => {

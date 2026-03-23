@@ -18,14 +18,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/j-voca/sw.js').catch(() => {});
+    navigator.serviceWorker.register('/j-voca-addtest/sw.js').catch(() => {});
   });
 }
 
 // 서버의 version.json과 로컬 빌드 시각을 비교하여 새 버전 감지
 function checkForUpdate() {
   if (window.__HAS_UPDATE__) return;
-  fetch('/j-voca/version.json?' + Date.now())
+  fetch('/j-voca-addtest/version.json?' + Date.now())
     .then(r => r.json())
     .then(({ build }) => {
       if (build && build !== __BUILD_TIME__) {

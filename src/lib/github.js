@@ -1,5 +1,5 @@
-const REPO_OWNER = 'ukiband';
-const REPO_NAME = 'j-voca';
+const REPO_OWNER = 'HilarioChung';
+const REPO_NAME = 'j-voca-addtest';
 const FILE_PATH = 'public/data/words.json';
 
 export function getGithubToken() {
@@ -23,17 +23,20 @@ function utf8ToBase64(str) {
 }
 
 export async function fetchWordsData() {
-  // 1. GitHub raw URL (항상 최신, public repo는 토큰 불필요)
+  // 1. 로컬 빌드 파일 우선 (dev에서 최신 편집 반영)
+  try {
+    const url = import.meta.env.BASE_URL + 'data/words.json';
+    const localRes = await fetch(url);
+    if (localRes.ok) {
+      const localData = await localRes.json();
+      if (localData.words?.length > 0) return localData;
+    }
+  } catch {}
+
+  // 2. Fallback: GitHub raw URL (배포 후 동기화)
   try {
     const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${FILE_PATH}?t=${Date.now()}`;
     const res = await fetch(rawUrl);
-    if (res.ok) return res.json();
-  } catch {}
-
-  // 2. Fallback: 정적 빌드 파일
-  try {
-    const url = import.meta.env.BASE_URL + 'data/words.json';
-    const res = await fetch(url);
     if (res.ok) return res.json();
   } catch {}
 
