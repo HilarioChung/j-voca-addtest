@@ -33,7 +33,7 @@ function StepIndicator({ current, total }) {
         <div
           key={i}
           className={`h-1.5 rounded-full transition-all ${
-            i <= current ? 'w-6 bg-indigo-500' : 'w-1.5 bg-slate-200'
+            i <= current ? 'w-5 bg-indigo-500' : 'w-2 bg-slate-200'
           }`}
         />
       ))}
@@ -69,13 +69,13 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
     <div className="flex flex-col items-center gap-6">
       <div
         className="w-full cursor-pointer"
-        style={{ minHeight: '240px' }}
+        style={{ minHeight: '260px' }}
         onClick={handleTap}
       >
         <div
           key={step}
           className="card-step bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center p-6"
-          style={{ minHeight: '240px' }}
+          style={{ minHeight: '260px' }}
         >
           {step === 0 && (
             <>
@@ -139,7 +139,7 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
             <button
               key={grade}
               onClick={() => handleGrade(grade)}
-              className={`${color} text-white py-3 rounded-xl text-sm font-medium`}
+              className={`${color} text-white py-3.5 rounded-xl text-sm font-medium active:scale-95 active:brightness-90 transition-transform`}
             >
               {label}
             </button>
