@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { getDueCount } from '../review-utils';
+import { getDueCount, getDueCountByLesson } from '../review-utils';
 
 afterEach(() => {
   vi.setSystemTime(vi.getRealSystemTime());
@@ -59,5 +59,34 @@ describe('getDueCount', () => {
       { wordId: 3, due: '2026-03-19T00:00:00.000Z', state: 2 },  // Review
     ];
     expect(getDueCount(words, reviews)).toEqual({ total: 3, reconfirm: 2 });
+  });
+});
+
+describe('getDueCountByLesson', () => {
+  it('lesson별로 due 카운트를 분리', () => {
+    vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
+    const words = [
+      { id: 1, chapter: 1 },
+      { id: 2, chapter: 1 },
+      { id: 3, chapter: 2 },
+      { id: 4, chapter: 3 },
+    ];
+    const reviews = [
+      { wordId: 1, due: '2026-03-19T00:00:00.000Z', state: 2 },
+      { wordId: 2, due: '2026-03-19T00:00:00.000Z', state: 1 },  // Learning
+      { wordId: 3, due: '2026-03-19T00:00:00.000Z', state: 2 },
+      { wordId: 4, due: '2026-03-20T00:00:00.000Z', state: 2 },  // 내일 → not due
+    ];
+    const result = getDueCountByLesson(words, reviews);
+    expect(result[1]).toEqual({ total: 2, reconfirm: 1 });
+    expect(result[2]).toEqual({ total: 1, reconfirm: 0 });
+    expect(result[3]).toBeUndefined();  // due가 아닌 lesson은 포함되지 않음
+  });
+
+  it('due인 리뷰가 없으면 빈 객체 반환', () => {
+    vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
+    const words = [{ id: 1, chapter: 1 }];
+    const reviews = [{ wordId: 1, due: '2026-03-20T00:00:00.000Z', state: 2 }];
+    expect(getDueCountByLesson(words, reviews)).toEqual({});
   });
 });
