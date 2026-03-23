@@ -17,8 +17,8 @@ function getLast14Days() {
 /** 등급별 색상 및 라벨 매핑 (모름/애매/앎) */
 const GRADES = [
   { key: 'again', color: 'bg-red-400', label: '모름' },
-  { key: 'good', color: 'bg-emerald-400', label: '애매' },
-  { key: 'easy', color: 'bg-blue-400', label: '앎' },
+  { key: 'hard', color: 'bg-emerald-400', label: '애매' },
+  { key: 'good', color: 'bg-blue-400', label: '앎' },
 ];
 
 export default function Statistics() {

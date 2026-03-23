@@ -12,18 +12,17 @@ afterEach(() => {
 });
 
 describe('GRADE_MAP', () => {
-  it('각 grade 문자열을 ts-fsrs Rating으로 매핑', () => {
+  it('각 grade 문자열을 ts-fsrs Rating으로 매핑 (3등급)', () => {
     expect(GRADE_MAP.again).toBe(Rating.Again);
     expect(GRADE_MAP.hard).toBe(Rating.Hard);
     expect(GRADE_MAP.good).toBe(Rating.Good);
-    expect(GRADE_MAP.easy).toBe(Rating.Easy);
+    expect(GRADE_MAP.easy).toBeUndefined();
   });
 
   it('Rating 값이 올바른 숫자', () => {
     expect(GRADE_MAP.again).toBe(1);
     expect(GRADE_MAP.hard).toBe(2);
     expect(GRADE_MAP.good).toBe(3);
-    expect(GRADE_MAP.easy).toBe(4);
   });
 });
 
@@ -133,10 +132,8 @@ describe('gradeCard', () => {
     expect(result.reps).toBe(1);
   });
 
-  it('easy로 채점하면 유효한 리뷰 반환', () => {
-    const result = gradeCard(makeNewReview(), 'easy');
-    expect(result.wordId).toBe(1);
-    expect(result.reps).toBe(1);
+  it('easy는 지원하지 않으므로 에러 발생', () => {
+    expect(() => gradeCard(makeNewReview(), 'easy')).toThrow('알 수 없는 grade');
   });
 
   it('알 수 없는 grade는 에러 발생', () => {
@@ -162,8 +159,11 @@ describe('gradeCard', () => {
   it('again은 lapses를 증가시키고 state를 변경', () => {
     let review = makeNewReview();
 
-    // Review 상태로 전환하기 위해 easy로 한 번에 졸업
-    review = gradeCard(review, 'easy');
+    // Review 상태로 전환: good 반복으로 Learning→Review 졸업
+    // Learning 카드의 due가 미래이므로 시간을 due 시점으로 진행
+    review = gradeCard(review, 'good');
+    vi.setSystemTime(new Date(review.due));
+    review = gradeCard(review, 'good');
     expect(review.state).toBe(State.Review);
 
     const lapsesBefore = review.lapses;

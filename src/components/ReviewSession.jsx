@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { db, putReview, putReviewLog } from '../lib/db';
+import { db } from '../lib/db';
 import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
 import FlashCard from './FlashCard';
@@ -8,19 +8,22 @@ import FlashCard from './FlashCard';
 export default function ReviewSession() {
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [done, setDone] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
+  const [noWords, setNoWords] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [results, setResults] = useState({ again: 0, good: 0, easy: 0 });
+  const [results, setResults] = useState({ again: 0, hard: 0, good: 0 });
   const [error, setError] = useState(null);
   const [saveError, setSaveError] = useState(null);
 
   useEffect(() => {
     getDueWords().then(words => {
       if (words.length === 0) {
-        setDone(true);
+        setNoWords(true);
       } else {
-        setQueue(words.sort(() => Math.random() - 0.5));
+        const shuffled = words.sort(() => Math.random() - 0.5);
+        setQueue(shuffled);
+        setWordCount(shuffled.length);
       }
       setLoading(false);
     }).catch((err) => {
@@ -31,6 +34,7 @@ export default function ReviewSession() {
   }, []);
 
   const currentWord = queue[currentIndex];
+  const done = !loading && queue.length > 0 && currentIndex >= queue.length;
 
   async function handleGrade(grade) {
     if (!currentWord || saving) return;
@@ -56,11 +60,13 @@ export default function ReviewSession() {
 
     setSaving(false);
     setResults(prev => ({ ...prev, [grade]: prev[grade] + 1 }));
-    if (currentIndex + 1 < queue.length) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setDone(true);
+
+    if (grade === 'again') {
+      // 모름: 큐 뒤쪽에 재삽입하여 같은 세션에서 다시 복습
+      setQueue(prev => [...prev, currentWord]);
     }
+
+    setCurrentIndex(prev => prev + 1);
   }
 
   if (loading) {
@@ -87,7 +93,7 @@ export default function ReviewSession() {
     );
   }
 
-  if (done && queue.length === 0) {
+  if (noWords) {
     return (
       <div className="text-center py-16">
         <p className="text-4xl mb-4">&#x1F389;</p>
@@ -99,7 +105,6 @@ export default function ReviewSession() {
   }
 
   if (done) {
-    const total = results.again + results.good + results.easy;
     return (
       <div className="text-center py-12 space-y-6">
         <p className="text-4xl">&#x2705;</p>
@@ -110,15 +115,15 @@ export default function ReviewSession() {
             <p className="text-slate-400">모름</p>
           </div>
           <div className="bg-orange-50 rounded-xl p-3">
-            <p className="text-orange-400 font-medium">{results.good}</p>
+            <p className="text-orange-400 font-medium">{results.hard}</p>
             <p className="text-slate-400">애매</p>
           </div>
           <div className="bg-green-50 rounded-xl p-3">
-            <p className="text-green-500 font-medium">{results.easy}</p>
+            <p className="text-green-500 font-medium">{results.good}</p>
             <p className="text-slate-400">앎</p>
           </div>
         </div>
-        <p className="text-sm text-slate-400">{total}개 단어 복습 완료</p>
+        <p className="text-sm text-slate-400">{wordCount}개 단어 복습 완료</p>
         <Link to="/" className="text-indigo-600 font-medium text-sm inline-block">홈으로</Link>
       </div>
     );
@@ -142,7 +147,7 @@ export default function ReviewSession() {
         />
       </div>
 
-      {currentWord && <FlashCard key={currentWord.id} word={currentWord} onGrade={handleGrade} />}
+      {currentWord && <FlashCard key={currentIndex} word={currentWord} onGrade={handleGrade} />}
     </div>
   );
 }

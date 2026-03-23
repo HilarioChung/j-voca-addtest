@@ -15,16 +15,16 @@ const reviews = [
   { wordId: 'w4', due: '2026-01-01T00:00:00.000Z', lapses: 0, reps: 0, state: 0 },
 ];
 
-// ReviewSession에서 grade를 문자열로 저장 ('again', 'hard', 'good', 'easy')
+// ReviewSession에서 grade를 문자열로 저장 ('again', 'hard', 'good')
 function log(wordId, grade) {
   return { id: Math.random(), wordId, review_date: '2026-01-01', grade };
 }
 
 describe('calculateWeakWords', () => {
-  it('모든 응답이 good/easy이면 취약 단어 없음', () => {
+  it('모든 응답이 good이면 취약 단어 없음', () => {
     const logs = [
-      log('w1', 'good'), log('w1', 'easy'), // good, easy
-      log('w2', 'good'), log('w2', 'good'), // good, good
+      log('w1', 'good'), log('w1', 'good'),
+      log('w2', 'good'), log('w2', 'good'),
     ];
     const result = calculateWeakWords(words, reviews, logs);
     expect(result).toHaveLength(0);
@@ -48,11 +48,10 @@ describe('calculateWeakWords', () => {
       log('w1', 'again'), // again
       log('w1', 'hard'), // hard
       log('w1', 'good'), // good
-      log('w1', 'easy'), // easy
     ];
     const result = calculateWeakWords(words, reviews, logs);
     expect(result).toHaveLength(1);
-    expect(result[0].failRate).toBe(0.5); // 2/4
+    expect(result[0].failRate).toBeCloseTo(2 / 3); // 2/3
     expect(result[0].againCount).toBe(1);
     expect(result[0].hardCount).toBe(1);
   });
@@ -92,7 +91,7 @@ describe('calculateWeakWords', () => {
 
   it('failRate 0인 단어는 제외', () => {
     const logs = [
-      log('w1', 'good'), log('w1', 'easy'), // 모두 good/easy
+      log('w1', 'good'), log('w1', 'good'), // 모두 good
       log('w2', 'again'),                // again 1회
     ];
     const result = calculateWeakWords(words, reviews, logs);
