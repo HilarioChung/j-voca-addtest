@@ -1,6 +1,6 @@
 {
-  "name": "J-VOCA - 일본어 단어장",
-  "short_name": "J-VOCA",
+  "name": "본's J-voca ⍺",
+  "short_name": "본's J-voca",
   "description": "일본어 복습용 웹 단어장",
   "start_url": "/j-voca-addtest/",
   "scope": "/j-voca-addtest/",
