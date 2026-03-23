@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { db } from '../lib/db';
 import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
 import FlashCard from './FlashCard';
 
 export default function ReviewSession() {
+  const [params] = useSearchParams();
+  const lessonParam = params.get('lesson');
+  // lesson 파라미터가 있으면 해당 lesson만, 없으면 전체 복습
+  const chapter = lessonParam != null ? Number(lessonParam) : undefined;
+
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [wordCount, setWordCount] = useState(0);
@@ -17,7 +22,7 @@ export default function ReviewSession() {
   const [saveError, setSaveError] = useState(null);
 
   useEffect(() => {
-    getDueWords().then(words => {
+    getDueWords(chapter).then(words => {
       if (words.length === 0) {
         setNoWords(true);
       } else {
@@ -31,7 +36,7 @@ export default function ReviewSession() {
       setError(err.message || '데이터를 불러올 수 없습니다');
       setLoading(false);
     });
-  }, []);
+  }, [chapter]);
 
   const currentWord = queue[currentIndex];
   const done = !loading && queue.length > 0 && currentIndex >= queue.length;
@@ -99,7 +104,7 @@ export default function ReviewSession() {
         <p className="text-4xl mb-4">&#x1F389;</p>
         <p className="text-lg font-medium text-slate-800">복습할 단어가 없습니다</p>
         <p className="text-sm text-slate-400 mt-2">내일 다시 확인해보세요</p>
-        <Link to="/" className="text-indigo-600 font-medium text-sm mt-4 inline-block">홈으로</Link>
+        <Link to="/lesson-select" className="text-indigo-600 font-medium text-sm mt-4 inline-block">돌아가기</Link>
       </div>
     );
   }
@@ -123,8 +128,10 @@ export default function ReviewSession() {
             <p className="text-slate-400">앎</p>
           </div>
         </div>
-        <p className="text-sm text-slate-400">{wordCount}개 단어 복습 완료</p>
-        <Link to="/" className="text-indigo-600 font-medium text-sm inline-block">홈으로</Link>
+        <p className="text-sm text-slate-400">
+          {chapter != null ? `Lesson ${chapter} · ` : ''}{wordCount}개 단어 복습 완료
+        </p>
+        <Link to="/lesson-select" className="text-indigo-600 font-medium text-sm inline-block">돌아가기</Link>
       </div>
     );
   }
@@ -138,7 +145,9 @@ export default function ReviewSession() {
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-xl font-bold text-slate-800">복습</h1>
+        <h1 className="text-xl font-bold text-slate-800">
+          {chapter != null ? `Lesson ${chapter} 복습` : '복습'}
+        </h1>
         <span className="text-sm text-slate-400">
           {isReview
             ? `${progressCurrent} / ${progressTotal}`
