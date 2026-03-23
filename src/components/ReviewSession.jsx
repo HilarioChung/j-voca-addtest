@@ -129,11 +129,21 @@ export default function ReviewSession() {
     );
   }
 
+  // 일반 복습 구간과 재복습(again) 구간을 분리하여 진행률 계산
+  const isReview = currentIndex < wordCount;
+  const progressCurrent = isReview ? currentIndex + 1 : currentIndex - wordCount + 1;
+  const progressTotal = isReview ? wordCount : queue.length - wordCount;
+  const progressPct = (progressCurrent / progressTotal) * 100;
+
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold text-slate-800">복습</h1>
-        <span className="text-sm text-slate-400">{currentIndex + 1} / {queue.length}</span>
+        <span className="text-sm text-slate-400">
+          {isReview
+            ? `${progressCurrent} / ${progressTotal}`
+            : `재복습 ${progressCurrent} / ${progressTotal}`}
+        </span>
       </div>
 
       {saveError && (
@@ -143,7 +153,7 @@ export default function ReviewSession() {
       <div className="h-1 bg-slate-100 rounded-full overflow-hidden">
         <div
           className="h-full bg-indigo-500 rounded-full transition-all"
-          style={{ width: `${((currentIndex + 1) / queue.length) * 100}%` }}
+          style={{ width: `${progressPct}%` }}
         />
       </div>
 

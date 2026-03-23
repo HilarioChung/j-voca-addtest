@@ -14,5 +14,8 @@ export async function getDueWords() {
 
 export function getDueCount(words, reviews) {
   const wordIds = new Set(words.map(w => w.id));
-  return reviews.filter(r => wordIds.has(r.wordId) && isDue(r)).length;
+  const dueReviews = reviews.filter(r => wordIds.has(r.wordId) && isDue(r));
+  // Learning/Relearning(state 1,3)은 재확인 카드, 나머지는 일반 복습 카드
+  const reconfirmCount = dueReviews.filter(r => r.state === 1 || r.state === 3).length;
+  return { total: dueReviews.length, reconfirm: reconfirmCount };
 }

@@ -28,18 +28,18 @@ describe('getDueCount', () => {
       { wordId: 3, due: tomorrow.toISOString() },
     ];
     // wordId 1: 어제 → due, wordId 2: 오늘 → due, wordId 3: 내일 → not due
-    expect(getDueCount(words, reviews)).toBe(2);
+    expect(getDueCount(words, reviews).total).toBe(2);
   });
 
   it('단어가 없으면 0', () => {
     vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
     const reviews = [{ wordId: 99, due: '2026-03-19T00:00:00.000Z' }];
-    expect(getDueCount([], reviews)).toBe(0);
+    expect(getDueCount([], reviews).total).toBe(0);
   });
 
   it('리뷰가 없으면 0', () => {
     vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
-    expect(getDueCount(words, [])).toBe(0);
+    expect(getDueCount(words, []).total).toBe(0);
   });
 
   it('삭제된 단어의 리뷰는 무시', () => {
@@ -48,7 +48,7 @@ describe('getDueCount', () => {
       { wordId: 1, due: '2026-03-19T00:00:00.000Z' },
       { wordId: 99, due: '2026-03-19T00:00:00.000Z' },
     ];
-    expect(getDueCount(words, reviews)).toBe(1);
+    expect(getDueCount(words, reviews).total).toBe(1);
   });
 
   it('Learning/Relearning 상태도 due면 카운트에 포함', () => {
@@ -58,6 +58,6 @@ describe('getDueCount', () => {
       { wordId: 2, due: '2026-03-19T00:00:00.000Z', state: 3 },  // Relearning
       { wordId: 3, due: '2026-03-19T00:00:00.000Z', state: 2 },  // Review
     ];
-    expect(getDueCount(words, reviews)).toBe(3);
+    expect(getDueCount(words, reviews)).toEqual({ total: 3, reconfirm: 2 });
   });
 });

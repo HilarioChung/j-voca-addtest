@@ -39,7 +39,7 @@ export default function Dashboard() {
 
   const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
-  const dueCount = getDueCount(words, reviews);
+  const { total: dueCount, reconfirm: reconfirmCount } = getDueCount(words, reviews);
   const { streak, totalReviews, overallAccuracy } = calculateStats(reviewLogs);
   const weakCount = calculateWeakWords(words, reviews, reviewLogs).length;
 
@@ -105,6 +105,7 @@ export default function Dashboard() {
         <Link to="/review" className="bg-indigo-600 rounded-2xl p-4 shadow-sm text-white">
           <p className="text-sm text-indigo-200">오늘 복습</p>
           <p className="text-3xl font-bold">{dueCount}</p>
+          {reconfirmCount > 0 && <p className="text-xs text-indigo-200 mt-0.5">재확인 {reconfirmCount}</p>}
           {dueCount > 0 && <p className="text-xs text-indigo-200 mt-1">탭하여 시작</p>}
         </Link>
       </div>
