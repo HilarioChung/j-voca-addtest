@@ -8,6 +8,24 @@ const SpeakerIcon = () => (
   </svg>
 );
 
+const POS_STYLE = {
+  'い형용사': 'bg-sky-100 text-sky-700',
+  'な형용사': 'bg-violet-100 text-violet-700',
+  '명사': 'bg-slate-100 text-slate-600',
+  '동사': 'bg-emerald-100 text-emerald-700',
+  '부사': 'bg-amber-100 text-amber-700',
+  '인사·표현': 'bg-rose-50 text-rose-500',
+};
+
+function PosBadge({ pos }) {
+  const style = POS_STYLE[pos] || 'bg-slate-100 text-slate-500';
+  return (
+    <span className={`inline-block mt-3 px-3 py-1 rounded-full text-xs font-medium ${style}`}>
+      {pos}
+    </span>
+  );
+}
+
 function StepIndicator({ current, total }) {
   return (
     <div className="flex gap-1.5 justify-center mt-4">
@@ -103,7 +121,7 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
                 <SpeakerIcon />
               </button>
               <p className="text-xl text-slate-700 font-medium">{word.meaning}</p>
-              {word.pos && <p className="text-xs text-slate-400 mt-2">{word.pos}</p>}
+              {word.pos && <PosBadge pos={word.pos} />}
             </>
           )}
         </div>
