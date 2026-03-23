@@ -84,11 +84,15 @@ export function createInitialReview(wordId) {
 
 /**
  * 리뷰가 복습 예정인지 판단한다.
- * due가 현재 시각 이전이면 true를 반환한다.
+ * 로컬 타임존 기준으로 due의 날짜가 오늘 이전이면 true를 반환한다.
+ * (시각이 아닌 날짜 단위 비교 — 밤늦게 학습해도 다음날 아침에 복습 가능)
  */
 export function isDue(review) {
-  const dueDate = new Date(review.due);
-  return dueDate <= new Date();
+  const d = new Date(review.due);
+  const now = new Date();
+  const dueDay = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return dueDay <= today;
 }
 
 export { Rating, State };

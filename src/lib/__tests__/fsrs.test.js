@@ -63,22 +63,44 @@ describe('createInitialReview', () => {
 });
 
 describe('isDue', () => {
-  it('due가 현재 시각 이전이면 true', () => {
+  it('due가 오늘 날짜이면 true', () => {
     const review = createInitialReview(1);
-    // 초기 카드의 due는 현재 시각 -> due <= now이므로 true
+    // 초기 카드의 due는 현재 시각 -> 같은 날이므로 true
     expect(isDue(review)).toBe(true);
   });
 
-  it('due가 미래면 false', () => {
+  it('due가 미래 날짜면 false', () => {
     const review = createInitialReview(1);
-    // due를 미래로 설정
     review.due = new Date('2099-12-31T00:00:00Z').toISOString();
     expect(isDue(review)).toBe(false);
   });
 
-  it('due가 정확히 현재 시각이면 true', () => {
+  it('due가 정확히 오늘이면 true', () => {
     const review = createInitialReview(1);
     review.due = FIXED_DATE.toISOString();
+    expect(isDue(review)).toBe(true);
+  });
+
+  it('due가 어제면 true', () => {
+    const review = createInitialReview(1);
+    review.due = new Date('2026-03-18T23:59:59Z').toISOString();
+    expect(isDue(review)).toBe(true);
+  });
+
+  it('due가 내일이면 false', () => {
+    const review = createInitialReview(1);
+    const tomorrow = new Date(FIXED_DATE);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    review.due = tomorrow.toISOString();
+    expect(isDue(review)).toBe(false);
+  });
+
+  it('due가 오늘 늦은 시각이어도 true (날짜 기준)', () => {
+    const review = createInitialReview(1);
+    const laterToday = new Date(FIXED_DATE);
+    laterToday.setHours(23, 59, 59, 0);
+    review.due = laterToday.toISOString();
     expect(isDue(review)).toBe(true);
   });
 });

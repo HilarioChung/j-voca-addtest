@@ -12,13 +12,22 @@ describe('getDueCount', () => {
     { id: 3 },
   ];
 
-  it('due가 현재 시각 이전인 단어 수 반환', () => {
-    vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
+  it('due 날짜가 오늘 이전인 단어 수 반환', () => {
+    const now = new Date('2026-03-19T12:00:00Z');
+    vi.setSystemTime(now);
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const laterToday = new Date(now);
+    laterToday.setHours(23, 59, 59, 0);
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
     const reviews = [
-      { wordId: 1, due: '2026-03-18T00:00:00.000Z' },
-      { wordId: 2, due: '2026-03-19T12:00:00.000Z' },
-      { wordId: 3, due: '2026-03-20T00:00:00.000Z' },
+      { wordId: 1, due: yesterday.toISOString() },
+      { wordId: 2, due: laterToday.toISOString() },
+      { wordId: 3, due: tomorrow.toISOString() },
     ];
+    // wordId 1: 어제 → due, wordId 2: 오늘 → due, wordId 3: 내일 → not due
     expect(getDueCount(words, reviews)).toBe(2);
   });
 
@@ -40,5 +49,15 @@ describe('getDueCount', () => {
       { wordId: 99, due: '2026-03-19T00:00:00.000Z' },
     ];
     expect(getDueCount(words, reviews)).toBe(1);
+  });
+
+  it('Learning/Relearning 상태도 due면 카운트에 포함', () => {
+    vi.setSystemTime(new Date('2026-03-19T12:00:00Z'));
+    const reviews = [
+      { wordId: 1, due: '2026-03-19T00:00:00.000Z', state: 1 },  // Learning
+      { wordId: 2, due: '2026-03-19T00:00:00.000Z', state: 3 },  // Relearning
+      { wordId: 3, due: '2026-03-19T00:00:00.000Z', state: 2 },  // Review
+    ];
+    expect(getDueCount(words, reviews)).toBe(3);
   });
 });
