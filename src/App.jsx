@@ -10,12 +10,13 @@ const ReviewSession = lazy(() => import('./components/ReviewSession'));
 const Settings = lazy(() => import('./components/Settings'));
 const Statistics = lazy(() => import('./components/Statistics'));
 const WeakWords = lazy(() => import('./components/WeakWords'));
+const LessonSelect = lazy(() => import('./components/LessonSelect'));
 
 const NAV_ITEMS = [
   { to: '/', icon: '\u{1F3E0}', label: '\uD648' },
   { to: '/input', icon: '\u{1F4F7}', label: '\uC785\uB825' },
   { to: '/words', icon: '\u{1F4D6}', label: '\uB2E8\uC5B4' },
-  { to: '/review', icon: '\u{1F504}', label: '\uBCF5\uC2B5' },
+  { to: '/lesson-select', icon: '\u{1F504}', label: '\uBCF5\uC2B5' },
   { to: '/settings', icon: '\u2699\uFE0F', label: '\uC124\uC815' },
 ];
 
@@ -83,6 +84,7 @@ export default function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/input" element={<WordInput />} />
             <Route path="/words" element={<WordList />} />
+            <Route path="/lesson-select" element={<LessonSelect />} />
             <Route path="/review" element={<ReviewSession />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/stats" element={<Statistics />} />

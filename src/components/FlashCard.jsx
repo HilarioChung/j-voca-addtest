@@ -133,8 +133,8 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
         <div className="grid grid-cols-3 gap-2 w-full">
           {[
             { grade: 'again', label: '모름', color: 'bg-red-500' },
-            { grade: 'good', label: '애매', color: 'bg-orange-400' },
-            { grade: 'easy', label: '앎', color: 'bg-green-500' },
+            { grade: 'hard', label: '애매', color: 'bg-orange-400' },
+            { grade: 'good', label: '앎', color: 'bg-green-500' },
           ].map(({ grade, label, color }) => (
             <button
               key={grade}

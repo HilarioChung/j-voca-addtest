@@ -30,7 +30,7 @@ describe('calculateStats', () => {
 
     const logs = [
       makeLog('2026-03-21', 'good'),
-      makeLog('2026-03-21', 'easy'),
+      makeLog('2026-03-21', 'hard'),
       makeLog('2026-03-21', 'again'),
       makeLog('2026-03-20', 'hard'),
     ];
@@ -41,9 +41,8 @@ describe('calculateStats', () => {
     const day21 = result.dailyStats.find(d => d.date === '2026-03-21');
     expect(day21.total).toBe(3);
     expect(day21.good).toBe(1);
-    expect(day21.easy).toBe(1);
+    expect(day21.hard).toBe(1);
     expect(day21.again).toBe(1);
-    expect(day21.hard).toBe(0);
   });
 
   it('정확도 계산', () => {
@@ -51,13 +50,13 @@ describe('calculateStats', () => {
 
     const logs = [
       makeLog('2026-03-21', 'good'),
-      makeLog('2026-03-21', 'easy'),
+      makeLog('2026-03-21', 'good'),
       makeLog('2026-03-21', 'again'),
       makeLog('2026-03-21', 'hard'),
     ];
 
     const result = calculateStats(logs);
-    // (good + easy) / total = 2/4 = 0.5
+    // good / total = 2/4 = 0.5
     expect(result.overallAccuracy).toBe(0.5);
     expect(result.dailyStats[0].accuracy).toBe(0.5);
   });
@@ -67,8 +66,8 @@ describe('calculateStats', () => {
 
     const logs = [
       makeLog('2026-03-21', 'good'),
-      makeLog('2026-03-20', 'easy'),
-      makeLog('2026-03-19', 'hard'),
+      makeLog('2026-03-20', 'hard'),
+      makeLog('2026-03-19', 'again'),
     ];
 
     const result = calculateStats(logs);
@@ -80,7 +79,7 @@ describe('calculateStats', () => {
 
     const logs = [
       makeLog('2026-03-21', 'good'),
-      makeLog('2026-03-19', 'easy'),
+      makeLog('2026-03-19', 'again'),
       makeLog('2026-03-20', 'hard'),
     ];
 
