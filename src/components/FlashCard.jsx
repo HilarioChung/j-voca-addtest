@@ -93,7 +93,7 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
                 <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
               </ruby>
               <button
-                onClick={(e) => { e.stopPropagation(); speak(word.kanji); }}
+                onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
                 className="text-slate-400 hover:text-indigo-500 transition-colors mb-2 mt-3"
                 aria-label="발음 듣기"
               >
@@ -114,7 +114,7 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
                 <p className="text-3xl font-bold text-slate-800 mb-2">{word.word}</p>
               )}
               <button
-                onClick={(e) => { e.stopPropagation(); speak(hasKanji ? word.kanji : word.word); }}
+                onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
                 className="text-slate-400 hover:text-indigo-500 transition-colors mb-3 mt-2"
                 aria-label="발음 듣기"
               >

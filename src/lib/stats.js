@@ -63,14 +63,14 @@ function calculateStreak(dailyStats) {
   if (!datesWithReviews.has(today)) return 0;
 
   let streak = 0;
-  let current = new Date(today + 'T00:00:00Z');
+  let current = new Date();
 
   while (true) {
-    const dateStr = current.toISOString().split('T')[0];
+    const dateStr = toLocalDateStr(current);
     if (!datesWithReviews.has(dateStr)) break;
     streak++;
     // 하루 전으로 이동
-    current.setUTCDate(current.getUTCDate() - 1);
+    current.setDate(current.getDate() - 1);
   }
 
   return streak;
