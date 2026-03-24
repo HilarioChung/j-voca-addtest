@@ -21,7 +21,7 @@ export function calculateStats(reviewLogs) {
   for (const log of reviewLogs) {
     const date = toLocalDateStr(log.review_date);
     if (!byDate[date]) {
-      byDate[date] = { date, total: 0, again: 0, hard: 0, good: 0, easy: 0 };
+      byDate[date] = { date, total: 0, again: 0, hard: 0, good: 0 };
     }
     byDate[date].total++;
     byDate[date][log.grade]++;
@@ -31,13 +31,13 @@ export function calculateStats(reviewLogs) {
   const dailyStats = Object.values(byDate)
     .map(day => ({
       ...day,
-      accuracy: day.total > 0 ? (day.good + day.easy) / day.total : 0,
+      accuracy: day.total > 0 ? day.good / day.total : 0,
     }))
     .sort((a, b) => a.date.localeCompare(b.date));
 
   const totalReviews = reviewLogs.length;
-  const totalGoodEasy = reviewLogs.filter(l => l.grade === 'good' || l.grade === 'easy').length;
-  const overallAccuracy = totalReviews > 0 ? totalGoodEasy / totalReviews : 0;
+  const totalGood = reviewLogs.filter(l => l.grade === 'good').length;
+  const overallAccuracy = totalReviews > 0 ? totalGood / totalReviews : 0;
 
   const streak = calculateStreak(dailyStats);
 
@@ -63,14 +63,14 @@ function calculateStreak(dailyStats) {
   if (!datesWithReviews.has(today)) return 0;
 
   let streak = 0;
-  let current = new Date(today + 'T00:00:00Z');
+  let current = new Date();
 
   while (true) {
-    const dateStr = current.toISOString().split('T')[0];
+    const dateStr = toLocalDateStr(current);
     if (!datesWithReviews.has(dateStr)) break;
     streak++;
     // 하루 전으로 이동
-    current.setUTCDate(current.getUTCDate() - 1);
+    current.setDate(current.getDate() - 1);
   }
 
   return streak;

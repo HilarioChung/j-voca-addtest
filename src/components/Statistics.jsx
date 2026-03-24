@@ -3,22 +3,30 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../lib/db';
 import { calculateStats } from '../lib/stats';
 /** 최근 14일간의 날짜 배열을 생성한다 (오늘 포함, 오래된 순) */
+function toLocalDateStr(date) {
+  const d = date instanceof Date ? date : new Date(date);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 function getLast14Days() {
   const days = [];
-  const today = new Date(new Date().toISOString().split('T')[0] + 'T00:00:00Z');
+  const today = new Date();
   for (let i = 13; i >= 0; i--) {
     const d = new Date(today);
-    d.setUTCDate(d.getUTCDate() - i);
-    days.push(d.toISOString().split('T')[0]);
+    d.setDate(d.getDate() - i);
+    days.push(toLocalDateStr(d));
   }
   return days;
 }
 
 /** 등급별 색상 및 라벨 매핑 (모름/애매/앎) */
 const GRADES = [
-  { key: 'again', color: 'bg-red-400', label: '모름' },
-  { key: 'good', color: 'bg-emerald-400', label: '애매' },
-  { key: 'easy', color: 'bg-blue-400', label: '앎' },
+  { key: 'again', color: 'bg-red-500', label: '모름' },
+  { key: 'hard', color: 'bg-orange-400', label: '애매' },
+  { key: 'good', color: 'bg-green-500', label: '앎' },
 ];
 
 export default function Statistics() {

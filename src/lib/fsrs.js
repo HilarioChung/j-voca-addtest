@@ -3,12 +3,11 @@ import { fsrs, createEmptyCard, Rating, State } from 'ts-fsrs';
 // FSRS 인스턴스 (기본 파라미터 사용)
 const f = fsrs();
 
-// grade 문자열을 ts-fsrs Rating으로 매핑
+// grade 문자열을 ts-fsrs Rating으로 매핑 (3등급: 모름/애매/앎)
 export const GRADE_MAP = {
   again: Rating.Again,
   hard: Rating.Hard,
   good: Rating.Good,
-  easy: Rating.Easy,
 };
 
 /**
@@ -26,6 +25,8 @@ function cardToReview(card, wordId) {
     reps: card.reps,
     lapses: card.lapses,
     state: card.state,
+    // Learning 단계 진행 추적 (ts-fsrs v5)
+    learning_steps: card.learning_steps ?? 0,
     last_review: card.last_review instanceof Date
       ? card.last_review.toISOString()
       : card.last_review ?? null,
@@ -46,6 +47,7 @@ function reviewToCard(review) {
     reps: review.reps,
     lapses: review.lapses,
     state: review.state,
+    learning_steps: review.learning_steps ?? 0,
     last_review: review.last_review ? new Date(review.last_review) : undefined,
   };
 }
@@ -60,12 +62,7 @@ export function gradeCard(review, grade) {
     throw new Error(`알 수 없는 grade: ${grade}`);
   }
 
-  // SM-2 마이그레이션에서 difficulty>0 + stability=0 조합은 FSRS에서 유효하지 않음
-  // 새 카드로 리셋하여 정상적으로 채점
-  const isInvalid = review.stability === 0 && review.difficulty > 0;
-  const card = isInvalid
-    ? createEmptyCard(new Date())
-    : reviewToCard(review);
+  const card = reviewToCard(review);
   const now = new Date();
   const result = f.repeat(card, now);
   const updated = result[rating].card;
@@ -90,6 +87,13 @@ export function createInitialReview(wordId) {
 export function isDue(review) {
   const d = new Date(review.due);
   const now = new Date();
+
+  // Learning/Relearning: 시각 단위 비교 (FSRS가 분 단위로 스케줄링)
+  if (review.state === 1 || review.state === 3) {
+    return d <= now;
+  }
+
+  // Review/New: 날짜 단위 비교 (밤늦게 학습해도 다음날 아침에 복습 가능)
   const dueDay = new Date(d.getFullYear(), d.getMonth(), d.getDate());
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   return dueDay <= today;
