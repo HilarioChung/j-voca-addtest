@@ -192,8 +192,8 @@ export default function WordList() {
                   </div>
                   {canEdit && (
                     <div className="flex gap-2 text-xs">
-                      <button onClick={() => startEdit(w)} className="text-slate-400">수정</button>
-                      <button onClick={() => handleDelete(w.id)} className="text-red-400">삭제</button>
+                      <button onClick={() => startEdit(w)} className="text-slate-400 py-1 px-2">수정</button>
+                      <button onClick={() => handleDelete(w.id)} className="text-red-400 py-1 px-2">삭제</button>
                     </div>
                   )}
                 </div>

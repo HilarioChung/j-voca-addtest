@@ -162,7 +162,7 @@ export default function ReviewSession() {
         <p className="text-xs text-red-500 bg-red-50 p-2 rounded-lg">저장 오류: {saveError}</p>
       )}
 
-      <div className="h-1 bg-slate-100 rounded-full overflow-hidden">
+      <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
         <div
           className="h-full bg-indigo-500 rounded-full transition-all"
           style={{ width: `${progressPct}%` }}
