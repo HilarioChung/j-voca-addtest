@@ -46,8 +46,6 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
   const browseMode = !onGrade;
   const hasKanji = !!word.kanji;
 
-  // kanji words: 0(reading) → 1(kanji) → 2(answer)
-  // non-kanji:  0(reading) → 1(answer)
   const maxStep = hasKanji ? 2 : 1;
   const isAnswerStep = step >= maxStep;
 
@@ -65,81 +63,96 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
     fn();
   }
 
+  // Card flipping logic: 0 -> front, 1/2 -> back
+  const isFlipped = step > 0;
+
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-8 w-full max-w-md mx-auto">
       <div
-        className="w-full cursor-pointer"
-        style={{ minHeight: '260px' }}
+        className="w-full perspective-1000 cursor-pointer group"
+        style={{ height: '320px' }}
         onClick={handleTap}
       >
         <div
-          key={step}
-          className="card-step bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center p-6"
-          style={{ minHeight: '260px' }}
+          className={`relative w-full h-full transition-all duration-500 preserve-3d ${
+            isFlipped ? 'rotate-y-180' : ''
+          }`}
         >
-          {step === 0 && (
-            <>
-              <p className="text-4xl font-bold text-slate-800 mb-2">{word.reading}</p>
-              <p className="text-sm text-slate-400">
-                {hasKanji ? '탭하여 한자 보기' : '탭하여 뜻 보기'}
-              </p>
-            </>
-          )}
+          {/* Front Face (Reading) */}
+          <div className="absolute inset-0 backface-hidden glass rounded-3xl flex flex-col items-center justify-center p-8 text-center">
+            <span className="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-4">Reading</span>
+            <p className="text-5xl font-bold text-slate-800 tracking-tight">{word.reading}</p>
+            <div className="mt-8 flex items-center gap-2 text-slate-400 group-hover:text-indigo-500 transition-colors">
+              <span className="text-sm font-medium">{hasKanji ? 'View Kanji' : 'View Meaning'}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
 
-          {step === 1 && hasKanji && (
-            <>
-              <ruby className="text-4xl font-bold text-slate-800 mb-3 ruby-furigana">
-                {word.kanji}
-                <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
-              </ruby>
-              <button
-                onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
-                className="text-slate-400 hover:text-indigo-500 transition-colors mb-2 mt-3"
-                aria-label="발음 듣기"
-              >
-                <SpeakerIcon />
-              </button>
-              <p className="text-sm text-slate-400 mt-1">탭하여 뜻 보기</p>
-            </>
-          )}
-
-          {isAnswerStep && (
-            <>
-              {hasKanji ? (
-                <ruby className="text-3xl font-bold text-slate-800 mb-2 ruby-furigana">
+          {/* Back Face (Kanji / Meaning) */}
+          <div className="absolute inset-0 backface-hidden glass rounded-3xl rotate-y-180 flex flex-col items-center justify-center p-8 text-center">
+            {step === 1 && hasKanji ? (
+              <div className="card-step w-full">
+                <span className="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-4 block">Kanji</span>
+                <ruby className="text-5xl font-bold text-slate-800 ruby-furigana">
                   {word.kanji}
-                  <rp>(</rp><rt className="text-sm font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
+                  <rp>(</rp><rt className="text-lg font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
                 </ruby>
-              ) : (
-                <p className="text-3xl font-bold text-slate-800 mb-2">{word.word}</p>
-              )}
-              <button
-                onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
-                className="text-slate-400 hover:text-indigo-500 transition-colors mb-3 mt-2"
-                aria-label="발음 듣기"
-              >
-                <SpeakerIcon />
-              </button>
-              <p className="text-xl text-slate-700 font-medium">{word.meaning}</p>
-              {word.pos && <PosBadge pos={word.pos} />}
-            </>
-          )}
-        </div>
+                <div className="flex justify-center gap-4 mt-8">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
+                    className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                    aria-label="발음 듣기"
+                  >
+                    <SpeakerIcon />
+                  </button>
+                </div>
+                <p className="text-sm text-slate-400 mt-6 font-medium">Tap to see meaning</p>
+              </div>
+            ) : (
+              <div className="card-step w-full flex flex-col items-center">
+                <span className="text-xs font-semibold tracking-widest text-emerald-500 uppercase mb-4 block">Meaning</span>
+                {hasKanji ? (
+                  <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
+                    {word.kanji}
+                    <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
+                  </ruby>
+                ) : (
+                  <p className="text-4xl font-bold text-slate-800 mb-4 tracking-tight">{word.word}</p>
+                )}
+                
+                <p className="text-2xl text-slate-700 font-semibold mb-2">{word.meaning}</p>
+                {word.pos && <PosBadge pos={word.pos} />}
 
-        <StepIndicator current={step} total={maxStep + 1} />
+                <div className="flex justify-center gap-4 mt-6">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
+                    className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                    aria-label="발음 듣기"
+                  >
+                    <SpeakerIcon />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
+      <StepIndicator current={step} total={maxStep + 1} />
+
       {isAnswerStep && !browseMode && (
-        <div className="grid grid-cols-3 gap-2 w-full">
+        <div className="grid grid-cols-3 gap-3 w-full">
           {[
-            { grade: 'again', label: '모름', color: 'bg-red-500' },
-            { grade: 'hard', label: '애매', color: 'bg-orange-400' },
-            { grade: 'good', label: '앎', color: 'bg-green-500' },
+            { grade: 'again', label: '모름', color: 'bg-rose-500 shadow-rose-200' },
+            { grade: 'hard', label: '애매', color: 'bg-amber-500 shadow-amber-200' },
+            { grade: 'good', label: '앎', color: 'bg-emerald-500 shadow-emerald-200' },
           ].map(({ grade, label, color }) => (
             <button
               key={grade}
               onClick={() => handleGrade(grade)}
-              className={`${color} text-white py-3.5 rounded-xl text-sm font-medium active:scale-95 active:brightness-90 transition-transform`}
+              className={`btn-grade ${color} text-white py-4 rounded-2xl text-sm font-bold shadow-lg shadow-offset-2 transition-all hover:-translate-y-0.5`}
             >
               {label}
             </button>
@@ -148,18 +161,18 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
       )}
 
       {browseMode && (
-        <div className="flex gap-3 w-full">
+        <div className="flex gap-4 w-full">
           <button
             onClick={() => handleNav(onPrev)}
             disabled={!onPrev}
-            className="flex-1 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 disabled:opacity-30"
+            className="flex-1 py-4 rounded-2xl bg-white border border-slate-100 text-sm font-bold text-slate-600 shadow-sm transition-all hover:bg-slate-50 active:scale-95 disabled:opacity-30"
           >
             ← 이전
           </button>
           <button
             onClick={() => handleNav(onNext)}
             disabled={!onNext}
-            className="flex-1 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 disabled:opacity-30"
+            className="flex-1 py-4 rounded-2xl bg-white border border-slate-100 text-sm font-bold text-slate-600 shadow-sm transition-all hover:bg-slate-50 active:scale-95 disabled:opacity-30"
           >
             다음 →
           </button>
