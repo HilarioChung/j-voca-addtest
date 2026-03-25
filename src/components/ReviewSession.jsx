@@ -11,7 +11,6 @@ import ConjugationCards from './ConjugationCards';
 export default function ReviewSession() {
   const [params] = useSearchParams();
   const lessonParam = params.get('lesson');
-  // lesson 파라미터가 있으면 해당 lesson만, 없으면 전체 복습
   const chapter = lessonParam != null ? Number(lessonParam) : undefined;
 
   const [queue, setQueue] = useState([]);
@@ -54,7 +53,6 @@ export default function ReviewSession() {
       let review = await db.reviews.get(currentWord.id);
       if (!review) review = createInitialReview(currentWord.id);
       const updated = gradeCard(review, grade);
-      // 단일 트랜잭션으로 review와 log를 함께 저장
       await db.transaction('rw', db.reviews, db.reviewLogs, async () => {
         await db.reviews.put(updated);
         await db.reviewLogs.add({
@@ -74,11 +72,9 @@ export default function ReviewSession() {
     setResults(prev => ({ ...prev, [grade]: prev[grade] + 1 }));
 
     if (grade === 'again') {
-      // 모름: 큐 뒤쪽에 재삽입하여 같은 세션에서 다시 복습
       setQueue(prev => [...prev, currentWord]);
     }
 
-    // 활용 가능한 품사면 활용 카드 표시, 아니면 바로 다음
     if (canConjugate(currentWord.pos)) {
       setConjWord(currentWord);
       setShowConj(true);
@@ -149,15 +145,14 @@ export default function ReviewSession() {
     );
   }
 
-  // 일반 복습 구간과 재복습(again) 구간을 분리하여 진행률 계산
   const isReview = currentIndex < wordCount;
   const progressCurrent = isReview ? currentIndex + 1 : currentIndex - wordCount + 1;
   const progressTotal = isReview ? wordCount : queue.length - wordCount;
   const progressPct = (progressCurrent / progressTotal) * 100;
 
   return (
-    <div className="space-y-4">
-      <div className="flex justify-between items-center">
+    <div className="space-y-4 pt-6">
+      <div className="flex justify-between items-center mb-2">
         <h1 className="text-xl font-bold text-slate-800">
           {chapter != null ? `Lesson ${chapter} 복습` : '복습'}
         </h1>
@@ -172,9 +167,9 @@ export default function ReviewSession() {
         <p className="text-xs text-red-500 bg-red-50 p-2 rounded-lg">저장 오류: {saveError}</p>
       )}
 
-      <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+      <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-6">
         <div
-          className="h-full bg-indigo-500 rounded-full transition-all"
+          className="h-full bg-indigo-500 rounded-full transition-all duration-300"
           style={{ width: `${progressPct}%` }}
         />
       </div>

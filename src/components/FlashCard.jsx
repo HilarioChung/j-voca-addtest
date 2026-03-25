@@ -10,7 +10,7 @@ const SpeakerIcon = () => (
 
 const POS_STYLE = {
   'い형용사': 'bg-sky-100 text-sky-700',
-  'な형용사': 'bg-violet-100 text-violet-700',
+  '나형용사': 'bg-violet-100 text-violet-700',
   '명사': 'bg-slate-100 text-slate-600',
   '동사': 'bg-emerald-100 text-emerald-700',
   '부사': 'bg-amber-100 text-amber-700',
@@ -63,7 +63,6 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
     fn();
   }
 
-  // Card flipping logic: 0 -> front, 1/2 -> back
   const isFlipped = step > 0;
 
   return (
@@ -79,11 +78,10 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
           }`}
         >
           {/* Front Face (Reading) */}
-          <div className="absolute inset-0 backface-hidden glass rounded-3xl flex flex-col items-center justify-center p-8 text-center">
-            <span className="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-4">Reading</span>
+          <div className="absolute inset-0 backface-hidden glass rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-sm">
             <p className="text-5xl font-bold text-slate-800 tracking-tight">{word.reading}</p>
             <div className="mt-8 flex items-center gap-2 text-slate-400 group-hover:text-indigo-500 transition-colors">
-              <span className="text-sm font-medium">{hasKanji ? 'View Kanji' : 'View Meaning'}</span>
+              <span className="text-sm font-medium">{hasKanji ? '한자 보기' : '뜻 보기'}</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -91,10 +89,9 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
           </div>
 
           {/* Back Face (Kanji / Meaning) */}
-          <div className="absolute inset-0 backface-hidden glass rounded-3xl rotate-y-180 flex flex-col items-center justify-center p-8 text-center">
+          <div className="absolute inset-0 backface-hidden glass rounded-3xl rotate-y-180 flex flex-col items-center justify-center p-8 text-center shadow-sm">
             {step === 1 && hasKanji ? (
               <div className="card-step w-full">
-                <span className="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-4 block">Kanji</span>
                 <ruby className="text-5xl font-bold text-slate-800 ruby-furigana">
                   {word.kanji}
                   <rp>(</rp><rt className="text-lg font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
@@ -108,11 +105,10 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
                     <SpeakerIcon />
                   </button>
                 </div>
-                <p className="text-sm text-slate-400 mt-6 font-medium">Tap to see meaning</p>
+                <p className="text-sm text-slate-400 mt-6 font-medium">탭하여 뜻 보기</p>
               </div>
             ) : (
               <div className="card-step w-full flex flex-col items-center">
-                <span className="text-xs font-semibold tracking-widest text-emerald-500 uppercase mb-4 block">Meaning</span>
                 {hasKanji ? (
                   <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
                     {word.kanji}

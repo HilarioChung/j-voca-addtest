@@ -5,10 +5,6 @@ import { getDueCount } from '../lib/review-utils';
 import { calculateStats } from '../lib/stats';
 import { calculateWeakWords } from '../lib/weak-utils';
 
-function isStandalone() {
-  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-}
-
 export default function Dashboard() {
   const [words, setWords] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -33,8 +29,6 @@ export default function Dashboard() {
     window.addEventListener('version-updated', handler);
     return () => window.removeEventListener('version-updated', handler);
   }, []);
-
-  const [showInstall, setShowInstall] = useState(() => !isStandalone() && !sessionStorage.getItem('hide-install'));
 
   const { total: dueCount, reconfirm: reconfirmCount } = useMemo(() => getDueCount(words, reviews), [words, reviews]);
   const { streak, totalReviews, overallAccuracy } = useMemo(() => calculateStats(reviewLogs), [reviewLogs]);
@@ -62,14 +56,14 @@ export default function Dashboard() {
   }, [words, reviews]);
 
   return (
-    <div className="space-y-8 pb-12">
+    <div className="space-y-8 pb-12 pt-6">
       {/* Header Section */}
-      <div className="flex justify-between items-center pt-4">
+      <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">본's J-voca ⍺</h1>
-          <p className="text-slate-400 text-sm font-medium mt-1">Smart Japanese Vocabulary</p>
+          <p className="text-slate-400 text-sm font-medium mt-1">똑똑한 일본어 단어장</p>
         </div>
-        <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-500 shadow-inner">
+        <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-500">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
           </svg>
@@ -79,8 +73,8 @@ export default function Dashboard() {
       {hasUpdate && (
         <div className="glass border-emerald-100 bg-emerald-50/50 rounded-3xl p-5 flex items-center justify-between">
           <div>
-            <p className="text-sm font-bold text-emerald-800">New Version Ready</p>
-            <p className="text-xs text-emerald-600">Update now for the latest features</p>
+            <p className="text-sm font-bold text-emerald-800">새 버전 준비됨</p>
+            <p className="text-xs text-emerald-600">최신 기능을 위해 업데이트하세요</p>
           </div>
           <button
             onClick={async () => {
@@ -88,79 +82,53 @@ export default function Dashboard() {
               await Promise.all(keys.map(k => caches.delete(k)));
               window.location.reload();
             }}
-            className="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-lg shadow-emerald-200"
+            className="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl"
           >
-            Update
+            업데이트
           </button>
-        </div>
-      )}
-
-      {showInstall && (
-        <div className="glass border-indigo-100 bg-indigo-50/50 rounded-3xl p-5 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 -mr-8 -mt-8 rounded-full" />
-          <button
-            onClick={() => { setShowInstall(false); sessionStorage.setItem('hide-install', '1'); }}
-            className="absolute top-3 right-4 text-indigo-400 hover:text-indigo-600 transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-            </svg>
-          </button>
-          <div className="relative">
-            <p className="text-sm font-bold text-indigo-800 mb-2">Install to Home Screen</p>
-            <p className="text-xs text-indigo-600 leading-relaxed max-w-[90%]">
-              Enjoy a full-screen experience and quick access from your home screen.
-            </p>
-          </div>
         </div>
       )}
 
       {/* Main Stats Grid */}
       <div className="grid grid-cols-2 gap-5">
-        <div className="glass rounded-3xl p-6 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-12 h-12 bg-slate-50 rounded-bl-3xl" />
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Total Words</p>
+        <div className="glass rounded-3xl p-6">
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">전체 단어</p>
           <p className="text-4xl font-black text-slate-800">{words.length}</p>
         </div>
         
-        <Link to="/lesson-select" className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-6 shadow-xl shadow-indigo-100 text-white relative group transition-transform active:scale-95">
-          <p className="text-xs font-bold text-indigo-200 uppercase tracking-wider mb-2">Due Today</p>
+        <Link to="/lesson-select" className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-6 shadow-xl shadow-indigo-100 text-white relative group active:scale-95 transition-all">
+          <p className="text-xs font-bold text-indigo-200 uppercase tracking-wider mb-2">오늘 복습</p>
           <p className="text-4xl font-black">{dueCount}</p>
           {reconfirmCount > 0 && (
             <div className="mt-2 inline-flex items-center px-2 py-0.5 bg-white/20 rounded-lg text-[10px] font-bold">
-              + {reconfirmCount} Re-confirm
+              + {reconfirmCount} 재확인
             </div>
           )}
-          <div className="absolute bottom-4 right-4 opacity-30 group-hover:translate-x-1 transition-transform">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
-              <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-            </svg>
-          </div>
         </Link>
       </div>
 
-      {/* Learning Insight Card */}
+      {/* Stats Insight */}
       {totalReviews > 0 && (
         <Link
           to="/stats"
           className="block glass bg-gradient-to-r from-violet-500/5 to-indigo-500/5 rounded-3xl p-6 border-indigo-50 relative group transition-all"
         >
-          <div className="flex items-center justify-between relative z-10">
+          <div className="flex items-center justify-between">
             <div className="space-y-4">
-              <p className="text-xs font-bold text-indigo-400 uppercase tracking-wider">Learning Insight</p>
+              <p className="text-xs font-bold text-indigo-400 uppercase tracking-wider">학습 통계</p>
               <div className="flex items-center gap-6">
                 <div>
-                  <p className="text-2xl font-black text-slate-800">{streak} Days</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">Current Streak</p>
+                  <p className="text-2xl font-black text-slate-800">{streak}일</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase">연속 학습</p>
                 </div>
                 <div className="w-px h-8 bg-slate-100" />
                 <div>
                   <p className="text-2xl font-black text-slate-800">{Math.round(overallAccuracy * 100)}%</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">Accuracy Rate</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase">평균 정확도</p>
                 </div>
               </div>
             </div>
-            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-500 shadow-sm group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-500 shadow-sm">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0017.25 3.75H6.75A2.25 2.25 0 004.5 6v12A2.25 2.25 0 006.75 20.25z" />
               </svg>
@@ -171,12 +139,11 @@ export default function Dashboard() {
 
       {/* Weak Words Alert */}
       {weakCount > 0 && (
-        <Link to="/weak-words" className="block bg-rose-50 border border-rose-100 rounded-3xl p-6 relative overflow-hidden group transition-all active:scale-[0.98]">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-rose-200/20 -mr-12 -mt-12 rounded-full" />
-          <div className="flex justify-between items-center relative">
+        <Link to="/weak-words" className="block bg-rose-50 border border-rose-100 rounded-3xl p-6 relative active:scale-[0.98] transition-all">
+          <div className="flex justify-between items-center">
             <div>
-              <p className="text-sm font-black text-rose-800">Critical Review Needed</p>
-              <p className="text-xs text-rose-600 mt-1">Practice {weakCount} weak words to improve retention.</p>
+              <p className="text-sm font-black text-rose-800">오답노트 확인</p>
+              <p className="text-xs text-rose-600 mt-1">{weakCount}개의 취약 단어가 있습니다.</p>
             </div>
             <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-rose-500 shadow-sm font-black">
               {weakCount}
@@ -187,10 +154,8 @@ export default function Dashboard() {
 
       {/* Progress Section */}
       {chapters.length > 0 && (
-        <div className="space-y-4">
-          <div className="flex justify-between items-end px-2">
-            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center mx-auto">Chapter Progress</h2>
-          </div>
+        <div className="space-y-4 pt-4">
+          <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center">레슨별 진행률</h2>
           <div className="grid gap-4">
             {chapters.map(ch => {
               const pct = ch.total > 0 ? Math.round((ch.reviewed / ch.total) * 100) : 0;
@@ -217,15 +182,10 @@ export default function Dashboard() {
 
       {words.length === 0 && (
         <div className="glass rounded-3xl py-16 text-center">
-          <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-slate-300">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-            </svg>
-          </div>
-          <p className="text-slate-800 font-bold text-xl mb-2">No Words Yet</p>
-          <p className="text-slate-400 text-sm mb-8 px-12">Start your journey by adding words from your textbook.</p>
-          <Link to="/input" className="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:-translate-y-1 transition-all active:scale-95">
-            Add First Words
+          <p className="text-slate-800 font-bold text-xl mb-2">단어가 없습니다</p>
+          <p className="text-slate-400 text-sm mb-8 px-12">교재 사진을 찍어 단어를 추가해보세요.</p>
+          <Link to="/input" className="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold">
+            단어 추가하기
           </Link>
         </div>
       )}

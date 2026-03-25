@@ -10,12 +10,16 @@ const FONT_SIZES = [
   { id: 'xxlarge', label: '최대' },
 ];
 
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+}
+
 function ExtLink({ href, children }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-indigo-500 underline">
       {children}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
-        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.75a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.31l-5.47 5.47a.75.75 0 01-1.06-1.06l5.47-5.47H12.25a.75.75 0 01-.75-.75z" clipRule="evenodd" />
+        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.75a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.31l-5.47 5.47a.75.75 0 01-1.06-1.06l5.47-5.47H12.25a.75.75 0 01-.75-.75z" clipRule="evenodd" />
       </svg>
     </a>
   );
@@ -93,7 +97,7 @@ export default function Settings() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pt-4 pb-12">
       <h1 className="text-xl font-bold text-slate-800">설정</h1>
 
       <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
@@ -188,9 +192,6 @@ export default function Settings() {
 
       <div className="bg-white rounded-2xl p-4 shadow-sm border border-red-100 space-y-3">
         <h2 className="font-medium text-red-600">초기화</h2>
-        <p className="text-xs text-slate-400">
-          되돌릴 수 없습니다. 단어 데이터는 GitHub에서 복구할 수 있습니다.
-        </p>
         <button
           onClick={async () => {
             if (!confirm('모든 복습 진도를 삭제합니다. 계속할까요?')) return;
@@ -202,26 +203,25 @@ export default function Settings() {
         >
           학습 기록만 초기화
         </button>
-        {hasGithubToken() && (
-          <button
-            onClick={async () => {
-              const input = prompt('모든 단어와 학습 기록을 삭제합니다.\n확인하려면 "초기화"를 입력하세요.');
-              if (input !== '초기화') return;
-              try {
-                await resetWordsInRepo();
-                await clearAllData();
-                showMessage('모든 데이터가 초기화되었습니다.', 'reset');
-              } catch (err) {
-                showMessage('초기화 실패: ' + err.message, 'reset');
-              }
-            }}
-            className="w-full py-2 border border-red-300 bg-red-50 rounded-xl text-sm text-red-600 font-medium"
-          >
-            전체 초기화 (단어 + 학습 기록)
-          </button>
-        )}
         <MessageBox section="reset" />
       </div>
+
+      {/* 홈 화면 추가 안내 (PWA Install Tip) */}
+      {!isStandalone() && (
+        <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 space-y-2">
+          <h2 className="text-sm font-bold text-indigo-800 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            홈 화면에 추가하기
+          </h2>
+          <p className="text-xs text-indigo-600 leading-relaxed">
+            <strong>iPhone</strong>: Safari 하단 공유(↑) &rarr; "홈 화면에 추가"<br/>
+            <strong>Android</strong>: Chrome 메뉴(&#8942;) &rarr; "홈 화면에 추가"<br/>
+            앱처럼 전체 화면으로 쾌적하게 사용할 수 있습니다.
+          </p>
+        </div>
+      )}
 
       <p className="text-center text-xs text-slate-300">
         최근 업데이트: {(() => {
