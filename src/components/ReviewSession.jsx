@@ -4,7 +4,9 @@ import { db } from '../lib/db';
 import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
 import { shuffle } from '../lib/shuffle';
+import { canConjugate } from '../lib/conjugation';
 import FlashCard from './FlashCard';
+import ConjugationCards from './ConjugationCards';
 
 export default function ReviewSession() {
   const [params] = useSearchParams();
@@ -21,6 +23,8 @@ export default function ReviewSession() {
   const [results, setResults] = useState({ again: 0, hard: 0, good: 0 });
   const [error, setError] = useState(null);
   const [saveError, setSaveError] = useState(null);
+  const [showConj, setShowConj] = useState(false);
+  const [conjWord, setConjWord] = useState(null);
 
   useEffect(() => {
     getDueWords(chapter).then(words => {
@@ -74,7 +78,13 @@ export default function ReviewSession() {
       setQueue(prev => [...prev, currentWord]);
     }
 
-    setCurrentIndex(prev => prev + 1);
+    // 활용 가능한 품사면 활용 카드 표시, 아니면 바로 다음
+    if (canConjugate(currentWord.pos)) {
+      setConjWord(currentWord);
+      setShowConj(true);
+    } else {
+      setCurrentIndex(prev => prev + 1);
+    }
   }
 
   if (loading) {
@@ -169,7 +179,19 @@ export default function ReviewSession() {
         />
       </div>
 
-      {currentWord && <FlashCard key={currentIndex} word={currentWord} onGrade={handleGrade} />}
+      {showConj && conjWord ? (
+        <ConjugationCards
+          key={`conj-${currentIndex}`}
+          word={conjWord}
+          onDone={() => {
+            setShowConj(false);
+            setConjWord(null);
+            setCurrentIndex(prev => prev + 1);
+          }}
+        />
+      ) : (
+        currentWord && <FlashCard key={currentIndex} word={currentWord} onGrade={handleGrade} />
+      )}
     </div>
   );
 }
