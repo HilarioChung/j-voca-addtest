@@ -24,6 +24,18 @@ export default function ReviewSession() {
   const [saveError, setSaveError] = useState(null);
   const [showConj, setShowConj] = useState(false);
   const [conjWord, setConjWord] = useState(null);
+  
+  const [studyMode, setStudyMode] = useState('random');
+  const [cardDir, setCardDir] = useState('jp2kr');
+
+  useEffect(() => {
+    if (!queue[currentIndex]) return;
+    if (studyMode === 'random') {
+      setCardDir(Math.random() > 0.5 ? 'jp2kr' : 'kr2jp');
+    } else {
+      setCardDir(studyMode);
+    }
+  }, [currentIndex, studyMode, queue]);
 
   useEffect(() => {
     getDueWords(chapter).then(words => {
@@ -151,16 +163,27 @@ export default function ReviewSession() {
   const progressPct = (progressCurrent / progressTotal) * 100;
 
   return (
-    <div className="space-y-4 pt-6">
+    <div className="space-y-4 pt-8">
       <div className="flex justify-between items-center mb-2">
         <h1 className="text-xl font-bold text-slate-800">
           {chapter != null ? `Lesson ${chapter} 복습` : '복습'}
         </h1>
-        <span className="text-sm text-slate-400">
-          {isReview
-            ? `${progressCurrent} / ${progressTotal}`
-            : `재복습 ${progressCurrent} / ${progressTotal}`}
-        </span>
+        <div className="flex items-center gap-3">
+          <select
+            value={studyMode}
+            onChange={(e) => setStudyMode(e.target.value)}
+            className="text-xs font-medium bg-white border border-slate-200 text-slate-600 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 shadow-sm"
+          >
+            <option value="random">🔀 랜덤</option>
+            <option value="jp2kr">🇯🇵 일본어먼저</option>
+            <option value="kr2jp">🇰🇷 한글먼저</option>
+          </select>
+          <span className="text-sm text-slate-400 font-medium">
+            {isReview
+              ? `${progressCurrent} / ${progressTotal}`
+              : `재복습 ${progressCurrent} / ${progressTotal}`}
+          </span>
+        </div>
       </div>
 
       {saveError && (
@@ -185,7 +208,7 @@ export default function ReviewSession() {
           }}
         />
       ) : (
-        currentWord && <FlashCard key={currentIndex} word={currentWord} onGrade={handleGrade} />
+        currentWord && <FlashCard key={currentIndex} word={currentWord} direction={cardDir} onGrade={handleGrade} />
       )}
     </div>
   );

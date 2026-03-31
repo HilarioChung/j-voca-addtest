@@ -136,7 +136,7 @@ export default function GrammarPractice() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex flex-col gap-4">
         {cards.map(card => (
           <GrammarCard
             key={card.id}

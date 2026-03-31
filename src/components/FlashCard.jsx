@@ -41,7 +41,7 @@ function StepIndicator({ current, total }) {
   );
 }
 
-export default function FlashCard({ word, onGrade, onPrev, onNext }) {
+export default function FlashCard({ word, direction = 'jp2kr', onGrade, onPrev, onNext }) {
   const [step, setStep] = useState(0);
   const browseMode = !onGrade;
   const hasKanji = !!word.kanji;
@@ -77,60 +77,117 @@ export default function FlashCard({ word, onGrade, onPrev, onNext }) {
             isFlipped ? 'rotate-y-180' : ''
           }`}
         >
-          {/* Front Face (Reading) */}
+          {/* Front Face */}
           <div className="absolute inset-0 backface-hidden glass rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-sm">
-            <p className="text-5xl font-bold text-slate-800 tracking-tight">{word.reading}</p>
-            <div className="mt-8 flex items-center gap-2 text-slate-400 group-hover:text-indigo-500 transition-colors">
-              <span className="text-sm font-medium">{hasKanji ? '한자 보기' : '뜻 보기'}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
+            {direction === 'kr2jp' ? (
+              <>
+                <p className="text-4xl font-bold text-slate-800 tracking-tight mb-4">{word.meaning}</p>
+                {word.pos && <PosBadge pos={word.pos} />}
+                <div className="mt-8 flex items-center gap-2 text-slate-400 group-hover:text-indigo-500 transition-colors">
+                  <span className="text-sm font-medium">일본어 보기</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="text-5xl font-bold text-slate-800 tracking-tight">{word.reading}</p>
+                <div className="mt-8 flex items-center gap-2 text-slate-400 group-hover:text-indigo-500 transition-colors">
+                  <span className="text-sm font-medium">{hasKanji ? '한자 보기' : '뜻 보기'}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </>
+            )}
           </div>
 
-          {/* Back Face (Kanji / Meaning) */}
+          {/* Back Face */}
           <div className="absolute inset-0 backface-hidden glass rounded-3xl rotate-y-180 flex flex-col items-center justify-center p-8 text-center shadow-sm">
-            {step === 1 && hasKanji ? (
-              <div className="card-step w-full">
-                <ruby className="text-5xl font-bold text-slate-800 ruby-furigana">
-                  {word.kanji}
-                  <rp>(</rp><rt className="text-lg font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
-                </ruby>
-                <div className="flex justify-center gap-4 mt-8">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
-                    className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
-                    aria-label="발음 듣기"
-                  >
-                    <SpeakerIcon />
-                  </button>
-                </div>
-                <p className="text-sm text-slate-400 mt-6 font-medium">탭하여 뜻 보기</p>
-              </div>
-            ) : (
-              <div className="card-step w-full flex flex-col items-center">
-                {hasKanji ? (
-                  <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
+            {direction === 'jp2kr' ? (
+              step === 1 && hasKanji ? (
+                <div className="card-step w-full flex flex-col items-center">
+                  <ruby className="text-5xl font-bold text-slate-800 ruby-furigana">
                     {word.kanji}
-                    <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
+                    <rp>(</rp><rt className="text-lg font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
                   </ruby>
-                ) : (
-                  <p className="text-4xl font-bold text-slate-800 mb-4 tracking-tight">{word.word}</p>
-                )}
-                
-                <p className="text-2xl text-slate-700 font-semibold mb-2">{word.meaning}</p>
-                {word.pos && <PosBadge pos={word.pos} />}
-
-                <div className="flex justify-center gap-4 mt-6">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
-                    className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
-                    aria-label="발음 듣기"
-                  >
-                    <SpeakerIcon />
-                  </button>
+                  <div className="flex justify-center gap-4 mt-8">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
+                      className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                      aria-label="발음 듣기"
+                    >
+                      <SpeakerIcon />
+                    </button>
+                  </div>
+                  <p className="text-sm text-slate-400 mt-6 font-medium">탭하여 뜻 보기</p>
                 </div>
-              </div>
+              ) : (
+                <div className="card-step w-full flex flex-col items-center">
+                  {hasKanji ? (
+                    <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
+                      {word.kanji}
+                      <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
+                    </ruby>
+                  ) : (
+                    <p className="text-4xl font-bold text-slate-800 mb-4 tracking-tight">{word.word}</p>
+                  )}
+                  
+                  <p className="text-2xl text-slate-700 font-semibold mb-2">{word.meaning}</p>
+                  {word.pos && <PosBadge pos={word.pos} />}
+
+                  <div className="flex justify-center gap-4 mt-6">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
+                      className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                      aria-label="발음 듣기"
+                    >
+                      <SpeakerIcon />
+                    </button>
+                  </div>
+                </div>
+              )
+            ) : (
+              step === 1 && hasKanji ? (
+                <div className="card-step w-full flex flex-col items-center">
+                  <p className="text-5xl font-bold text-slate-800 tracking-tight">{word.reading}</p>
+                  <div className="flex justify-center gap-4 mt-8">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speak(word.reading); }}
+                      className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                      aria-label="발음 듣기"
+                    >
+                      <SpeakerIcon />
+                    </button>
+                  </div>
+                  <p className="text-sm text-slate-400 mt-6 font-medium">탭하여 한자 보기</p>
+                </div>
+              ) : (
+                <div className="card-step w-full flex flex-col items-center">
+                  {hasKanji ? (
+                    <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
+                      {word.kanji}
+                      <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
+                    </ruby>
+                  ) : (
+                    <p className="text-4xl font-bold text-slate-800 mb-4 tracking-tight">{word.reading || word.word}</p>
+                  )}
+                  
+                  <p className="text-xl text-slate-500 mb-2">{word.meaning}</p>
+                  {word.pos && <PosBadge pos={word.pos} />}
+
+                  <div className="flex justify-center gap-4 mt-6">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speak(word.reading || word.word); }}
+                      className="p-3 rounded-full bg-slate-50 text-slate-400 hover:text-indigo-500 hover:bg-white transition-all shadow-sm"
+                      aria-label="발음 듣기"
+                    >
+                      <SpeakerIcon />
+                    </button>
+                  </div>
+                </div>
+              )
             )}
           </div>
         </div>
