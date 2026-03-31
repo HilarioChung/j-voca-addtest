@@ -1,3 +1,5 @@
+import { getLocalDateString } from './date-utils';
+
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 export const MODELS = [
@@ -79,7 +81,7 @@ export async function extractWordsFromImage(base64Image, mimeType, chapter, text
     words = JSON.parse(jsonMatch[0]);
   }
 
-  const today = new Date().toISOString().split('T')[0];
+  const today = getLocalDateString();
 
   return words.map(w => ({
     word: w.word || '',

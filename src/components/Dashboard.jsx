@@ -4,6 +4,7 @@ import { db } from '../lib/db';
 import { getDueCount } from '../lib/review-utils';
 import { calculateStats } from '../lib/stats';
 import { calculateWeakWords } from '../lib/weak-utils';
+import { getLocalDateString } from '../lib/date-utils';
 
 export default function Dashboard() {
   const [words, setWords] = useState([]);

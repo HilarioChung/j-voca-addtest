@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { db } from '../lib/db';
 import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
@@ -10,6 +10,7 @@ import ConjugationCards from './ConjugationCards';
 
 export default function ReviewSession() {
   const [params] = useSearchParams();
+  const location = useLocation();
   const lessonParam = params.get('lesson');
   const chapter = lessonParam != null ? Number(lessonParam) : undefined;
 
@@ -52,7 +53,7 @@ export default function ReviewSession() {
       setError(err.message || '데이터를 불러올 수 없습니다');
       setLoading(false);
     });
-  }, [chapter]);
+  }, [chapter, location.key]);
 
   const currentWord = queue[currentIndex];
   const done = !loading && queue.length > 0 && currentIndex >= queue.length;

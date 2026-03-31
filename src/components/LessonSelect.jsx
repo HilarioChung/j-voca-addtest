@@ -2,24 +2,29 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../lib/db';
 import { getDueCount, getDueCountByLesson } from '../lib/review-utils';
+import { calculateWeakWords } from '../lib/weak-utils';
 
 export default function LessonSelect() {
   const [words, setWords] = useState([]);
   const [reviews, setReviews] = useState([]);
+  const [reviewLogs, setReviewLogs] = useState([]);
 
   const loadData = useCallback(async () => {
-    const [w, r] = await Promise.all([
+    const [w, r, l] = await Promise.all([
       db.words.toArray(),
       db.reviews.toArray(),
+      db.reviewLogs.toArray(),
     ]);
     setWords(w);
     setReviews(r);
+    setReviewLogs(l);
   }, []);
 
   useEffect(() => { loadData(); }, [loadData]);
 
   const { total: totalDue, reconfirm: totalReconfirm } = getDueCount(words, reviews);
   const byLesson = getDueCountByLesson(words, reviews);
+  const weakCount = calculateWeakWords(words, reviews, reviewLogs).length;
 
   // 전체 lesson 목록 (due 없는 lesson도 포함)
   const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
@@ -59,6 +64,27 @@ export default function LessonSelect() {
           {totalDue > 0 && <span className="text-2xl opacity-70">→</span>}
         </div>
       </Link>
+
+      {/* 자전거 복습 */}
+      {weakCount > 0 && (
+        <Link
+          to="/listening"
+          className="block glass border-emerald-100 bg-emerald-50/50 rounded-2xl p-4 shadow-sm relative active:scale-[0.98] transition-all"
+        >
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-sm font-black text-emerald-800">자전거 복습 (듣기)</p>
+              <p className="text-xs font-bold font-medium text-emerald-600 mt-1">취약 단어 {weakCount}개를 들으며 복습하세요</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl font-black text-emerald-700">{weakCount}</span>
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-emerald-500 shadow-sm text-xl">
+                🎧
+              </div>
+            </div>
+          </div>
+        </Link>
+      )}
 
       {/* lesson별 복습 */}
       <div className="space-y-2">

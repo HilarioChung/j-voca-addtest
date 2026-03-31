@@ -11,6 +11,7 @@ const Settings = lazy(() => import('./components/Settings'));
 const Statistics = lazy(() => import('./components/Statistics'));
 const WeakWords = lazy(() => import('./components/WeakWords'));
 const LessonSelect = lazy(() => import('./components/LessonSelect'));
+const ListeningReview = lazy(() => import('./components/ListeningReview'));
 const GrammarMenu = lazy(() => import('./components/GrammarMenu'));
 const GrammarPractice = lazy(() => import('./components/GrammarPractice'));
 
@@ -89,6 +90,7 @@ export default function App() {
             <Route path="/words" element={<WordList />} />
             <Route path="/lesson-select" element={<LessonSelect />} />
             <Route path="/review" element={<ReviewSession />} />
+            <Route path="/listening" element={<ListeningReview />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/stats" element={<Statistics />} />
             <Route path="/weak-words" element={<WeakWords />} />

@@ -1,15 +1,28 @@
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useState, useEffect, useCallback } from 'react';
 import { db } from '../lib/db';
 import { calculateWeakWords } from '../lib/weak-utils';
 import { useBrowseMode } from '../hooks/useBrowseMode';
 import BrowseModal from './BrowseModal';
 
 export default function WeakWords() {
-  const words = useLiveQuery(() => db.words.toArray(), [], []);
-  const reviews = useLiveQuery(() => db.reviews.toArray(), [], []);
-  const reviewLogs = useLiveQuery(() => db.reviewLogs.toArray(), [], []);
-  const browse = useBrowseMode();
+  const [words, setWords] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [reviewLogs, setReviewLogs] = useState([]);
 
+  const loadData = useCallback(async () => {
+    const [w, r, l] = await Promise.all([
+      db.words.toArray(),
+      db.reviews.toArray(),
+      db.reviewLogs.toArray(),
+    ]);
+    setWords(w);
+    setReviews(r);
+    setReviewLogs(l);
+  }, []);
+
+  useEffect(() => { loadData(); }, [loadData]);
+
+  const browse = useBrowseMode();
   const weakWords = calculateWeakWords(words, reviews, reviewLogs);
 
   return (
@@ -67,11 +80,8 @@ export default function WeakWords() {
               </div>
               <div className="flex gap-3 mt-2 text-xs text-slate-400">
                 <span>전체 {totalReviews}회</span>
-                <span className="text-red-400">again {againCount}</span>
-                <span className="text-amber-400">hard {hardCount}</span>
-                {review && review.lapses > 0 && (
-                  <span className="text-orange-400">lapses {review.lapses}</span>
-                )}
+                <span className="text-red-400">모름 {againCount}</span>
+                <span className="text-amber-400">애매 {hardCount}</span>
               </div>
             </div>
           ))}
