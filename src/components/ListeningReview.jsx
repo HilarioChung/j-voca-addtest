@@ -159,8 +159,7 @@ export default function ListeningReview() {
 
         <div className="glass rounded-2xl p-4 text-xs text-slate-500 space-y-2">
           <p className="flex items-center gap-2">
-            <span className="text-base">🔊</span>{' '}
-            {studyMode === 'kr2jp' ? '한국어 뜻 → 5초 대기 → 일본어 발음' : '일본어 발음 → 5초 대기 → 한국어 뜻'}
+            <span className="text-base">🔊</span> 질문 음성 → 5초 대기 → 정답 안내
           </p>
           <p className="flex items-center gap-2"><span className="text-base">🔁</span> 설정한 시간 동안 무한 반복</p>
           <p className="flex items-center gap-2"><span className="text-base">📱</span> 화면 꺼짐 방지 자동 적용</p>
