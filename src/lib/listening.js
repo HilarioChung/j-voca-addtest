@@ -35,10 +35,11 @@ function speakKorean(text) {
  *
  * @param {Array} words - 단어 배열 [{word, reading, meaning, ...}]
  * @param {number} durationMin - 타이머 시간(분)
+ * @param {string} studyMode - 'jp2kr' | 'kr2jp' | 'random'
  * @param {object} callbacks - { onWordChange, onPhaseChange, onFinish }
  * @returns {{ stop: Function }} - stop()으로 세션 중단
  */
-export function createListeningSession(words, durationMin, callbacks) {
+export function createListeningSession(words, durationMin, studyMode, callbacks) {
   if (!words || words.length === 0) return { stop() {} };
 
   let stopped = false;
@@ -78,23 +79,38 @@ export function createListeningSession(words, durationMin, callbacks) {
     for (let i = 0; i < queue.length; i++) {
       if (shouldStop()) break;
 
-      const word = queue[i];
-      callbacks.onWordChange?.(word, i);
+      let dir = studyMode;
+      if (dir === 'random') {
+        dir = Math.random() > 0.5 ? 'jp2kr' : 'kr2jp';
+      }
 
-      // 일본어 발음 재생
-      callbacks.onPhaseChange?.('japanese');
-      await speakJapanese(word.word);
-      if (shouldStop()) break;
+      callbacks.onWordChange?.(word, dir);
 
-      // 대기 (회상 시간)
-      callbacks.onPhaseChange?.('waiting');
-      await delay(DELAY_MS);
-      if (shouldStop()) break;
+      if (dir === 'kr2jp') {
+        callbacks.onPhaseChange?.('korean_q');
+        await speakKorean(word.meaning);
+        if (shouldStop()) break;
 
-      // 한국어 뜻 발음 재생
-      callbacks.onPhaseChange?.('korean');
-      await speakKorean(word.meaning);
-      if (shouldStop()) break;
+        callbacks.onPhaseChange?.('waiting');
+        await delay(DELAY_MS);
+        if (shouldStop()) break;
+
+        callbacks.onPhaseChange?.('japanese_a');
+        await speakJapanese(word.word);
+        if (shouldStop()) break;
+      } else {
+        callbacks.onPhaseChange?.('japanese_q');
+        await speakJapanese(word.word);
+        if (shouldStop()) break;
+
+        callbacks.onPhaseChange?.('waiting');
+        await delay(DELAY_MS);
+        if (shouldStop()) break;
+
+        callbacks.onPhaseChange?.('korean_a');
+        await speakKorean(word.meaning);
+        if (shouldStop()) break;
+      }
 
       // 다음 단어로 넘어가기 전 짧은 대기
       callbacks.onPhaseChange?.('next');

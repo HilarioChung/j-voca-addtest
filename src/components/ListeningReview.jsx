@@ -14,8 +14,10 @@ export default function ListeningReview() {
 
   // 재생 중 상태
   const [currentWord, setCurrentWord] = useState(null);
-  const [playPhase, setPlayPhase] = useState(null); // 'japanese' | 'waiting' | 'korean' | 'next'
+  const [playPhase, setPlayPhase] = useState(null); // 'japanese_q', 'korean_q', 'waiting', 'japanese_a', 'korean_a', 'next'
   const [selectedMin, setSelectedMin] = useState(30);
+  const [studyMode, setStudyMode] = useState('random');
+  const [playDir, setPlayDir] = useState('jp2kr');
   const [remainingSec, setRemainingSecState] = useState(0);
   const sessionRef = useRef(null);
   const endTimeRef = useRef(null);
@@ -51,12 +53,12 @@ export default function ListeningReview() {
     setRemainingSecState(selectedMin * 60);
     setPhase('playing');
 
-    sessionRef.current = createListeningSession(weakWords, selectedMin, {
-      onWordChange: (word) => setCurrentWord(word),
+    sessionRef.current = createListeningSession(weakWords, selectedMin, studyMode, {
+      onWordChange: (word, dir) => { setCurrentWord(word); setPlayDir(dir); },
       onPhaseChange: (p) => setPlayPhase(p),
       onFinish: () => setPhase('finished'),
     });
-  }, [weakWords, selectedMin]);
+  }, [weakWords, selectedMin, studyMode]);
 
   const stopSession = useCallback(() => {
     sessionRef.current?.stop();
@@ -76,12 +78,6 @@ export default function ListeningReview() {
   };
 
   // phase별 안내 텍스트
-  const phaseLabel = {
-    japanese: '듣고 뜻을 떠올려 보세요',
-    waiting: '뜻을 떠올려 보세요...',
-    korean: '정답 확인',
-    next: '다음 단어로...',
-  };
 
   if (loading) {
     return (
@@ -138,8 +134,34 @@ export default function ListeningReview() {
           </div>
         </div>
 
+        <div>
+          <p className="text-sm font-medium text-slate-600 mb-3 px-2">진행 방향</p>
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { id: 'random', label: '🔀 랜덤' },
+              { id: 'jp2kr', label: '🇯🇵 일본어먼저' },
+              { id: 'kr2jp', label: '🇰🇷 한글먼저' }
+            ].map(mode => (
+              <button
+                key={mode.id}
+                onClick={() => setStudyMode(mode.id)}
+                className={`py-3 rounded-2xl text-xs font-bold transition-all ${
+                  studyMode === mode.id
+                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 scale-105'
+                    : 'bg-white border border-slate-100 text-slate-500 shadow-sm hover:bg-slate-50'
+                }`}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="glass rounded-2xl p-4 text-xs text-slate-500 space-y-2">
-          <p className="flex items-center gap-2"><span className="text-base">🔊</span> 일본어 발음 → 5초 대기 → 한국어 뜻</p>
+          <p className="flex items-center gap-2">
+            <span className="text-base">🔊</span>{' '}
+            {studyMode === 'kr2jp' ? '한국어 뜻 → 5초 대기 → 일본어 발음' : '일본어 발음 → 5초 대기 → 한국어 뜻'}
+          </p>
           <p className="flex items-center gap-2"><span className="text-base">🔁</span> 설정한 시간 동안 무한 반복</p>
           <p className="flex items-center gap-2"><span className="text-base">📱</span> 화면 꺼짐 방지 자동 적용</p>
         </div>
@@ -165,26 +187,37 @@ export default function ListeningReview() {
           </div>
 
           {/* 현재 단어 표시 */}
-          {currentWord ? (
-            <div className="text-center space-y-6 flex-1 flex flex-col justify-center w-full">
-              <p className="text-5xl font-bold text-slate-800 tracking-tight">
-                {currentWord.word}
-              </p>
-              
-              <div className="h-20 flex flex-col justify-center items-center transition-opacity duration-500">
-                {(playPhase === 'korean' || playPhase === 'next') ? (
-                  <>
-                    <p className="text-2xl font-bold text-indigo-600 mb-2">{currentWord.meaning}</p>
-                    {currentWord.reading && currentWord.reading !== currentWord.word && (
-                      <p className="text-sm font-medium text-slate-400">{currentWord.reading}</p>
-                    )}
-                  </>
-                ) : (
-                  <p className="text-sm font-medium text-slate-400 opacity-50">
-                    {phaseLabel[playPhase] || '준비 중...'}
-                  </p>
-                )}
-              </div>
+          {currentWord ? (() => {
+            const isAnswerPhase = (playPhase && playPhase.endsWith('_a')) || playPhase === 'next';
+            const questionText = playDir === 'kr2jp' ? currentWord.meaning : currentWord.word;
+            const answerMain = playDir === 'kr2jp' ? currentWord.word : currentWord.meaning;
+            const waitingLabel = playDir === 'kr2jp' ? '일본어 발음을 뱉어보세요...' : '뜻을 떠올려 보세요...';
+
+            return (
+              <div className="text-center space-y-6 flex-1 flex flex-col justify-center w-full">
+                <p className={`font-bold tracking-tight ${playDir === 'kr2jp' ? 'text-4xl text-indigo-700' : 'text-5xl text-slate-800'}`}>
+                  {questionText}
+                </p>
+                
+                <div className="h-20 flex flex-col justify-center items-center transition-opacity duration-500">
+                  {isAnswerPhase ? (
+                    <>
+                      <p className={`font-bold mb-2 ${playDir === 'kr2jp' ? 'text-4xl text-emerald-600' : 'text-2xl text-indigo-600'}`}>
+                        {answerMain}
+                      </p>
+                      {playDir === 'jp2kr' && currentWord.reading && currentWord.reading !== currentWord.word && (
+                        <p className="text-sm font-medium text-slate-400">{currentWord.reading}</p>
+                      )}
+                      {playDir === 'kr2jp' && currentWord.reading && currentWord.reading !== answerMain && (
+                        <p className="text-sm font-medium text-slate-400">{currentWord.reading}</p>
+                      )}
+                    </>
+                  ) : (
+                    <p className="text-sm font-medium text-slate-400 opacity-50">
+                      {playPhase === 'waiting' ? waitingLabel : '듣고 정답을 떠올리세요'}
+                    </p>
+                  )}
+                </div>
 
               {/* 대기 시 카운트다운 인디케이터 */}
               <div className="h-6 flex justify-center items-center">
@@ -197,7 +230,8 @@ export default function ListeningReview() {
                 )}
               </div>
             </div>
-          ) : (
+            );
+          })() : (
             <div className="flex-1 flex items-center justify-center">
                <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
             </div>
