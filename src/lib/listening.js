@@ -1,4 +1,5 @@
 import { shuffle } from './shuffle';
+import { getBestJapaneseVoice } from './speech';
 
 const DELAY_MS = 5000; // 일본어 발음 후 한국어 뜻까지 대기 시간
 const NEXT_WORD_DELAY_MS = 2000; // 한국어 뜻 발음 후 다음 단어까지 대기
@@ -12,6 +13,11 @@ function speakJapanese(text) {
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'ja-JP';
     u.rate = 0.8;
+    
+    // Improved voice selection
+    const voice = getBestJapaneseVoice();
+    if (voice) u.voice = voice;
+    
     u.onend = resolve;
     u.onerror = resolve;
     speechSynthesis.speak(u);
@@ -23,6 +29,14 @@ function speakKorean(text) {
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'ko-KR';
     u.rate = 0.9;
+    
+    // Basic Korean voice selection
+    if (typeof speechSynthesis !== 'undefined') {
+      const voices = speechSynthesis.getVoices();
+      const koVoice = voices.find(v => v.lang.includes('ko'));
+      if (koVoice) u.voice = koVoice;
+    }
+    
     u.onend = resolve;
     u.onerror = resolve;
     speechSynthesis.speak(u);
@@ -79,6 +93,7 @@ export function createListeningSession(words, durationMin, studyMode, callbacks)
     for (let i = 0; i < queue.length; i++) {
       if (shouldStop()) break;
 
+      const word = queue[i];
       let dir = studyMode;
       if (dir === 'random') {
         dir = Math.random() > 0.5 ? 'jp2kr' : 'kr2jp';

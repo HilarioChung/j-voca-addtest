@@ -7,7 +7,7 @@ if (typeof speechSynthesis !== 'undefined') {
   };
 }
 
-function getBestJapaneseVoice() {
+export function getBestJapaneseVoice() {
   if (voices.length === 0 && typeof speechSynthesis !== 'undefined') {
     voices = speechSynthesis.getVoices();
   }
