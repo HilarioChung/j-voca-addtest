@@ -11,12 +11,15 @@ const Settings = lazy(() => import('./components/Settings'));
 const Statistics = lazy(() => import('./components/Statistics'));
 const WeakWords = lazy(() => import('./components/WeakWords'));
 const LessonSelect = lazy(() => import('./components/LessonSelect'));
+const GrammarMenu = lazy(() => import('./components/GrammarMenu'));
+const GrammarPractice = lazy(() => import('./components/GrammarPractice'));
 
 const NAV_ITEMS = [
   { to: '/', icon: '\u{1F3E0}', label: '\uD648' },
   { to: '/input', icon: '\u{1F4F7}', label: '\uC785\uB825' },
   { to: '/words', icon: '\u{1F4D6}', label: '\uB2E8\uC5B4' },
   { to: '/lesson-select', icon: '\u{1F504}', label: '\uBCF5\uC2B5' },
+  { to: '/grammar', icon: '\u{1F4DD}', label: '\uBB38\uBC95' },
   { to: '/settings', icon: '\u2699\uFE0F', label: '\uC124\uC815' },
 ];
 
@@ -89,6 +92,8 @@ export default function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/stats" element={<Statistics />} />
             <Route path="/weak-words" element={<WeakWords />} />
+            <Route path="/grammar" element={<GrammarMenu />} />
+            <Route path="/grammar/:categoryId" element={<GrammarPractice />} />
           </Routes>
         </Suspense>
       </main>
