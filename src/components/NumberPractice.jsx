@@ -115,8 +115,13 @@ export default function NumberPractice() {
                     {currentWord.example}
                   </p>
                   {currentWord.exampleReading && (
-                    <p className="text-xs text-slate-400 italic">
+                    <p className="text-xs text-slate-400 italic mb-1">
                       {currentWord.exampleReading}
+                    </p>
+                  )}
+                  {currentWord.exampleMeaning && (
+                    <p className="text-xs text-slate-500 font-medium">
+                      {currentWord.exampleMeaning}
                     </p>
                   )}
                   <div className="absolute right-3 top-3 text-indigo-300 group-active:text-indigo-500">🔊</div>

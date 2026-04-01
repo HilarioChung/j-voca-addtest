@@ -2160,7 +2160,8 @@
       "exampleReading": "りんごをいっこかいました。",
       "id": 206,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "사과를 한 개 샀습니다."
     },
     {
       "word": "に",
@@ -2173,7 +2174,8 @@
       "exampleReading": "ねこがにひきいます。",
       "id": 207,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "고양이가 두 마리 있습니다."
     },
     {
       "word": "さん",
@@ -2186,7 +2188,8 @@
       "exampleReading": "さんじにあいましょう。",
       "id": 208,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "세 시에 만납시다."
     },
     {
       "word": "よん/し",
@@ -2199,7 +2202,8 @@
       "exampleReading": "しがつはさくらがきれいです。",
       "id": 209,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "4월은 벚꽃이 예쁩니다."
     },
     {
       "word": "ご",
@@ -2212,7 +2216,8 @@
       "exampleReading": "ごえんがありますように。",
       "id": 210,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "인연이 있기를."
     },
     {
       "word": "ろく",
@@ -2225,7 +2230,8 @@
       "exampleReading": "むいかかんやすみます。",
       "id": 211,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "6일 동안 쉽니다."
     },
     {
       "word": "しち/なな",
@@ -2238,7 +2244,8 @@
       "exampleReading": "ななつのうみをわたる。",
       "id": 212,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "일곱 개의 바다를 건너다."
     },
     {
       "word": "はち",
@@ -2251,7 +2258,8 @@
       "exampleReading": "やおやでさいをかう。",
       "id": 213,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "채소가게에서 야채를 사다."
     },
     {
       "word": "きゅう/く",
@@ -2264,7 +2272,8 @@
       "exampleReading": "ここのつのてんをつなぐ。",
       "id": 214,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "아홉 개의 점을 잇다."
     },
     {
       "word": "じゅう",
@@ -2277,7 +2286,8 @@
       "exampleReading": "じゅうえんだまがありますか。",
       "id": 215,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "10엔 동전이 있습니까?"
     },
     {
       "word": "ひとつ",
@@ -2289,7 +2299,8 @@
       "exampleReading": "いすをひとつください。",
       "id": 216,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "의자를 하나 주세요."
     },
     {
       "word": "ふたつ",
@@ -2301,7 +2312,8 @@
       "exampleReading": "たまごふたつわります。",
       "id": 217,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "계란을 두 개 깹니다."
     },
     {
       "word": "みっつ",
@@ -2313,7 +2325,8 @@
       "exampleReading": "みっつかどをまがる。",
       "id": 218,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "세 번째 모퉁이를 돌다."
     },
     {
       "word": "よっつ",
@@ -2325,7 +2338,8 @@
       "exampleReading": "きせつはよっつあります。",
       "id": 219,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "계절은 네 개 있습니다."
     },
     {
       "word": "いつつ",
@@ -2337,7 +2351,8 @@
       "exampleReading": "ほしがいつつみえる。",
       "id": 220,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "별이 다섯 개 보이다."
     },
     {
       "word": "むっつ",
@@ -2349,7 +2364,8 @@
       "exampleReading": "こっぷがむっつある。",
       "id": 221,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "컵이 여섯 개 있다."
     },
     {
       "word": "ななつ",
@@ -2361,7 +2377,8 @@
       "exampleReading": "にじはななつのいろだ。",
       "id": 222,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "무지개는 일곱 가지 색이다."
     },
     {
       "word": "っつ",
@@ -2373,7 +2390,8 @@
       "exampleReading": "ここにはやっつはこがあります。",
       "id": 223,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "여기에는 여덟 개의 상자가 있다."
     },
     {
       "word": "ここのつ",
@@ -2385,7 +2403,8 @@
       "exampleReading": "ここのつのてんとうがあります。",
       "id": 224,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "아홉 개의 점등이 있다."
     },
     {
       "word": "とお",
@@ -2397,7 +2416,8 @@
       "exampleReading": "とおでひとくぎりです。",
       "id": 225,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "열로 한 단락입니다."
     },
     {
       "word": "ついたち",
@@ -2410,7 +2430,8 @@
       "exampleReading": "しつついたちはへいじつです。",
       "id": 226,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "4월 1일은 평일입니다."
     },
     {
       "word": "ふつか",
@@ -2423,7 +2444,8 @@
       "exampleReading": "ふつかよいであたまいたいです。",
       "id": 227,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "숙취로 머리가 아프다."
     },
     {
       "word": "みっか",
@@ -2436,7 +2458,8 @@
       "exampleReading": "みっかぼうずにならないで。",
       "id": 228,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "작심삼일이 되지 말아줘."
     },
     {
       "word": "よっか",
@@ -2449,7 +2472,8 @@
       "exampleReading": "よっかごにつく。",
       "id": 229,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "4일 후에 도착한다."
     },
     {
       "word": "いつか",
@@ -2462,7 +2486,8 @@
       "exampleReading": "いつかはこどものひ.",
       "id": 230,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "5일은 어린이날입니다."
     },
     {
       "word": "むいか",
@@ -2475,7 +2500,8 @@
       "exampleReading": "むいかはきんようび.",
       "id": 231,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "6일은 금요일입니다."
     },
     {
       "word": "なのか",
@@ -2488,7 +2514,8 @@
       "exampleReading": "ななかでいっしゅうかんです。",
       "id": 232,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "7일이면 일주일입니다."
     },
     {
       "word": "ようか",
@@ -2501,7 +2528,8 @@
       "exampleReading": "ようかはおまつり.",
       "id": 233,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "8일은 축제입니다."
     },
     {
       "word": "ここのか",
@@ -2514,7 +2542,8 @@
       "exampleReading": "ここのかにかえりましょう。",
       "id": 234,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "9일에 돌아갑시다."
     },
     {
       "word": "とおか",
@@ -2527,7 +2556,8 @@
       "exampleReading": "とおかはわたしのたんじょうび.",
       "id": 235,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "10일은 제 생일입니다."
     },
     {
       "word": "ひとり",
@@ -2540,7 +2570,8 @@
       "exampleReading": "ひとりでえいがをみます。",
       "id": 236,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "혼자서 영화를 봅니다."
     },
     {
       "word": "ふたり",
@@ -2553,7 +2584,8 @@
       "exampleReading": "ふたりはなかよしです。",
       "id": 237,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "두 사람은 사이가 좋습니다."
     },
     {
       "word": "さんにん",
@@ -2566,7 +2598,8 @@
       "exampleReading": "あのいえはさんにんかぞくです。",
       "id": 238,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "저 집은 세 명 가족입니다."
     },
     {
       "word": "よにん",
@@ -2579,7 +2612,8 @@
       "exampleReading": "よにんでりょこうにいきます。",
       "id": 239,
       "textbook": "일본어수업",
-      "createdAt": "2026-04-01"
+      "createdAt": "2026-04-01",
+      "exampleMeaning": "네 명이서 여행을 갑니다."
     }
   ]
 }
