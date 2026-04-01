@@ -27,8 +27,8 @@ export default function LessonSelect() {
   const totalWeak = calculateWeakWords(words, reviews, reviewLogs).length;
   const numberCount = words.filter(w => w.pos === '숫자/수사').length;
 
-  // 전체 lesson 목록 (due 없는 lesson도 포함)
-  const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
+  // 전체 lesson 목록 (chapter 0인 숫자 연습은 제외)
+  const chapters = [...new Set(words.map(w => w.chapter))].filter(ch => ch > 0).sort((a, b) => a - b);
 
   if (words.length === 0) {
     return (
