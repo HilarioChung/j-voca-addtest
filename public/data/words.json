@@ -1,5 +1,5 @@
 {
-  "lastId": 205,
+  "lastId": 239,
   "words": [
     {
       "word": "おおい",
@@ -2148,6 +2148,40 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-31",
       "id": 205
-    }
+    },
+    { "word": "いち", "reading": "いち", "meaning": "1 (일)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 206, "kanji": "一", "example": "りんごを一個（いっこ）買いました。", "exampleReading": "りんごをいっこかいました。" },
+    { "word": "に", "reading": "에", "meaning": "2 (이)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 207, "kanji": "二", "example": "猫が二匹（にひき）います。", "exampleReading": "ねこがにひきいます。" },
+    { "word": "さん", "reading": "さん", "meaning": "3 (삼)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 208, "kanji": "三", "example": "三時に会いましょう。", "exampleReading": "さんじにあいましょう。" },
+    { "word": "よん/し", "reading": "よん/し", "meaning": "4 (사)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 209, "kanji": "四", "example": "四月は桜がきれいです。", "exampleReading": "しがつはさくらがきれいです。" },
+    { "word": "ご", "reading": "ご", "meaning": "5 (오)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 210, "kanji": "五", "example": "ご縁がありますように。", "exampleReading": "ごえんがありますように。" },
+    { "word": "ろく", "reading": "ろく", "meaning": "6 (육)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 211, "kanji": "六", "example": "六日間休みます。", "exampleReading": "むいかかんやすみます。" },
+    { "word": "しち/なな", "reading": "し치/なな", "meaning": "7 (칠)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 212, "kanji": "七", "example": "七つの海を渡る。", "exampleReading": "ななつのうみをわたる。" },
+    { "word": "はち", "reading": "はち", "meaning": "8 (팔)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 213, "kanji": "八", "example": "八百屋で野菜を買う。", "exampleReading": "やおやでやさいをかう。" },
+    { "word": "きゅう/く", "reading": "きゅう/く", "meaning": "9 (구)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 214, "kanji": "九", "example": "九つの点をつなぐ。", "exampleReading": "ここのつのてんをつなぐ。" },
+    { "word": "じゅう", "reading": "じゅう", "meaning": "10 (십)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 215, "kanji": "十", "example": "十円玉がありますか。", "exampleReading": "じゅうえんだまがありますか。" },
+    { "word": "ひとつ", "reading": "ひとつ", "meaning": "하나 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 216, "example": "椅子を一つ（ひとつ）ください。", "exampleReading": "いすをひとつください。" },
+    { "word": "ふたつ", "reading": "ふたつ", "meaning": "둘 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 217, "example": "卵を二つ（ふたつ）割ります。", "exampleReading": "たまごをふたつわります。" },
+    { "word": "みっつ", "reading": "みっつ", "meaning": "셋 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 218, "example": "三つ（みっつ）角を曲がる。", "exampleReading": "みっつかど을まがる。" },
+    { "word": "よっつ", "reading": "よっつ", "meaning": "넷 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 219, "example": "季節は四つ（よっつ）あります。", "exampleReading": "きせつはよっつあります。" },
+    { "word": "いつつ", "reading": "いつつ", "meaning": "다섯 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 220, "example": "星が五つ（いつつ）見える。", "exampleReading": "ほしがいつつみえる。" },
+    { "word": "むっつ", "reading": "むっつ", "meaning": "여섯 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 221, "example": "コップが六つ（むっつ）ある。", "exampleReading": "こっぷがむっつある。" },
+    { "word": "ななつ", "reading": "ななつ", "meaning": "일곱 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 222, "example": "虹は七つ（ななつ）の色だ。", "exampleReading": "にじはななつのいろだ。" },
+    { "word": "やっつ", "reading": "やっつ", "meaning": "여덟 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 223, "example": "ここには八つ（やっつ）箱がある。", "exampleReading": "ここにはやっつはこがある。" },
+    { "word": "ここのつ", "reading": "ここのつ", "meaning": "아홉 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 224, "example": "九つ（ここのつ）の点灯がある。", "exampleReading": "ここのつのてんとうがある。" },
+    { "word": "とお", "reading": "とお", "meaning": "열 (기수)", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 225, "example": "十（とお）で一区切りです。", "exampleReading": "とおでひとくぎりです。" },
+    { "word": "ついたち", "reading": "ついたち", "meaning": "1일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 226, "kanji": "1日", "example": "四月一日（ついたち）은 평일입니다.", "exampleReading": "しがつついたちはへいじつです。" },
+    { "word": "ふつか", "reading": "ふつ카", "meaning": "2일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 227, "kanji": "2일", "example": "二日（ふつか）酔いで頭が痛い。", "exampleReading": "ふつかよいであたまがいたい。" },
+    { "word": "みっか", "reading": "みっ카", "meaning": "3일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 228, "kanji": "3일", "example": "三日（みっか）坊主にならないで。", "exampleReading": "みっかぼうずにならないで。" },
+    { "word": "よっか", "reading": "よっ카", "meaning": "4일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 229, "kanji": "4일", "example": "四日（よっか）後に着く。", "exampleReading": "よっかごにつく。" },
+    { "word": "いつか", "reading": "いつ카", "meaning": "5일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 230, "kanji": "5일", "example": "五日（いつか）はこどもの日です。", "exampleReading": "いつかはこどものひです。" },
+    { "word": "むいか", "reading": "むい카", "meaning": "6일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 231, "kanji": "6일", "example": "六日（むいか）は金曜日です。", "exampleReading": "むいかはきんようびです。" },
+    { "word": "ななか", "reading": "なな카", "meaning": "7일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 232, "kanji": "7일", "example": "七日（ななか）で一週間です。", "exampleReading": "ななかでいっしゅうかんです。" },
+    { "word": "ようか", "reading": "よう카", "meaning": "8일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 233, "kanji": "8일", "example": "八日（ようか）はお祭りです。", "exampleReading": "ようかはおまつりです。" },
+    { "word": "ここのか", "reading": "ここの카", "meaning": "9일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 234, "kanji": "9일", "example": "九日（ここのか）に帰りましょう。", "exampleReading": "ここのかにかえりましょう。" },
+    { "word": "とおか", "reading": "とお카", "meaning": "10일", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 235, "kanji": "10일", "example": "十日（とおか）は私の誕生日です。", "exampleReading": "とおかはわたしのたんじょうびです。" },
+    { "word": "ひとり", "reading": "ひとり", "meaning": "1명", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 236, "kanji": "一人", "example": "一人（ひとり）で映画を見ます。", "exampleReading": "ひとりでえいがをみます。" },
+    { "word": "ふたり", "reading": "ふたり", "meaning": "2명", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 237, "kanji": "二人", "example": "二人（ふたり）は仲良しです。", "exampleReading": "ふたりはなかよしです。" },
+    { "word": "さんにん", "reading": "さんにん", "meaning": "3명", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 238, "kanji": "三人", "example": "あの家は三人（さんにん）家族です。", "exampleReading": "あのいえはさんにんかぞくです。" },
+    { "word": "よにん", "reading": "よにん", "meaning": "4명", "pos": "숫자/수사", "chapter": 7, "textbook": "일본어수업", "createdAt": "2026-04-01", "id": 239, "kanji": "四人", "example": "四人（よにん）で旅行に行きます。", "exampleReading": "よにんでりょこうにいきます。" }
   ]
 }

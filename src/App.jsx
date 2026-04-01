@@ -14,6 +14,7 @@ const LessonSelect = lazy(() => import('./components/LessonSelect'));
 const ListeningReview = lazy(() => import('./components/ListeningReview'));
 const GrammarMenu = lazy(() => import('./components/GrammarMenu'));
 const GrammarPractice = lazy(() => import('./components/GrammarPractice'));
+const NumberPractice = lazy(() => import('./components/NumberPractice'));
 
 const NAV_ITEMS = [
   { to: '/', icon: '\u{1F3E0}', label: '\uD648' },
@@ -96,6 +97,7 @@ export default function App() {
             <Route path="/weak-words" element={<WeakWords />} />
             <Route path="/grammar" element={<GrammarMenu />} />
             <Route path="/grammar/:categoryId" element={<GrammarPractice />} />
+            <Route path="/number-practice" element={<NumberPractice />} />
           </Routes>
         </Suspense>
       </main>

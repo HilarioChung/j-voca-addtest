@@ -24,7 +24,8 @@ export default function LessonSelect() {
 
   const { total: totalDue, reconfirm: totalReconfirm } = getDueCount(words, reviews);
   const byLesson = getDueCountByLesson(words, reviews);
-  const weakCount = calculateWeakWords(words, reviews, reviewLogs).length;
+  const totalWeak = calculateWeakWords(words, reviews, reviewLogs).length;
+  const numberCount = words.filter(w => w.pos === '숫자/수사').length;
 
   // 전체 lesson 목록 (due 없는 lesson도 포함)
   const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
@@ -66,7 +67,7 @@ export default function LessonSelect() {
       </Link>
 
       {/* 자전거 복습 */}
-      {weakCount > 0 && (
+      {totalWeak > 0 && (
         <Link
           to="/listening"
           className="block glass border-emerald-100 bg-emerald-50/50 rounded-2xl p-4 shadow-sm relative active:scale-[0.98] transition-all"
@@ -74,12 +75,33 @@ export default function LessonSelect() {
           <div className="flex justify-between items-center">
             <div>
               <p className="text-sm font-black text-emerald-800">자전거 복습 (듣기)</p>
-              <p className="text-xs font-bold font-medium text-emerald-600 mt-1">취약 단어 {weakCount}개를 들으며 복습하세요</p>
+              <p className="text-xs font-bold font-medium text-emerald-600 mt-1">취약 단어 {totalWeak}개를 들으며 복습하세요</p>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-black text-emerald-700">{weakCount}</span>
+              <span className="text-2xl font-black text-emerald-700">{totalWeak}</span>
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-emerald-500 shadow-sm text-xl">
                 🎧
+              </div>
+            </div>
+          </div>
+        </Link>
+      )}
+
+      {/* 숫자 연습 */}
+      {numberCount > 0 && (
+        <Link
+          to="/number-practice"
+          className="block glass border-amber-100 bg-amber-50/50 rounded-2xl p-4 shadow-sm relative active:scale-[0.98] transition-all"
+        >
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-sm font-black text-amber-800">숫자 익히기 (기수/서수)</p>
+              <p className="text-xs font-bold font-medium text-amber-600 mt-1">다양한 숫자와 조수사 예문을 연습하세요</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl font-black text-amber-700">{numberCount}</span>
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-amber-500 shadow-sm text-xl">
+                🔢
               </div>
             </div>
           </div>
