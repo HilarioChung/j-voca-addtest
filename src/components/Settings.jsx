@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getApiKey, setApiKey, getModel, setModel, MODELS } from '../lib/gemini';
 import { getGithubToken, setGithubToken, hasGithubToken, resetWordsInRepo } from '../lib/github';
 import { exportData, importReviews, clearAllReviews, clearAllData, ensureReviewsExist } from '../lib/db';
+import { getLocalDateString } from '../lib/date-utils';
 
 const FONT_SIZES = [
   { id: 'base', label: '보통' },
@@ -71,7 +72,7 @@ export default function Settings() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `j-voca-backup-${new Date().toISOString().split('T')[0]}.json`;
+      a.download = `j-voca-backup-${getLocalDateString()}.json`;
       a.click();
       URL.revokeObjectURL(url);
       showMessage('백업 파일이 다운로드되었습니다.', 'backup');

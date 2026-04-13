@@ -1,5 +1,5 @@
 {
-  "lastId": 239,
+  "lastId": 336,
   "words": [
     {
       "word": "おおい",
@@ -2614,6 +2614,1183 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-01",
       "exampleMeaning": "네 명이서 여행을 갑니다."
+    },
+    {
+      "word": "3000 円",
+      "reading": "さんぜんえん",
+      "meaning": "3000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 240,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "4000 円",
+      "reading": "よんせんえん",
+      "meaning": "4000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 241,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "5000 円",
+      "reading": "ごせんえん",
+      "meaning": "5000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 242,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "6000 円",
+      "reading": "ろくせんえん",
+      "meaning": "6000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 243,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "7000 円",
+      "reading": "ななせんえん",
+      "meaning": "7000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 244,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "8000 円",
+      "reading": "はっせんえん",
+      "meaning": "8000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 245,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "9000 円",
+      "reading": "きゅうせんえん",
+      "meaning": "9000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 246,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "10000 円",
+      "reading": "いちまんえん",
+      "meaning": "10000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 247,
+      "tags": [
+        "금액"
+      ]
+    },
+    {
+      "word": "1 月",
+      "reading": "いちがつ",
+      "meaning": "1월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 248,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "2 月",
+      "reading": "にがつ",
+      "meaning": "2월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 249,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "3 月",
+      "reading": "さんがつ",
+      "meaning": "3월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 250,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "4 月",
+      "reading": "しがつ",
+      "meaning": "4월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 251,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "5 月",
+      "reading": "ごがつ",
+      "meaning": "5월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 252,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "6 月",
+      "reading": "ろくがつ",
+      "meaning": "6월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 253,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "7 月",
+      "reading": "しちがつ",
+      "meaning": "7월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 254,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "8 月",
+      "reading": "はちがつ",
+      "meaning": "8월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 255,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "9 月",
+      "reading": "くがつ",
+      "meaning": "9월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 256,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "10 月",
+      "reading": "じゅうがつ",
+      "meaning": "10월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 257,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "11 月",
+      "reading": "じゅういちがつ",
+      "meaning": "11월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 258,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "12 月",
+      "reading": "じゅうにがつ",
+      "meaning": "12월",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 259,
+      "tags": [
+        "월"
+      ]
+    },
+    {
+      "word": "1日",
+      "reading": "ついたち",
+      "meaning": "초하루, 1일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 260,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "2日",
+      "reading": "ふつか",
+      "meaning": "이틀, 2일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 261,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "3日",
+      "reading": "みっか",
+      "meaning": "사흘, 3일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 262,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "4日",
+      "reading": "よっか",
+      "meaning": "나흘, 4일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 263,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "5日",
+      "reading": "いつか",
+      "meaning": "닷새, 5일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 264,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "6日",
+      "reading": "むいか",
+      "meaning": "엿새, 6일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 265,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "7日",
+      "reading": "なのか",
+      "meaning": "이레, 7일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 266,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "8日",
+      "reading": "ようか",
+      "meaning": "여드레, 8일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 267,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "9日",
+      "reading": "ここのか",
+      "meaning": "아흐레, 9일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 268,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "10日",
+      "reading": "とおか",
+      "meaning": "열흘, 10일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 269,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "11日",
+      "reading": "じゅういちにち",
+      "meaning": "11일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 270,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "12日",
+      "reading": "じゅうににち",
+      "meaning": "12일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 271,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "13日",
+      "reading": "じゅうさんにち",
+      "meaning": "13일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 272,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "14日",
+      "reading": "じゅうよっか",
+      "meaning": "14일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 273,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "15日",
+      "reading": "じゅうごにち",
+      "meaning": "15일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 274,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "16日",
+      "reading": "じゅうろくにち",
+      "meaning": "16일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 275,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "17日",
+      "reading": "じゅうしちにち",
+      "meaning": "17일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 276,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "18日",
+      "reading": "じゅうはちにち",
+      "meaning": "18일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 277,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "19日",
+      "reading": "じゅうくにち",
+      "meaning": "19일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 278,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "20日",
+      "reading": "はつか",
+      "meaning": "스무날, 20일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 279,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "21日",
+      "reading": "にじゅういちにち",
+      "meaning": "21일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 280,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "22日",
+      "reading": "にじゅうににち",
+      "meaning": "22일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 281,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "23日",
+      "reading": "にじゅうさんにち",
+      "meaning": "23일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 282,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "24日",
+      "reading": "にじゅうよっか",
+      "meaning": "24일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 283,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "25日",
+      "reading": "にじゅうごにち",
+      "meaning": "25일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 284,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "26日",
+      "reading": "にじゅうろくにち",
+      "meaning": "26일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 285,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "27日",
+      "reading": "にじゅうしちにち",
+      "meaning": "27일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 286,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "28日",
+      "reading": "にじゅうはちにち",
+      "meaning": "28일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 287,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "29日",
+      "reading": "にじゅうくにち",
+      "meaning": "29일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 288,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "30日",
+      "reading": "さんじゅうにち",
+      "meaning": "30일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 289,
+      "tags": [
+        "날짜"
+      ]
+    },
+    {
+      "word": "月曜日",
+      "reading": "げつようび",
+      "meaning": "월요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 290,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "火曜日",
+      "reading": "かようび",
+      "meaning": "화요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 291,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "水曜日",
+      "reading": "すいようび",
+      "meaning": "수요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 292,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "木曜日",
+      "reading": "もくようび",
+      "meaning": "목요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 293,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "金曜日",
+      "reading": "きんようび",
+      "meaning": "금요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 294,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "土曜日",
+      "reading": "どようび",
+      "meaning": "토요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 295,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "日曜日",
+      "reading": "にちようび",
+      "meaning": "일요일",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 296,
+      "tags": [
+        "요일"
+      ]
+    },
+    {
+      "word": "1時",
+      "reading": "いちじ",
+      "meaning": "1시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 297,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "2時",
+      "reading": "にじ",
+      "meaning": "2시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 298,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "3時",
+      "reading": "さんじ",
+      "meaning": "3시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 299,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "4時",
+      "reading": "よじ",
+      "meaning": "4시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 300,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "5時",
+      "reading": "ごじ",
+      "meaning": "5시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 301,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "6時",
+      "reading": "ろくじ",
+      "meaning": "6시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 302,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "7時",
+      "reading": "しちじ",
+      "meaning": "7시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 303,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "8時",
+      "reading": "はちじ",
+      "meaning": "8시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 304,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "9時",
+      "reading": "くじ",
+      "meaning": "9시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 305,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "10時",
+      "reading": "じゅうじ",
+      "meaning": "10시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 306,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "11時",
+      "reading": "じゅういちじ",
+      "meaning": "11시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 307,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "12時",
+      "reading": "じゅうにじ",
+      "meaning": "12시",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 308,
+      "tags": [
+        "시간"
+      ]
+    },
+    {
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "meaning": "우유",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 309
+    },
+    {
+      "word": "たまご",
+      "reading": "たまご",
+      "meaning": "달걀",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 310
+    },
+    {
+      "word": "コップ",
+      "reading": "コップ",
+      "meaning": "컵",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 311
+    },
+    {
+      "word": "りんご",
+      "reading": "りんご",
+      "meaning": "사과",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 312
+    },
+    {
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "meaning": "우유",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 313
+    },
+    {
+      "word": "出発",
+      "reading": "しゅっぱつ",
+      "meaning": "출발",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 314
+    },
+    {
+      "word": "練習",
+      "reading": "れんしゅう",
+      "meaning": "연습",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 315
+    },
+    {
+      "word": "パーティー",
+      "reading": "パーティー",
+      "meaning": "파티",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 316
+    },
+    {
+      "word": "仕事",
+      "reading": "しごと",
+      "meaning": "일, 업무",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 317
+    },
+    {
+      "word": "東京",
+      "reading": "とうきょう",
+      "meaning": "도쿄(도시명)",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 318
+    },
+    {
+      "word": "バス",
+      "reading": "バス",
+      "meaning": "버스",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 319
+    },
+    {
+      "word": "新宿",
+      "reading": "しんじゅく",
+      "meaning": "신주쿠(지명)",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 320
+    },
+    {
+      "word": "渋谷",
+      "reading": "しぶや",
+      "meaning": "시부야(지명)",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 321
+    },
+    {
+      "word": "試合",
+      "reading": "しあい",
+      "meaning": "시합",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 322
+    },
+    {
+      "word": "授業",
+      "reading": "じゅぎょう",
+      "meaning": "수업",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 323
+    },
+    {
+      "word": "サンドイッチ",
+      "reading": "サンドイッチ",
+      "meaning": "샌드위치",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 324
+    },
+    {
+      "word": "うどん",
+      "reading": "うどん",
+      "meaning": "우동",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 325
+    },
+    {
+      "word": "カメラ",
+      "reading": "カメラ",
+      "meaning": "카메라",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 326
+    },
+    {
+      "word": "とんかつ",
+      "reading": "とんかつ",
+      "meaning": "돈가스",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 327
+    },
+    {
+      "word": "店",
+      "reading": "みせ",
+      "meaning": "가게",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 328
+    },
+    {
+      "word": "姉",
+      "reading": "あね",
+      "meaning": "언니, 누나",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 329
+    },
+    {
+      "word": "野菜",
+      "reading": "やさい",
+      "meaning": "채소",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 330
+    },
+    {
+      "word": "嫌いだ",
+      "reading": "きらいだ",
+      "meaning": "싫어하다",
+      "pos": "な형용사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 331
+    },
+    {
+      "word": "すいか",
+      "reading": "すいか",
+      "meaning": "수박",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 332
+    },
+    {
+      "word": "サッカー",
+      "reading": "サッカー",
+      "meaning": "축구",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 333
+    },
+    {
+      "word": "上手だ",
+      "reading": "じょうずだ",
+      "meaning": "능숙하다, 잘하다",
+      "pos": "な형용사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 334
+    },
+    {
+      "word": "下手だ",
+      "reading": "へただ",
+      "meaning": "서툴다, 잘 못하다",
+      "pos": "な형용사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 335
+    },
+    {
+      "word": "兄",
+      "reading": "あに",
+      "meaning": "형, 오빠",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-07",
+      "id": 336
     }
   ]
 }
