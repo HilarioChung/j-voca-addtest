@@ -7,6 +7,7 @@ import { shuffle } from '../lib/shuffle';
 import { canConjugate } from '../lib/conjugation';
 import FlashCard from './FlashCard';
 import ConjugationCards from './ConjugationCards';
+import AntonymCard from './AntonymCard';
 
 export default function ReviewSession() {
   const [params] = useSearchParams();
@@ -25,6 +26,8 @@ export default function ReviewSession() {
   const [saveError, setSaveError] = useState(null);
   const [showConj, setShowConj] = useState(false);
   const [conjWord, setConjWord] = useState(null);
+  const [showAntonym, setShowAntonym] = useState(false);
+  const [antonymWord, setAntonymWord] = useState(null);
   
   const [studyMode, setStudyMode] = useState('random');
   const [cardDir, setCardDir] = useState('jp2kr');
@@ -91,6 +94,9 @@ export default function ReviewSession() {
     if (canConjugate(currentWord.pos)) {
       setConjWord(currentWord);
       setShowConj(true);
+    } else if (currentWord.antonym) {
+      setAntonymWord(currentWord);
+      setShowAntonym(true);
     } else {
       setCurrentIndex(prev => prev + 1);
     }
@@ -198,14 +204,29 @@ export default function ReviewSession() {
         />
       </div>
 
-      {showConj && conjWord ? (
+      {showAntonym && antonymWord ? (
+        <AntonymCard
+          key={`antonym-${currentIndex}`}
+          word={antonymWord}
+          onDone={() => {
+            setShowAntonym(false);
+            setAntonymWord(null);
+            setCurrentIndex(prev => prev + 1);
+          }}
+        />
+      ) : showConj && conjWord ? (
         <ConjugationCards
           key={`conj-${currentIndex}`}
           word={conjWord}
           onDone={() => {
             setShowConj(false);
             setConjWord(null);
-            setCurrentIndex(prev => prev + 1);
+            if (currentWord.antonym) {
+              setAntonymWord(currentWord);
+              setShowAntonym(true);
+            } else {
+              setCurrentIndex(prev => prev + 1);
+            }
           }}
         />
       ) : (

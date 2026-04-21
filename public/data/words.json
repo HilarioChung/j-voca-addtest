@@ -10,7 +10,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 1,
-      "kanji": "多い"
+      "kanji": "多い",
+      "antonym": "少ない",
+      "antonymReading": "すくない",
+      "antonymMeaning": "적다"
     },
     {
       "word": "かるい",
@@ -21,7 +24,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 2,
-      "kanji": "軽い"
+      "kanji": "軽い",
+      "antonym": "重い",
+      "antonymReading": "おもい",
+      "antonymMeaning": "무겁다"
     },
     {
       "word": "せまい",
@@ -32,7 +38,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 3,
-      "kanji": "狭い"
+      "kanji": "狭い",
+      "antonym": "広い",
+      "antonymReading": "ひろい",
+      "antonymMeaning": "넓다"
     },
     {
       "word": "しろい",
@@ -43,7 +52,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 4,
-      "kanji": "白い"
+      "kanji": "白い",
+      "antonym": "黒い",
+      "antonymReading": "くろい",
+      "antonymMeaning": "검다"
     },
     {
       "word": "たかい",
@@ -54,7 +66,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 5,
-      "kanji": "高い"
+      "kanji": "高い",
+      "antonym": "低い・安い",
+      "antonymReading": "ひくい・やすい",
+      "antonymMeaning": "낮다 / 싸다"
     },
     {
       "word": "ながい",
@@ -65,7 +80,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 6,
-      "kanji": "長い"
+      "kanji": "長い",
+      "antonym": "短い",
+      "antonymReading": "みじかい",
+      "antonymMeaning": "짧다"
     },
     {
       "word": "ひろい",
@@ -76,7 +94,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 7,
-      "kanji": "広い"
+      "kanji": "広い",
+      "antonym": "狭い",
+      "antonymReading": "せまい",
+      "antonymMeaning": "좁다"
     },
     {
       "word": "ほそい",
@@ -87,7 +108,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 8,
-      "kanji": "細い"
+      "kanji": "細い",
+      "antonym": "太い",
+      "antonymReading": "ふとい",
+      "antonymMeaning": "굵다"
     },
     {
       "word": "やすい",
@@ -98,7 +122,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 9,
-      "kanji": "安い"
+      "kanji": "安い",
+      "antonym": "高い",
+      "antonymReading": "たかい",
+      "antonymMeaning": "비싸다 / 높다"
     },
     {
       "word": "あぶない",
@@ -109,7 +136,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 10,
-      "kanji": "危ない"
+      "kanji": "危ない",
+      "antonym": "安全だ",
+      "antonymReading": "あんぜんだ",
+      "antonymMeaning": "안전하다"
     },
     {
       "word": "おいしい",
@@ -120,7 +150,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 11,
-      "kanji": "美味しい"
+      "kanji": "美味しい",
+      "antonym": "まずい",
+      "antonymReading": "まずい",
+      "antonymMeaning": "맛없다"
     },
     {
       "word": "たのしい",
@@ -131,7 +164,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 12,
-      "kanji": "楽しい"
+      "kanji": "楽しい",
+      "antonym": "つまらない",
+      "antonymReading": "つまらない",
+      "antonymMeaning": "지루하다"
     },
     {
       "word": "つめたい",
@@ -142,7 +178,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 13,
-      "kanji": "冷たい"
+      "kanji": "冷たい",
+      "antonym": "あたたかい",
+      "antonymReading": "あたたかい",
+      "antonymMeaning": "따뜻하다"
     },
     {
       "word": "あたらしい",
@@ -153,7 +192,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 14,
-      "kanji": "新しい"
+      "kanji": "新しい",
+      "antonym": "古い",
+      "antonymReading": "ふるい",
+      "antonymMeaning": "낡다, 오래되다"
     },
     {
       "word": "おもしろい",
@@ -164,7 +206,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 15,
-      "kanji": "面白い"
+      "kanji": "面白い",
+      "antonym": "つまらない",
+      "antonymReading": "つまらない",
+      "antonymMeaning": "재미없다"
     },
     {
       "word": "むずかしい",
@@ -175,7 +220,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 16,
-      "kanji": "難しい"
+      "kanji": "難しい",
+      "antonym": "やさしい",
+      "antonymReading": "やさしい",
+      "antonymMeaning": "쉽다"
     },
     {
       "word": "きれいだ",
@@ -1159,7 +1207,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 107,
-      "kanji": "暑い"
+      "kanji": "暑い",
+      "antonym": "さむい",
+      "antonymReading": "さむい",
+      "antonymMeaning": "춥다"
     },
     {
       "word": "ふるい",
@@ -1170,7 +1221,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 108,
-      "kanji": "古い"
+      "kanji": "古い",
+      "antonym": "あたらしい",
+      "antonymReading": "あたらしい",
+      "antonymMeaning": "새롭다"
     },
     {
       "word": "いい・よい",
@@ -1181,7 +1235,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 109,
-      "kanji": "良い"
+      "kanji": "良い",
+      "antonym": "わるい",
+      "antonymReading": "わるい",
+      "antonymMeaning": "나쁘다"
     },
     {
       "word": "すずしい",
@@ -1192,7 +1249,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 110,
-      "kanji": "涼しい"
+      "kanji": "涼しい",
+      "antonym": "あたたかい",
+      "antonymReading": "あたたかい",
+      "antonymMeaning": "따뜻하다"
     },
     {
       "word": "あかるい",
@@ -1203,7 +1263,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 111,
-      "kanji": "明るい"
+      "kanji": "明るい",
+      "antonym": "くらい",
+      "antonymReading": "くらい",
+      "antonymMeaning": "어둡다"
     },
     {
       "word": "みじかい",
@@ -1214,7 +1277,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 112,
-      "kanji": "短い"
+      "kanji": "短い",
+      "antonym": "ながい",
+      "antonymReading": "ながい",
+      "antonymMeaning": "길다"
     },
     {
       "word": "ひくい",
@@ -1225,7 +1291,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 113,
-      "kanji": "低い"
+      "kanji": "低い",
+      "antonym": "たかい",
+      "antonymReading": "たかい",
+      "antonymMeaning": "높다"
     },
     {
       "word": "くろい",
@@ -1236,7 +1305,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 114,
-      "kanji": "黒い"
+      "kanji": "黒い",
+      "antonym": "しろい",
+      "antonymReading": "しろい",
+      "antonymMeaning": "하얗다"
     },
     {
       "word": "おおきい",
@@ -1247,7 +1319,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 115,
-      "kanji": "大きい"
+      "kanji": "大きい",
+      "antonym": "ちいさい",
+      "antonymReading": "ちいさい",
+      "antonymMeaning": "작다"
     },
     {
       "word": "ひまだ",
@@ -1517,7 +1592,10 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
-      "id": 140
+      "id": 140,
+      "antonym": "寒い",
+      "antonymReading": "さむい",
+      "antonymMeaning": "춥다"
     },
     {
       "word": "昨日",
@@ -1637,7 +1715,10 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
-      "id": 153
+      "id": 153,
+      "antonym": "少ない",
+      "antonymReading": "すくない",
+      "antonymMeaning": "적다"
     },
     {
       "word": "母さん",
@@ -1877,7 +1958,10 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
-      "id": 178
+      "id": 178,
+      "antonym": "小さい",
+      "antonymReading": "ちいさい",
+      "antonymMeaning": "작다"
     },
     {
       "word": "黒い",
@@ -1887,7 +1971,10 @@
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
-      "id": 179
+      "id": 179,
+      "antonym": "白い",
+      "antonymReading": "しろい",
+      "antonymMeaning": "하얗다"
     },
     {
       "word": "信号",
@@ -2027,7 +2114,10 @@
       "chapter": 5,
       "textbook": "일본어수업",
       "createdAt": "2026-03-31",
-      "id": 193
+      "id": 193,
+      "antonym": "涼しい",
+      "antonymReading": "すずしい",
+      "antonymMeaning": "시원하다"
     },
     {
       "word": "今日",
@@ -3840,7 +3930,10 @@
       "chapter": 5,
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
-      "id": 341
+      "id": 341,
+      "antonym": "すずしい",
+      "antonymReading": "すずしい",
+      "antonymMeaning": "시원하다"
     },
     {
       "word": "じょうずだ",

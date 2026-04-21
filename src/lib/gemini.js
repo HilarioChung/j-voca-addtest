@@ -33,6 +33,7 @@ export async function extractWordsFromImage(base64Image, mimeType, chapter, text
 
   const prompt = `이 일본어 교재 사진에서 단어를 추출하여 JSON 배열로 반환해주세요.
 필수 필드: word(일본어), reading(히라가나), meaning(한국어 뜻), pos(품사: 명사, 동사, い형용사, な형용사, 부사, 기타).
+추가로 형용사(い형용사, な형용사)의 경우 반의어가 명확하다면 antonym(반의어 일본어), antonymReading(반의어 히라가나), antonymMeaning(반의어 한국어 뜻) 필드를 추가해주세요. (없으면 생략)
 사진에 없는 단어는 절대 추가하지 마세요.`;
 
   const response = await fetch(url, {
