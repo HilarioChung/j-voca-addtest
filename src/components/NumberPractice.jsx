@@ -26,15 +26,19 @@ export default function NumberPractice() {
   }, [nouns]);
 
   useEffect(() => {
-    // 명사 데이터 로딩이 완료되었을 때 첫 문제 생성
-    if (nouns && nouns.length >= 0) {
+    // 명사 데이터 로딩이 완료되었을 때 첫 문제 생성 (중복 생성 방지)
+    if (nouns !== undefined && !currentWord) {
       generateNext();
     }
-  }, [nouns, generateNext]);
+  }, [nouns, currentWord, generateNext]);
 
   const handleNext = () => {
-    setCount(c => c + 1);
-    generateNext();
+    setShowAnswer(false);
+    // 카드가 닫히는 애니메이션을 기다린 후 새 단어 생성 (빈 카드 버그 방지)
+    setTimeout(() => {
+      setCount(c => c + 1);
+      generateNext();
+    }, 300);
   };
 
   const toggleAnswer = () => {

@@ -119,8 +119,17 @@ function generateCounter(nouns = []) {
   const num = getRandomInt(1, 10);
   let obj = getRandomItem(OBJECTS);
   
+  let validNouns = nouns;
   if (nouns && nouns.length > 0) {
-    const dbNoun = getRandomItem(nouns);
+    // 사람이나 동물 등을 나타내는 단어는 '개(~つ)' 단위를 쓰기 어색하므로 제외
+    validNouns = nouns.filter(n => {
+      const m = n.meaning || '';
+      return !/(사람|명|형|누나|오빠|언니|동생|아버지|어머니|아빠|엄마|할아버지|할머니|가족|부모|친구|선생님|학생|남편|아내|딸|아들|아이|어른|남자|여자|소년|소녀|개|고양이|동물|새|물고기|마리|권|인물|직원|손님)/.test(m);
+    });
+  }
+
+  if (validNouns && validNouns.length > 0) {
+    const dbNoun = getRandomItem(validNouns);
     obj = {
       q: dbNoun.meaning,
       k: dbNoun.kanji || dbNoun.word,
