@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../lib/db';
 import { speak } from '../lib/speech';
 import { generateRandomQuestion } from '../lib/number-generator';
 
@@ -9,15 +11,26 @@ export default function NumberPractice() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [count, setCount] = useState(1);
 
+  // DB에서 명사만 불러오기
+  const nouns = useLiveQuery(
+    () => db.words.filter(w => w.pos === '명사' || w.pos === '명사(시간)' || w.pos === '명사(기타)').toArray(),
+    [],
+    []
+  );
+
   const generateNext = useCallback(() => {
-    const nextQ = generateRandomQuestion();
+    // 아직 데이터를 불러오는 중이라면(또는 비어있다면) 기본 단어로 생성되도록 함
+    const nextQ = generateRandomQuestion(nouns);
     setCurrentWord(nextQ);
     setShowAnswer(false);
-  }, []);
+  }, [nouns]);
 
   useEffect(() => {
-    generateNext();
-  }, [generateNext]);
+    // 명사 데이터 로딩이 완료되었을 때 첫 문제 생성
+    if (nouns && nouns.length >= 0) {
+      generateNext();
+    }
+  }, [nouns, generateNext]);
 
   const handleNext = () => {
     setCount(c => c + 1);
@@ -25,9 +38,6 @@ export default function NumberPractice() {
   };
 
   const toggleAnswer = () => {
-    if (!showAnswer && currentWord) {
-      speak(currentWord.reading);
-    }
     setShowAnswer(!showAnswer);
   };
 
@@ -50,7 +60,7 @@ export default function NumberPractice() {
           {/* Main Question */}
           <div className="space-y-2">
             <p className="text-sm font-medium text-slate-400">질문</p>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight break-keep">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight break-words whitespace-normal leading-tight">
               {currentWord.question}
             </h2>
           </div>
@@ -59,7 +69,7 @@ export default function NumberPractice() {
           <div className={`transition-all duration-500 transform ${showAnswer ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
             <div className="space-y-4 bg-white/40 p-6 rounded-3xl border border-white/50">
               <div>
-                <ruby className="text-4xl font-bold text-indigo-600 mb-3 ruby-furigana break-keep">
+                <ruby className="text-2xl md:text-3xl font-bold text-indigo-600 mb-3 ruby-furigana break-words whitespace-normal leading-relaxed">
                   {currentWord.kanji}
                   {currentWord.reading && currentWord.reading !== currentWord.kanji && (
                     <><rp>(</rp><rt className="text-base font-normal text-indigo-500">{currentWord.reading}</rt><rp>)</rp></>

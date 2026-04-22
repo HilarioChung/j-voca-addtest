@@ -115,15 +115,25 @@ const OBJECTS = [
   { q: "사과", k: "りんご" }, { q: "귤", k: "みかん" }, { q: "가방", k: "かばん" }, { q: "책상", k: "つくえ" }
 ];
 
-function generateCounter() {
+function generateCounter(nouns = []) {
   const num = getRandomInt(1, 10);
-  const obj = getRandomItem(OBJECTS);
+  let obj = getRandomItem(OBJECTS);
+  
+  if (nouns && nouns.length > 0) {
+    const dbNoun = getRandomItem(nouns);
+    obj = {
+      q: dbNoun.meaning,
+      k: dbNoun.kanji || dbNoun.word,
+      r: dbNoun.reading || dbNoun.word
+    };
+  }
+
   const counter = COUNTERS[num];
   
   return {
     question: `${obj.q} ${num}개는?`,
     kanji: `${obj.k} ${counter.k}`,
-    reading: `${obj.k} ${counter.r}`
+    reading: `${obj.r} ${counter.r}`
   };
 }
 
@@ -239,14 +249,14 @@ function generatePrice() {
   };
 }
 
-export function generateRandomQuestion() {
+export function generateRandomQuestion(nouns = []) {
   const category = getRandomItem(CATEGORIES);
   switch (category) {
     case 'date': return generateDate();
     case 'price': return generatePrice();
     case 'weekday': return generateWeekday();
     case 'time': return generateTime();
-    case 'counter': return generateCounter();
+    case 'counter': return generateCounter(nouns);
     default: return generateDate();
   }
 }
