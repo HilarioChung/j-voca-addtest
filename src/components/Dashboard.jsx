@@ -138,7 +138,6 @@ export default function Dashboard() {
         </Link>
       )}
 
-      {/* Weak Words Alert */}
       {weakCount > 0 && (
         <Link to="/weak-words" className="block bg-rose-50 border border-rose-100 rounded-3xl p-6 relative active:scale-[0.98] transition-all">
           <div className="flex justify-between items-center">
@@ -152,6 +151,19 @@ export default function Dashboard() {
           </div>
         </Link>
       )}
+
+      {/* Number Practice Link */}
+      <Link to="/number-practice" className="block bg-slate-50 border border-slate-200 rounded-3xl p-6 relative active:scale-[0.98] transition-all">
+        <div className="flex justify-between items-center">
+          <div>
+            <p className="text-sm font-black text-slate-800">숫자/날짜 연습</p>
+            <p className="text-xs text-slate-500 mt-1">헷갈리는 숫자 읽기를 랜덤으로 연습하세요.</p>
+          </div>
+          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-600 shadow-sm font-black text-xl">
+            🔢
+          </div>
+        </div>
+      </Link>
 
       {/* Progress Section */}
       {chapters.length > 0 && (

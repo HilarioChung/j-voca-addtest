@@ -200,7 +200,8 @@ function getPriceReading(price) {
   const man = Math.floor(p / 10000);
   p = p % 10000;
   if (man > 0) {
-    res += "いちまん"; 
+    if (man === 1) res += "いちまん";
+    else res += getNumberReading(man) + "まん";
   }
   
   const sen = Math.floor(p / 1000);
@@ -235,9 +236,8 @@ function generatePrice() {
     () => getRandomInt(1, 9) * 100, // 100~900
     () => getRandomInt(1, 9) * 1000, // 1000~9000
     () => getRandomInt(1, 9) * 1000 + getRandomInt(1, 9) * 100, // 1100~9900
-    () => getRandomInt(10, 99) * 10, // 100~990
-    () => 10000,
-    () => getRandomInt(100, 9999) // completely random
+    () => getRandomInt(1, 9) * 10000, // 10000~90000
+    () => getRandomInt(100, 99999) // completely random up to 99999
   ];
   
   const price = getRandomItem(patterns)();
