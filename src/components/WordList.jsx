@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, syncWordsFromData, deleteReview } from '../lib/db';
 import { hasGithubToken, updateWordInRepo, deleteWordFromRepo, deleteChapterFromRepo } from '../lib/github';
@@ -74,7 +75,15 @@ export default function WordList() {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-xl font-bold text-slate-800">단어 목록</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl font-bold text-slate-800">단어 목록</h1>
+        <Link 
+          to="/number-practice" 
+          className="text-sm px-3 py-1.5 bg-indigo-50 text-indigo-600 rounded-lg font-medium border border-indigo-100 shadow-sm"
+        >
+          숫자/날짜 연습
+        </Link>
+      </div>
 
       {/* 검색 입력 */}
       <input
