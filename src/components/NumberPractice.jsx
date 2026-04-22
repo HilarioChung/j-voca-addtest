@@ -66,7 +66,7 @@ export default function NumberPractice() {
           </div>
 
           {/* Answer Area */}
-          <div className={`transition-all duration-500 transform ${showAnswer ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+          <div className={`transform ${showAnswer ? 'transition-all duration-500 opacity-100 translate-y-0' : 'transition-none opacity-0 translate-y-4 pointer-events-none'}`}>
             <div className="space-y-4 bg-white/40 p-6 rounded-3xl border border-white/50">
               <div>
                 <ruby className="text-2xl md:text-3xl font-bold text-indigo-600 mb-3 ruby-furigana break-words whitespace-normal leading-relaxed">
