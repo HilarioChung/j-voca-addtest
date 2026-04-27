@@ -20,14 +20,26 @@ export default function NumberPractice() {
 
   const generateNext = useCallback(() => {
     // 아직 데이터를 불러오는 중이라면(또는 비어있다면) 기본 단어로 생성되도록 함
-    const nextQ = generateRandomQuestion(nouns);
-    setCurrentWord(nextQ);
-    setShowAnswer(false);
+    let nextQ = generateRandomQuestion(nouns);
+    
+    // 유효성 검사: 필수 필드가 누락된 경우 최대 3번 재시도
+    let retryCount = 0;
+    while ((!nextQ || !nextQ.question || !nextQ.reading) && retryCount < 3) {
+      nextQ = generateRandomQuestion(nouns);
+      retryCount++;
+    }
+
+    if (nextQ && nextQ.question) {
+      setCurrentWord(nextQ);
+      setShowAnswer(false);
+    } else {
+      console.error('Failed to generate a valid question');
+    }
   }, [nouns]);
 
   useEffect(() => {
     // 명사 데이터 로딩이 완료되었을 때 첫 문제 생성 (중복 생성 방지)
-    if (nouns !== undefined && !currentWord) {
+    if (nouns !== undefined && nouns.length > 0 && !currentWord) {
       generateNext();
     }
   }, [nouns, currentWord, generateNext]);

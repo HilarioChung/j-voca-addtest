@@ -96,7 +96,12 @@ const WEEKDAYS = [
 ];
 
 function generateWeekday() {
-  return getRandomItem(WEEKDAYS);
+  const item = getRandomItem(WEEKDAYS);
+  return {
+    question: item.q,
+    kanji: item.k,
+    reading: item.r
+  };
 }
 
 const COUNTERS = {
