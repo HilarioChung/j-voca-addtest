@@ -1,5 +1,5 @@
 {
-  "lastId": 374,
+  "lastId": 415,
   "words": [
     {
       "word": "おおい",
@@ -10,10 +10,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 1,
-      "kanji": "多い",
       "antonym": "少ない",
       "antonymReading": "すくない",
-      "antonymMeaning": "적다"
+      "antonymMeaning": "적다",
+      "kanji": "多い"
     },
     {
       "word": "かるい",
@@ -24,10 +24,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 2,
-      "kanji": "軽い",
       "antonym": "重い",
       "antonymReading": "おもい",
-      "antonymMeaning": "무겁다"
+      "antonymMeaning": "무겁다",
+      "kanji": "軽い"
     },
     {
       "word": "せまい",
@@ -38,10 +38,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 3,
-      "kanji": "狭い",
       "antonym": "広い",
       "antonymReading": "ひろい",
-      "antonymMeaning": "넓다"
+      "antonymMeaning": "넓다",
+      "kanji": "狭い"
     },
     {
       "word": "しろい",
@@ -52,10 +52,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 4,
-      "kanji": "白い",
       "antonym": "黒い",
       "antonymReading": "くろい",
-      "antonymMeaning": "검다"
+      "antonymMeaning": "검다",
+      "kanji": "白い"
     },
     {
       "word": "たかい",
@@ -66,10 +66,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 5,
-      "kanji": "高い",
       "antonym": "低い・安い",
       "antonymReading": "ひくい・やすい",
-      "antonymMeaning": "낮다 / 싸다"
+      "antonymMeaning": "낮다 / 싸다",
+      "kanji": "高い"
     },
     {
       "word": "ながい",
@@ -80,10 +80,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 6,
-      "kanji": "長い",
       "antonym": "短い",
       "antonymReading": "みじかい",
-      "antonymMeaning": "짧다"
+      "antonymMeaning": "짧다",
+      "kanji": "長い"
     },
     {
       "word": "ひろい",
@@ -94,10 +94,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 7,
-      "kanji": "広い",
       "antonym": "狭い",
       "antonymReading": "せまい",
-      "antonymMeaning": "좁다"
+      "antonymMeaning": "좁다",
+      "kanji": "広い"
     },
     {
       "word": "ほそい",
@@ -108,10 +108,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 8,
-      "kanji": "細い",
       "antonym": "太い",
       "antonymReading": "ふとい",
-      "antonymMeaning": "굵다"
+      "antonymMeaning": "굵다",
+      "kanji": "細い"
     },
     {
       "word": "やすい",
@@ -122,10 +122,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 9,
-      "kanji": "安い",
       "antonym": "高い",
       "antonymReading": "たかい",
-      "antonymMeaning": "비싸다 / 높다"
+      "antonymMeaning": "비싸다 / 높다",
+      "kanji": "安い"
     },
     {
       "word": "あぶない",
@@ -136,10 +136,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 10,
-      "kanji": "危ない",
       "antonym": "安全だ",
       "antonymReading": "あんぜんだ",
-      "antonymMeaning": "안전하다"
+      "antonymMeaning": "안전하다",
+      "kanji": "危ない"
     },
     {
       "word": "おいしい",
@@ -150,10 +150,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 11,
-      "kanji": "美味しい",
       "antonym": "まずい",
       "antonymReading": "まずい",
-      "antonymMeaning": "맛없다"
+      "antonymMeaning": "맛없다",
+      "kanji": "美味しい"
     },
     {
       "word": "たのしい",
@@ -164,10 +164,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 12,
-      "kanji": "楽しい",
       "antonym": "つまらない",
       "antonymReading": "つまらない",
-      "antonymMeaning": "지루하다"
+      "antonymMeaning": "지루하다",
+      "kanji": "楽しい"
     },
     {
       "word": "つめたい",
@@ -178,10 +178,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 13,
-      "kanji": "冷たい",
       "antonym": "あたたかい",
       "antonymReading": "あたたかい",
-      "antonymMeaning": "따뜻하다"
+      "antonymMeaning": "따뜻하다",
+      "kanji": "冷たい"
     },
     {
       "word": "あたらしい",
@@ -192,10 +192,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 14,
-      "kanji": "新しい",
       "antonym": "古い",
       "antonymReading": "ふるい",
-      "antonymMeaning": "낡다, 오래되다"
+      "antonymMeaning": "낡다, 오래되다",
+      "kanji": "新しい"
     },
     {
       "word": "おもしろい",
@@ -206,10 +206,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 15,
-      "kanji": "面白い",
       "antonym": "つまらない",
       "antonymReading": "つまらない",
-      "antonymMeaning": "재미없다"
+      "antonymMeaning": "재미없다",
+      "kanji": "面白い"
     },
     {
       "word": "むずかしい",
@@ -220,10 +220,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 16,
-      "kanji": "難しい",
       "antonym": "やさしい",
       "antonymReading": "やさしい",
-      "antonymMeaning": "쉽다"
+      "antonymMeaning": "쉽다",
+      "kanji": "難しい"
     },
     {
       "word": "きれいだ",
@@ -234,10 +234,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 17,
-      "kanji": "綺麗だ",
       "antonym": "汚い",
       "antonymReading": "きたない",
-      "antonymMeaning": "더럽다"
+      "antonymMeaning": "더럽다",
+      "kanji": "綺麗だ"
     },
     {
       "word": "げんきだ",
@@ -248,10 +248,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 18,
-      "kanji": "元気だ",
       "antonym": "病気だ",
       "antonymReading": "びょうきだ",
-      "antonymMeaning": "아프다"
+      "antonymMeaning": "아프다",
+      "kanji": "元気だ"
     },
     {
       "word": "しずかだ",
@@ -262,10 +262,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 19,
-      "kanji": "静かだ",
       "antonym": "うるさい",
       "antonymReading": "うるさい",
-      "antonymMeaning": "시끄럽다"
+      "antonymMeaning": "시끄럽다",
+      "kanji": "静かだ"
     },
     {
       "word": "べんりだ",
@@ -276,10 +276,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 20,
-      "kanji": "便利だ",
       "antonym": "不便だ",
       "antonymReading": "ふべんだ",
-      "antonymMeaning": "불편하다"
+      "antonymMeaning": "불편하다",
+      "kanji": "便利だ"
     },
     {
       "word": "すてきだ",
@@ -301,10 +301,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 22,
-      "kanji": "親切だ",
       "antonym": "不親切だ",
       "antonymReading": "ふしんせつだ",
-      "antonymMeaning": "불친절하다"
+      "antonymMeaning": "불친절하다",
+      "kanji": "親切だ"
     },
     {
       "word": "ゆうめいだ",
@@ -315,10 +315,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
       "id": 23,
-      "kanji": "有名だ",
       "antonym": "無名だ",
       "antonymReading": "むめいだ",
-      "antonymMeaning": "무명이다"
+      "antonymMeaning": "무명이다",
+      "kanji": "有名だ"
     },
     {
       "word": "さくら",
@@ -432,7 +432,7 @@
       "word": "いただきます",
       "reading": "いただきます",
       "meaning": "잘 먹겠습니다 (식사 전 인사)",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
@@ -442,7 +442,7 @@
       "word": "では、また",
       "reading": "では、また",
       "meaning": "그럼, 또 봐요 (헤어질 때 인사)",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
@@ -452,7 +452,7 @@
       "word": "おげんきで",
       "reading": "おげんきで",
       "meaning": "잘 지내세요 (헤어질 때 인사)",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 3,
       "textbook": "일본어수업",
       "createdAt": "2026-03-18",
@@ -770,7 +770,7 @@
       "word": "こんにちは",
       "reading": "こんにちは",
       "meaning": "안녕하세요",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -780,7 +780,7 @@
       "word": "はじめまして",
       "reading": "はじめまして",
       "meaning": "처음 뵙겠습니다",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -790,7 +790,7 @@
       "word": "よろしくおねがいします",
       "reading": "よろしくおねがいします",
       "meaning": "잘 부탁드립니다",
-      "pos": "인사·표현",
+      "pos": "기타",
       "chapter": 2,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1136,7 +1136,7 @@
       "word": "すみません",
       "reading": "すみません",
       "meaning": "죄송합니다, 실례합니다, 저기요",
-      "pos": "인사·표현",
+      "pos": "감탄사",
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1147,7 +1147,7 @@
       "word": "しつれいします",
       "reading": "しつれいします",
       "meaning": "실례하겠습니다",
-      "pos": "인사·표현",
+      "pos": "동사",
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1158,7 +1158,7 @@
       "word": "ありがとう",
       "reading": "ありがとう",
       "meaning": "고마워",
-      "pos": "인사·표현",
+      "pos": "감탄사",
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1168,7 +1168,7 @@
       "word": "ありがとうございます",
       "reading": "ありがとうございます",
       "meaning": "고맙습니다",
-      "pos": "인사·표현",
+      "pos": "감탄사",
       "chapter": 1,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1227,10 +1227,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 107,
-      "kanji": "暑い",
       "antonym": "さむい",
       "antonymReading": "さむい",
-      "antonymMeaning": "춥다"
+      "antonymMeaning": "춥다",
+      "kanji": "暑い"
     },
     {
       "word": "ふるい",
@@ -1241,10 +1241,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 108,
-      "kanji": "古い",
       "antonym": "あたらしい",
       "antonymReading": "あたらしい",
-      "antonymMeaning": "새롭다"
+      "antonymMeaning": "새롭다",
+      "kanji": "古い"
     },
     {
       "word": "いい・よい",
@@ -1255,10 +1255,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 109,
-      "kanji": "良い",
       "antonym": "わるい",
       "antonymReading": "わるい",
-      "antonymMeaning": "나쁘다"
+      "antonymMeaning": "나쁘다",
+      "kanji": "良い"
     },
     {
       "word": "すずしい",
@@ -1269,10 +1269,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 110,
-      "kanji": "涼しい",
       "antonym": "あたたかい",
       "antonymReading": "あたたかい",
-      "antonymMeaning": "따뜻하다"
+      "antonymMeaning": "따뜻하다",
+      "kanji": "涼しい"
     },
     {
       "word": "あかるい",
@@ -1283,10 +1283,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 111,
-      "kanji": "明るい",
       "antonym": "くらい",
       "antonymReading": "くらい",
-      "antonymMeaning": "어둡다"
+      "antonymMeaning": "어둡다",
+      "kanji": "明るい"
     },
     {
       "word": "みじかい",
@@ -1297,10 +1297,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 112,
-      "kanji": "短い",
       "antonym": "ながい",
       "antonymReading": "ながい",
-      "antonymMeaning": "길다"
+      "antonymMeaning": "길다",
+      "kanji": "短い"
     },
     {
       "word": "ひくい",
@@ -1311,10 +1311,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 113,
-      "kanji": "低い",
       "antonym": "たかい",
       "antonymReading": "たかい",
-      "antonymMeaning": "높다"
+      "antonymMeaning": "높다",
+      "kanji": "低い"
     },
     {
       "word": "くろい",
@@ -1325,10 +1325,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 114,
-      "kanji": "黒い",
       "antonym": "しろい",
       "antonymReading": "しろい",
-      "antonymMeaning": "하얗다"
+      "antonymMeaning": "하얗다",
+      "kanji": "黒い"
     },
     {
       "word": "おおきい",
@@ -1339,10 +1339,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
       "id": 115,
-      "kanji": "大きい",
       "antonym": "ちいさい",
       "antonymReading": "ちいさい",
-      "antonymMeaning": "작다"
+      "antonymMeaning": "작다",
+      "kanji": "大きい"
     },
     {
       "word": "ひまだ",
@@ -1587,7 +1587,7 @@
       "word": "ただいま",
       "reading": "ただいま",
       "meaning": "다녀왔습니다",
-      "pos": "인사·표현",
+      "pos": "감탄사",
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1598,7 +1598,7 @@
       "word": "おかえりなさい",
       "reading": "おかえりなさい",
       "meaning": "다녀오셨어요 (어서 와요)",
-      "pos": "인사·표현",
+      "pos": "감탄사",
       "chapter": 4,
       "textbook": "일본어수업",
       "createdAt": "2026-03-19",
@@ -1682,10 +1682,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
       "id": 147,
-      "kanji": "楽しかった",
       "antonym": "つまらなかった",
       "antonymReading": "つまらなかった",
-      "antonymMeaning": "재미없었다"
+      "antonymMeaning": "재미없었다",
+      "kanji": "楽しかった"
     },
     {
       "word": "とても",
@@ -1706,10 +1706,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
       "id": 149,
-      "kanji": "面白かった",
       "antonym": "つまらなかった",
       "antonymReading": "つまらなかった",
-      "antonymMeaning": "재미없었다"
+      "antonymMeaning": "재미없었다",
+      "kanji": "面白かった"
     },
     {
       "word": "何",
@@ -1873,10 +1873,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-25",
       "id": 164,
-      "kanji": "暑かった",
       "antonym": "寒かった",
       "antonymReading": "さむかった",
-      "antonymMeaning": "추웠다"
+      "antonymMeaning": "추웠다",
+      "kanji": "暑かった"
     },
     {
       "word": "ひまな人",
@@ -2179,10 +2179,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-31",
       "id": 192,
-      "kanji": "好きだ",
       "antonym": "嫌いだ",
       "antonymReading": "きらいだ",
-      "antonymMeaning": "싫어하다"
+      "antonymMeaning": "싫어하다",
+      "kanji": "好きだ"
     },
     {
       "word": "暖かい",
@@ -2269,10 +2269,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-03-31",
       "id": 200,
-      "kanji": "大好きだ",
       "antonym": "大嫌いだ",
       "antonymReading": "だいきらいだ",
-      "antonymMeaning": "아주 싫어하다"
+      "antonymMeaning": "아주 싫어하다",
+      "kanji": "大好きだ"
     },
     {
       "word": "今週",
@@ -2328,480 +2328,438 @@
       "id": 205
     },
     {
-      "word": "いち",
+      "word": "一",
       "reading": "いち",
-      "meaning": "1 (일)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "一",
-      "example": "りんごを一個（いっこ）買いました。",
-      "exampleReading": "りんごをいっこかいました。",
+      "meaning": "1",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 206,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "사과를 한 개 샀습니다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "一"
     },
     {
-      "word": "に",
+      "word": "二",
       "reading": "に",
-      "meaning": "2 (이)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "二",
-      "example": "猫が二匹（にひき）います。",
-      "exampleReading": "ねこがにひきいます。",
+      "meaning": "2",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 207,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "고양이가 두 마리 있습니다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "二"
     },
     {
-      "word": "さん",
+      "word": "三",
       "reading": "さん",
-      "meaning": "3 (삼)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "三",
-      "example": "三時に会いましょう。",
-      "exampleReading": "さんじにあいましょう。",
+      "meaning": "3",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 208,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "세 시에 만납시다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "三"
     },
     {
-      "word": "よん/し",
-      "reading": "よん/し",
-      "meaning": "4 (사)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "四",
-      "example": "四月は桜がきれいです。",
-      "exampleReading": "しがつはさくらがきれいです。",
+      "word": "四",
+      "reading": "よん",
+      "meaning": "4",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 209,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "4월은 벚꽃이 예쁩니다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "四"
     },
     {
-      "word": "ご",
+      "word": "五",
       "reading": "ご",
-      "meaning": "5 (오)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "五",
-      "example": "ご縁がありますように。",
-      "exampleReading": "ごえんがありますように。",
-      "id": 210,
+      "meaning": "5",
+      "pos": "명사",
+      "chapter": 5,
       "textbook": "일본어수업",
       "createdAt": "2026-04-01",
-      "exampleMeaning": "인연이 있기를."
-    },
-    {
-      "word": "ろく",
-      "reading": "ろく",
-      "meaning": "6 (육)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "六",
-      "example": "六日間休みます。",
-      "exampleReading": "むいかかんやすみます。",
       "id": 211,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "6일 동안 쉽니다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "六"
     },
     {
-      "word": "しち/なな",
-      "reading": "しち/なな",
-      "meaning": "7 (칠)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "七",
-      "example": "七つの海を渡る。",
-      "exampleReading": "ななつのうみをわたる。",
+      "word": "六",
+      "reading": "ろく",
+      "meaning": "6",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 212,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "일곱 개의 바다를 건너다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "七"
     },
     {
-      "word": "はち",
-      "reading": "はち",
-      "meaning": "8 (팔)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "八",
-      "example": "八百屋で野菜を買う。",
-      "exampleReading": "やおやでやさいをかう。",
+      "word": "七",
+      "reading": "なな",
+      "meaning": "7",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 213,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "채소가게에서 야채를 사다."
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "八"
     },
     {
-      "word": "きゅう/く",
-      "reading": "きゅう/く",
-      "meaning": "9 (구)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "九",
-      "example": "九つの点をつなぐ。",
-      "exampleReading": "ここのつのてんをつなぐ。",
-      "id": 214,
+      "word": "八",
+      "reading": "はち",
+      "meaning": "8",
+      "pos": "명사",
+      "chapter": 5,
       "textbook": "일본어수업",
       "createdAt": "2026-04-01",
-      "exampleMeaning": "아홉 개의 점을 잇다."
-    },
-    {
-      "word": "じゅう",
-      "reading": "じゅう",
-      "meaning": "10 (십)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "十",
-      "example": "十円玉がありますか。",
-      "exampleReading": "じゅうえんだまがありますか。",
       "id": 215,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "10엔 동전이 있습니까?"
-    },
-    {
-      "word": "ひとつ",
-      "reading": "ひとつ",
-      "meaning": "하나 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "椅子を一つください。",
-      "exampleReading": "いすをひとつください。",
-      "id": 216,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "의자를 하나 주세요.",
-      "kanji": "一つ"
-    },
-    {
-      "word": "ふたつ",
-      "reading": "ふたつ",
-      "meaning": "둘 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "卵を二つ割ります。",
-      "exampleReading": "たまごふたつわります。",
-      "id": 217,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "계란을 두 개 깹니다.",
-      "kanji": "二つ"
-    },
-    {
-      "word": "みっつ",
-      "reading": "みっつ",
-      "meaning": "셋 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "ケーキを三つ買いました。",
-      "exampleReading": "けーきをみっつかいました。",
-      "id": 218,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "케이크를 세 개 샀습니다.",
-      "kanji": "三つ"
-    },
-    {
-      "word": "よっつ",
-      "reading": "よっつ",
-      "meaning": "넷 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "季節は四つあります。",
-      "exampleReading": "きせつはよっつあります。",
-      "id": 219,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "계절은 네 개 있습니다.",
-      "kanji": "四つ"
-    },
-    {
-      "word": "いつつ",
-      "reading": "いつつ",
-      "meaning": "다섯 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "星が五つ見える。",
-      "exampleReading": "ほしがいつつみえる。",
-      "id": 220,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "별이 다섯 개 보이다.",
-      "kanji": "五つ"
-    },
-    {
-      "word": "むっつ",
-      "reading": "むっつ",
-      "meaning": "여섯 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "コップが六つある。",
-      "exampleReading": "こっぷがむっつある。",
-      "id": 221,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "컵이 여섯 개 있다.",
-      "kanji": "六つ"
-    },
-    {
-      "word": "ななつ",
-      "reading": "ななつ",
-      "meaning": "일곱 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "虹は七つの色だ。",
-      "exampleReading": "にじはななつのいろだ。",
-      "id": 222,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "무지개는 일곱 가지 색이다.",
-      "kanji": "七つ"
-    },
-    {
-      "word": "やっつ",
-      "reading": "やっつ",
-      "meaning": "여덟 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "ここには八つの箱があります。",
-      "exampleReading": "ここにはやっつのはこがあります。",
-      "id": 223,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "여기에는 여덟 개의 상자가 있다.",
-      "kanji": "八つ"
-    },
-    {
-      "word": "ここのつ",
-      "reading": "ここのつ",
-      "meaning": "아홉 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "九つの点灯があります。",
-      "exampleReading": "ここのつのてんとうがあります。",
-      "id": 224,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "아홉 개의 점등이 있다.",
-      "kanji": "九つ"
-    },
-    {
-      "word": "とお",
-      "reading": "とお",
-      "meaning": "열 (기수)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "example": "十で一区切りです。",
-      "exampleReading": "とおでひとくぎりです。",
-      "id": 225,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "열로 한 단락입니다.",
+      "tags": [
+        "숫자"
+      ],
       "kanji": "十"
     },
     {
-      "word": "ついたち",
-      "reading": "ついたち",
-      "meaning": "1일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "1日",
-      "example": "四月一日は平日です。",
-      "exampleReading": "しがつついたちはへいじつです。",
+      "word": "九",
+      "reading": "きゅう",
+      "meaning": "9",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 216,
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "一つ"
+    },
+    {
+      "word": "十",
+      "reading": "じゅう",
+      "meaning": "10",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 218,
+      "tags": [
+        "숫자"
+      ],
+      "kanji": "三つ"
+    },
+    {
+      "word": "一つ",
+      "reading": "ひとつ",
+      "meaning": "한 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 219,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "四つ"
+    },
+    {
+      "word": "二つ",
+      "reading": "ふたつ",
+      "meaning": "두 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 220,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "五つ"
+    },
+    {
+      "word": "三つ",
+      "reading": "みっつ",
+      "meaning": "세 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 221,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "六つ"
+    },
+    {
+      "word": "四つ",
+      "reading": "よっつ",
+      "meaning": "네 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 222,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "七つ"
+    },
+    {
+      "word": "五つ",
+      "reading": "いつつ",
+      "meaning": "다섯 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 223,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "八つ"
+    },
+    {
+      "word": "六つ",
+      "reading": "むっつ",
+      "meaning": "여섯 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 224,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "九つ"
+    },
+    {
+      "word": "七つ",
+      "reading": "ななつ",
+      "meaning": "일곱 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
+      "id": 225,
+      "tags": [
+        "개수"
+      ],
+      "kanji": "十"
+    },
+    {
+      "word": "八つ",
+      "reading": "やっつ",
+      "meaning": "여덟 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 226,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "4월 1일은 평일입니다."
+      "tags": [
+        "개수"
+      ],
+      "kanji": "1日"
     },
     {
-      "word": "ふつか",
-      "reading": "ふつか",
-      "meaning": "2일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "2日",
-      "example": "二日酔いで頭が痛い。",
-      "exampleReading": "ふつかよいであたまいたいです。",
+      "word": "九つ",
+      "reading": "ここのつ",
+      "meaning": "아홉 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 227,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "숙취로 머리가 아프다."
+      "tags": [
+        "개수"
+      ],
+      "kanji": "2日"
     },
     {
-      "word": "みっか",
-      "reading": "みっか",
-      "meaning": "3일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "3日",
-      "example": "三日坊主にならないで。",
-      "exampleReading": "みっかぼうずにならないで。",
+      "word": "十",
+      "reading": "とお",
+      "meaning": "열 개",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 228,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "작심삼일이 되지 말아줘."
+      "tags": [
+        "개수"
+      ],
+      "kanji": "3日"
     },
     {
-      "word": "よっか",
-      "reading": "よっか",
-      "meaning": "4일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "4日",
-      "example": "四日後に着く。",
-      "exampleReading": "よっかごにつく。",
+      "word": "100 円",
+      "reading": "ひゃくえん",
+      "meaning": "100엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 229,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "4일 후에 도착한다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "4日"
     },
     {
-      "word": "いつか",
-      "reading": "いつか",
-      "meaning": "5일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "5日",
-      "example": "五日はこどもの日です。",
-      "exampleReading": "いつかはこどものひです。",
+      "word": "200 円",
+      "reading": "にひゃくえん",
+      "meaning": "200엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 230,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "5일은 어린이날입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "5日"
     },
     {
-      "word": "むいか",
-      "reading": "むいか",
-      "meaning": "6일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "6",
-      "example": "六日は金曜日です。",
-      "exampleReading": "むいかはきんようびです。",
+      "word": "300 円",
+      "reading": "さんびゃくえん",
+      "meaning": "300엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 231,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "6일은 금요일입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "6"
     },
     {
-      "word": "なのか",
-      "reading": "なのか",
-      "meaning": "7일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "7",
-      "example": "七日で一週間です。",
-      "exampleReading": "なのかでいっしゅうかんです。",
+      "word": "400 円",
+      "reading": "よんひゃくえん",
+      "meaning": "400엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 232,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "7일이면 일주일입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "7"
     },
     {
-      "word": "ようか",
-      "reading": "ようか",
-      "meaning": "8일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "8",
-      "example": "八日はお祭りです。",
-      "exampleReading": "ようかはおまつりです。",
+      "word": "500 円",
+      "reading": "ごひゃくえん",
+      "meaning": "500엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 233,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "8일은 축제입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "8"
     },
     {
-      "word": "ここのか",
-      "reading": "ここのか",
-      "meaning": "9일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "9",
-      "example": "九日に帰りましょう。",
-      "exampleReading": "ここのかにかえりましょう。",
+      "word": "600 円",
+      "reading": "ろっぴゃくえん",
+      "meaning": "600엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 234,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "9일에 돌아갑시다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "9"
     },
     {
-      "word": "とおか",
-      "reading": "とおか",
-      "meaning": "10일 (날짜)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "10",
-      "example": "十日は私の誕生日です。",
-      "exampleReading": "とおかはわたしのたんじょうびです。",
+      "word": "700 円",
+      "reading": "ななひゃくえん",
+      "meaning": "700엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 235,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "10일은 제 생일입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "10"
     },
     {
-      "word": "ひとり",
-      "reading": "ひとり",
-      "meaning": "1명 (사람)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "一人",
-      "example": "一人で映画を見ます。",
-      "exampleReading": "ひとりでえいがをみます。",
+      "word": "800 円",
+      "reading": "はっぴゃくえん",
+      "meaning": "800엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 236,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "혼자서 영화를 봅니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "一人"
     },
     {
-      "word": "ふたり",
-      "reading": "ふたり",
-      "meaning": "2명 (사람)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "二人",
-      "example": "二人は仲良しです。",
-      "exampleReading": "ふたりはなかよしです。",
+      "word": "900 円",
+      "reading": "きゅうひゃくえん",
+      "meaning": "900엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 237,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "두 사람은 사이가 좋습니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "二人"
     },
     {
-      "word": "さんにん",
-      "reading": "さんにん",
-      "meaning": "3명 (사람)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "三人",
-      "example": "あの家は三人家族です。",
-      "exampleReading": "あのいえはさんにんかぞくです。",
+      "word": "1000 円",
+      "reading": "せんえん",
+      "meaning": "1000엔",
+      "pos": "명사",
+      "chapter": 5,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-01",
       "id": 238,
-      "textbook": "일본어수업",
-      "createdAt": "2026-04-01",
-      "exampleMeaning": "저 집은 세 명 가족입니다."
+      "tags": [
+        "금액"
+      ],
+      "kanji": "三人"
     },
     {
-      "word": "よにん",
-      "reading": "よにん",
-      "meaning": "4명 (사람)",
-      "pos": "숫자/수사",
-      "chapter": 0,
-      "kanji": "四人",
-      "example": "四人で旅行に行きます。",
-      "exampleReading": "よにんでりょこうにいきます。",
-      "id": 239,
+      "word": "2000 円",
+      "reading": "にせんえん",
+      "meaning": "2000엔",
+      "pos": "명사",
+      "chapter": 5,
       "textbook": "일본어수업",
       "createdAt": "2026-04-01",
-      "exampleMeaning": "네 명이서 여행을 갑니다."
+      "id": 239,
+      "tags": [
+        "금액"
+      ],
+      "kanji": "四人"
     },
     {
       "word": "3000 円",
@@ -3940,10 +3898,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-07",
       "id": 331,
-      "kanji": "嫌いだ",
       "antonym": "好きだ",
       "antonymReading": "すきだ",
-      "antonymMeaning": "좋아하다"
+      "antonymMeaning": "좋아하다",
+      "kanji": "嫌いだ"
     },
     {
       "word": "すいか",
@@ -3975,10 +3933,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-07",
       "id": 334,
-      "kanji": "上手だ",
       "antonym": "下手だ",
       "antonymReading": "へただ",
-      "antonymMeaning": "서툴다, 잘 못하다"
+      "antonymMeaning": "서툴다, 잘 못하다",
+      "kanji": "上手だ"
     },
     {
       "word": "下手だ",
@@ -3989,10 +3947,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-07",
       "id": 335,
-      "kanji": "下手だ",
       "antonym": "上手だ",
       "antonymReading": "じょうずだ",
-      "antonymMeaning": "능숙하다, 잘하다"
+      "antonymMeaning": "능숙하다, 잘하다",
+      "kanji": "下手だ"
     },
     {
       "word": "兄",
@@ -4071,10 +4029,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 342,
-      "kanji": "上手だ",
       "antonym": "へただ",
       "antonymReading": "へただ",
-      "antonymMeaning": "서투르다"
+      "antonymMeaning": "서투르다",
+      "kanji": "上手だ"
     },
     {
       "word": "へただ",
@@ -4085,10 +4043,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 343,
-      "kanji": "下手だ",
       "antonym": "じょうずだ",
       "antonymReading": "じょうずだ",
-      "antonymMeaning": "능숙하다"
+      "antonymMeaning": "능숙하다",
+      "kanji": "下手だ"
     },
     {
       "word": "すきだ",
@@ -4099,10 +4057,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 344,
-      "kanji": "好きだ",
       "antonym": "きらいだ",
       "antonymReading": "きらいだ",
-      "antonymMeaning": "싫어하다"
+      "antonymMeaning": "싫어하다",
+      "kanji": "好きだ"
     },
     {
       "word": "だいすきだ",
@@ -4113,10 +4071,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 345,
-      "kanji": "大好きだ",
       "antonym": "だいきらいだ",
       "antonymReading": "だいきらいだ",
-      "antonymMeaning": "아주 싫어하다"
+      "antonymMeaning": "아주 싫어하다",
+      "kanji": "大好きだ"
     },
     {
       "word": "きらいだ",
@@ -4127,10 +4085,10 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 346,
-      "kanji": "嫌いだ",
       "antonym": "すきだ",
       "antonymReading": "すきだ",
-      "antonymMeaning": "좋아하다"
+      "antonymMeaning": "좋아하다",
+      "kanji": "嫌いだ"
     },
     {
       "word": "そと",
@@ -4294,6 +4252,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 361,
+      "tags": [
+        "분"
+      ],
       "kanji": "一分"
     },
     {
@@ -4305,6 +4266,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 362,
+      "tags": [
+        "분"
+      ],
       "kanji": "二分"
     },
     {
@@ -4316,6 +4280,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 363,
+      "tags": [
+        "분"
+      ],
       "kanji": "三分"
     },
     {
@@ -4327,6 +4294,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 364,
+      "tags": [
+        "분"
+      ],
       "kanji": "四分"
     },
     {
@@ -4338,6 +4308,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 365,
+      "tags": [
+        "분"
+      ],
       "kanji": "五分"
     },
     {
@@ -4349,6 +4322,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 366,
+      "tags": [
+        "분"
+      ],
       "kanji": "六分"
     },
     {
@@ -4360,6 +4336,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 367,
+      "tags": [
+        "분"
+      ],
       "kanji": "七分"
     },
     {
@@ -4371,6 +4350,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 368,
+      "tags": [
+        "분"
+      ],
       "kanji": "八分"
     },
     {
@@ -4382,6 +4364,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 369,
+      "tags": [
+        "분"
+      ],
       "kanji": "九分"
     },
     {
@@ -4393,6 +4378,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 370,
+      "tags": [
+        "분"
+      ],
       "kanji": "十分"
     },
     {
@@ -4404,6 +4392,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 371,
+      "tags": [
+        "분"
+      ],
       "kanji": "十一分"
     },
     {
@@ -4415,6 +4406,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 372,
+      "tags": [
+        "분"
+      ],
       "kanji": "十二分"
     },
     {
@@ -4426,6 +4420,9 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 373,
+      "tags": [
+        "분"
+      ],
       "kanji": "十三分"
     },
     {
@@ -4437,7 +4434,420 @@
       "textbook": "일본어수업",
       "createdAt": "2026-04-15",
       "id": 374,
+      "tags": [
+        "분"
+      ],
       "kanji": "十四分"
+    },
+    {
+      "word": "いってきます",
+      "reading": "いってきます",
+      "meaning": "다녀오겠습니다",
+      "pos": "동사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 375
+    },
+    {
+      "word": "いってらっしゃい",
+      "reading": "いってらっしゃい",
+      "meaning": "다녀오세요",
+      "pos": "동사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 376
+    },
+    {
+      "word": "早い",
+      "reading": "はやい",
+      "meaning": "빠르다, 이르다(시간)",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 377
+    },
+    {
+      "word": "朝",
+      "reading": "あさ",
+      "meaning": "아침",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 378
+    },
+    {
+      "word": "だから",
+      "reading": "だから",
+      "meaning": "그래서",
+      "pos": "접속사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 379
+    },
+    {
+      "word": "同じだ",
+      "reading": "おなじだ",
+      "meaning": "같다",
+      "pos": "な형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 380
+    },
+    {
+      "word": "遅い",
+      "reading": "おそい",
+      "meaning": "느리다, 그르치다, 늦다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 381
+    },
+    {
+      "word": "早い",
+      "reading": "はやい",
+      "meaning": "이르다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 382
+    },
+    {
+      "word": "速い",
+      "reading": "はやい",
+      "meaning": "빠르다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 383
+    },
+    {
+      "word": "遠い",
+      "reading": "とおい",
+      "meaning": "멀다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 384
+    },
+    {
+      "word": "近い",
+      "reading": "ちかい",
+      "meaning": "가깝다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 385
+    },
+    {
+      "word": "ほう",
+      "reading": "ほう",
+      "meaning": "~쪽이, ~편이",
+      "pos": "조사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 386
+    },
+    {
+      "word": "一番",
+      "reading": "いちばん",
+      "meaning": "가장, 제일",
+      "pos": "부사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 387
+    },
+    {
+      "word": "便利",
+      "reading": "べんり",
+      "meaning": "편리하다",
+      "pos": "な형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 388
+    },
+    {
+      "word": "同じ",
+      "reading": "おなじ",
+      "meaning": "똑같은, 같은",
+      "pos": "な형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 389
+    },
+    {
+      "word": "どんな",
+      "reading": "どんな",
+      "meaning": "어떤",
+      "pos": "기타",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 390
+    },
+    {
+      "word": "こんな",
+      "reading": "こんな",
+      "meaning": "이런",
+      "pos": "기타",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 391
+    },
+    {
+      "word": "そんな",
+      "reading": "そんな",
+      "meaning": "그런",
+      "pos": "기타",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 392
+    },
+    {
+      "word": "あんな",
+      "reading": "あんな",
+      "meaning": "저런",
+      "pos": "기타",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 393
+    },
+    {
+      "word": "そうですか",
+      "reading": "そうですか",
+      "meaning": "글쎄요",
+      "pos": "감탄사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 394
+    },
+    {
+      "word": "やっぱり",
+      "reading": "やっぱり",
+      "meaning": "역시 (やはり의 구어체)",
+      "pos": "부사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 395
+    },
+    {
+      "word": "美人",
+      "reading": "びじん",
+      "meaning": "미인",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 396
+    },
+    {
+      "word": "顔",
+      "reading": "かお",
+      "meaning": "얼굴",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 397
+    },
+    {
+      "word": "小さい",
+      "reading": "ちいさい",
+      "meaning": "작다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 398
+    },
+    {
+      "word": "ピアノ",
+      "reading": "ピアノ",
+      "meaning": "피아노",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 399
+    },
+    {
+      "word": "重い",
+      "reading": "おもい",
+      "meaning": "무겁다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 400
+    },
+    {
+      "word": "魚",
+      "reading": "さかな",
+      "meaning": "생선",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 401
+    },
+    {
+      "word": "肉",
+      "reading": "にく",
+      "meaning": "고기, 살",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 402
+    },
+    {
+      "word": "行く",
+      "reading": "いく",
+      "meaning": "가다",
+      "pos": "동사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 403
+    },
+    {
+      "word": "来る",
+      "reading": "くる",
+      "meaning": "오다",
+      "pos": "동사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 404
+    },
+    {
+      "word": "〜と",
+      "reading": "と",
+      "meaning": "~와/~과, ~랑",
+      "pos": "조사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 405
+    },
+    {
+      "word": "ほうが",
+      "reading": "ほうが",
+      "meaning": "~쪽이, ~편이",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 406
+    },
+    {
+      "word": "第一",
+      "reading": "だいいち",
+      "meaning": "제1",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 407
+    },
+    {
+      "word": "学校",
+      "reading": "がっこう",
+      "meaning": "학교",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 408
+    },
+    {
+      "word": "電車",
+      "reading": "でんしゃ",
+      "meaning": "전철",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 409
+    },
+    {
+      "word": "どちら",
+      "reading": "どちら",
+      "meaning": "어느 쪽, 어느 것",
+      "pos": "대명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 410
+    },
+    {
+      "word": "東京",
+      "reading": "とうきょう",
+      "meaning": "도쿄",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 411
+    },
+    {
+      "word": "車",
+      "reading": "くるま",
+      "meaning": "차",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 412
+    },
+    {
+      "word": "多い",
+      "reading": "おおい",
+      "meaning": "많다",
+      "pos": "い형용사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 413
+    },
+    {
+      "word": "ソウル",
+      "reading": "ソウル",
+      "meaning": "서울",
+      "pos": "명사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 414
+    },
+    {
+      "word": "早く",
+      "reading": "はやく",
+      "meaning": "빨리, 일찍",
+      "pos": "부사",
+      "chapter": 6,
+      "textbook": "일본어수업",
+      "createdAt": "2026-04-22",
+      "id": 415
     }
   ]
 }

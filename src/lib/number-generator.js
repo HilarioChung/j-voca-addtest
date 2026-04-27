@@ -112,7 +112,7 @@ const COUNTERS = {
   10: { k: "十", r: "とお" },
 };
 const OBJECTS = [
-  { q: "사과", k: "りんご" }, { q: "귤", k: "みかん" }, { q: "가방", k: "かばん" }, { q: "책상", k: "つくえ" }
+  { q: "사과", k: "りんご", r: "りんご" }, { q: "귤", k: "みかん", r: "みかん" }, { q: "가방", k: "かばん", r: "かばん" }, { q: "책상", k: "つくえ", r: "つくえ" }
 ];
 
 function generateCounter(nouns = []) {
@@ -131,9 +131,9 @@ function generateCounter(nouns = []) {
   if (validNouns && validNouns.length > 0) {
     const dbNoun = getRandomItem(validNouns);
     obj = {
-      q: dbNoun.meaning,
-      k: dbNoun.kanji || dbNoun.word,
-      r: dbNoun.reading || dbNoun.word
+      q: dbNoun.meaning || dbNoun.word || '?',
+      k: dbNoun.kanji || dbNoun.word || '?',
+      r: dbNoun.reading || dbNoun.word || '?'
     };
   }
 
