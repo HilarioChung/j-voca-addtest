@@ -119,8 +119,9 @@ export function getStem(word, categoryId) {
  * 한자 어간 추출
  */
 export function getKanjiStem(word, categoryId) {
-  if (!word.kanji) return null;
-  if (categoryId === 'i-adj') return word.kanji.replace(/い$/, '');
-  if (categoryId === 'na-adj') return word.kanji.replace(/だ$/, '');
-  return word.kanji;
+  const kanji = word.kanji || (word.word !== word.reading ? word.word : null);
+  if (!kanji) return null;
+  if (categoryId === 'i-adj') return kanji.replace(/い$/, '');
+  if (categoryId === 'na-adj') return kanji.replace(/だ$/, '');
+  return kanji;
 }

@@ -44,7 +44,7 @@ function StepIndicator({ current, total }) {
 export default function FlashCard({ word, direction = 'jp2kr', onGrade, onPrev, onNext }) {
   const [step, setStep] = useState(0);
   const browseMode = !onGrade;
-  const hasKanji = !!word.kanji;
+  const hasKanji = !!word.kanji || (word.word !== word.reading);
 
   const maxStep = hasKanji ? 2 : 1;
   const isAnswerStep = step >= maxStep;
@@ -109,7 +109,7 @@ export default function FlashCard({ word, direction = 'jp2kr', onGrade, onPrev, 
               step === 1 && hasKanji ? (
                 <div className="card-step w-full flex flex-col items-center">
                   <ruby className="text-5xl font-bold text-slate-800 ruby-furigana">
-                    {word.kanji}
+                    {word.kanji || word.word}
                     <rp>(</rp><rt className="text-lg font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
                   </ruby>
                   <div className="flex justify-center gap-4 mt-8">
@@ -127,7 +127,7 @@ export default function FlashCard({ word, direction = 'jp2kr', onGrade, onPrev, 
                 <div className="card-step w-full flex flex-col items-center">
                   {hasKanji ? (
                     <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
-                      {word.kanji}
+                      {word.kanji || word.word}
                       <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
                     </ruby>
                   ) : (
@@ -167,7 +167,7 @@ export default function FlashCard({ word, direction = 'jp2kr', onGrade, onPrev, 
                 <div className="card-step w-full flex flex-col items-center">
                   {hasKanji ? (
                     <ruby className="text-3xl font-bold text-slate-800 mb-4 ruby-furigana">
-                      {word.kanji}
+                      {word.kanji || word.word}
                       <rp>(</rp><rt className="text-base font-normal text-indigo-500">{word.reading}</rt><rp>)</rp>
                     </ruby>
                   ) : (
