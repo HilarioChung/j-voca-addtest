@@ -1,5 +1,5 @@
 {
-  "lastId": 566,
+  "lastId": 591,
   "words": [
     {
       "word": "多い",
@@ -67,7 +67,7 @@
       "antonymMeaning": "낮다 / 싸다"
     },
     {
-      "word": "ながい",
+      "word": "長い",
       "reading": "ながい",
       "meaning": "길다",
       "pos": "い형용사",
@@ -80,7 +80,7 @@
       "antonymMeaning": "짧다"
     },
     {
-      "word": "ひろい",
+      "word": "広い",
       "reading": "ひろい",
       "meaning": "넓다",
       "pos": "い형용사",
@@ -93,7 +93,7 @@
       "antonymMeaning": "좁다"
     },
     {
-      "word": "ほそい",
+      "word": "細い",
       "reading": "ほそい",
       "meaning": "가늘다",
       "pos": "い형용사",
@@ -145,7 +145,7 @@
       "antonymMeaning": "맛없다"
     },
     {
-      "word": "たのしい",
+      "word": "楽しい",
       "reading": "たのしい",
       "meaning": "즐겁다",
       "pos": "い형용사",
@@ -184,7 +184,7 @@
       "antonymMeaning": "낡다, 오래되다"
     },
     {
-      "word": "おもしろい",
+      "word": "面白い",
       "reading": "おもしろい",
       "meaning": "재미있다",
       "pos": "い형용사",
@@ -236,7 +236,7 @@
       "antonymMeaning": "아프다"
     },
     {
-      "word": "しずかだ",
+      "word": "静かだ",
       "reading": "しずかだ",
       "meaning": "조용하다",
       "pos": "な형용사",
@@ -249,7 +249,7 @@
       "antonymMeaning": "시끄럽다"
     },
     {
-      "word": "べんりだ",
+      "word": "便利だ",
       "reading": "べんりだ",
       "meaning": "편리하다",
       "pos": "な형용사",
@@ -272,7 +272,7 @@
       "id": 21
     },
     {
-      "word": "しんせつだ",
+      "word": "親切だ",
       "reading": "しんせつだ",
       "meaning": "친절하다",
       "pos": "な형용사",
@@ -308,7 +308,7 @@
       "id": 24
     },
     {
-      "word": "えいが",
+      "word": "映画",
       "reading": "えいが",
       "meaning": "영화",
       "pos": "명사",
@@ -428,7 +428,7 @@
       "id": 36
     },
     {
-      "word": "わたし",
+      "word": "私",
       "reading": "わたし",
       "meaning": "나",
       "pos": "명사",
@@ -498,7 +498,7 @@
       "id": 43
     },
     {
-      "word": "アメリカじん",
+      "word": "アメリカ人",
       "reading": "アメリカじん",
       "meaning": "미국인",
       "pos": "명사",
@@ -818,7 +818,7 @@
       "id": 75
     },
     {
-      "word": "くすり",
+      "word": "薬",
       "reading": "くすり",
       "meaning": "약",
       "pos": "명사",
@@ -918,7 +918,7 @@
       "id": 85
     },
     {
-      "word": "しょくどう",
+      "word": "食堂",
       "reading": "しょくどう",
       "meaning": "식당",
       "pos": "명사",
@@ -1180,7 +1180,7 @@
       "antonymMeaning": "따뜻하다"
     },
     {
-      "word": "あかるい",
+      "word": "明るい",
       "reading": "あかるい",
       "meaning": "밝다",
       "pos": "い형용사",
@@ -1193,7 +1193,7 @@
       "antonymMeaning": "어둡다"
     },
     {
-      "word": "みじかい",
+      "word": "短い",
       "reading": "みじかい",
       "meaning": "짧다",
       "pos": "い형용사",
@@ -1206,7 +1206,7 @@
       "antonymMeaning": "길다"
     },
     {
-      "word": "ひくい",
+      "word": "低い",
       "reading": "ひくい",
       "meaning": "낮다",
       "pos": "い형용사",
@@ -1245,7 +1245,7 @@
       "antonymMeaning": "작다"
     },
     {
-      "word": "ひまだ",
+      "word": "暇だ",
       "reading": "ひまだ",
       "meaning": "한가하다",
       "pos": "な형용사",
@@ -1485,7 +1485,7 @@
       "id": 142
     },
     {
-      "word": "あした",
+      "word": "明日",
       "reading": "あした",
       "meaning": "내일",
       "pos": "명사",
@@ -1854,7 +1854,7 @@
       "id": 184
     },
     {
-      "word": "はな",
+      "word": "鼻",
       "reading": "はな",
       "meaning": "코",
       "pos": "명사",
@@ -3672,7 +3672,7 @@
       "id": 343
     },
     {
-      "word": "そと",
+      "word": "外",
       "reading": "そと",
       "meaning": "밖",
       "pos": "명사",
@@ -3692,7 +3692,7 @@
       "id": 350
     },
     {
-      "word": "プロやきゅう",
+      "word": "プロ野球",
       "reading": "プロやきゅう",
       "meaning": "프로 야구",
       "pos": "명사",
@@ -5195,7 +5195,7 @@
       "id": 505
     },
     {
-      "word": "なつ",
+      "word": "夏",
       "reading": "なつ",
       "meaning": "여름",
       "pos": "명사",
@@ -5205,7 +5205,7 @@
       "id": 506
     },
     {
-      "word": "ふゆ",
+      "word": "冬",
       "reading": "ふゆ",
       "meaning": "겨울",
       "pos": "명사",
@@ -5255,7 +5255,7 @@
       "id": 511
     },
     {
-      "word": "わたし",
+      "word": "私",
       "reading": "わたし",
       "meaning": "나",
       "pos": "명사",
@@ -5265,7 +5265,7 @@
       "id": 512
     },
     {
-      "word": "おきる",
+      "word": "起きる",
       "reading": "おきる",
       "meaning": "일어나다",
       "pos": "동사",
@@ -5803,6 +5803,256 @@
       "textbook": "일본어수업",
       "createdAt": "2026-06-03",
       "id": 566
+    },
+    {
+      "word": "父",
+      "reading": "ちち",
+      "meaning": "아버지",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 567
+    },
+    {
+      "word": "エレベーター",
+      "reading": "エレベーター",
+      "meaning": "엘리베이터",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 568
+    },
+    {
+      "word": "使う",
+      "reading": "つかう",
+      "meaning": "사용하다",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 569
+    },
+    {
+      "word": "銀行",
+      "reading": "ぎんこう",
+      "meaning": "은행",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 570
+    },
+    {
+      "word": "ご飯",
+      "reading": "ごはん",
+      "meaning": "밥",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 571
+    },
+    {
+      "word": "たばこ",
+      "reading": "たばこ",
+      "meaning": "담배",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 572
+    },
+    {
+      "word": "吸う",
+      "reading": "すう",
+      "meaning": "피우다,들이키다",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 573
+    },
+    {
+      "word": "新聞",
+      "reading": "しんぶん",
+      "meaning": "신문",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 574
+    },
+    {
+      "word": "撮る",
+      "reading": "とる",
+      "meaning": "찍다",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 575
+    },
+    {
+      "word": "します",
+      "reading": "します",
+      "meaning": "합니다",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 576
+    },
+    {
+      "word": "しません",
+      "reading": "しません",
+      "meaning": "하지 않습니다",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 577
+    },
+    {
+      "word": "会社",
+      "reading": "かいしゃ",
+      "meaning": "회사",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 578
+    },
+    {
+      "word": "いじょう",
+      "reading": "いじょう",
+      "meaning": "이상",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 579
+    },
+    {
+      "word": "いか",
+      "reading": "いか",
+      "meaning": "이하",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 580
+    },
+    {
+      "word": "毎週",
+      "reading": "まいしゅう",
+      "meaning": "매주",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 581
+    },
+    {
+      "word": "階段",
+      "reading": "かいだん",
+      "meaning": "계단",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 582
+    },
+    {
+      "word": "健康",
+      "reading": "けんこう",
+      "meaning": "건강",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 583
+    },
+    {
+      "word": "注意",
+      "reading": "ちゅうい",
+      "meaning": "주의(조심이라는 뜻에서)",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 584
+    },
+    {
+      "word": "夜ご飯",
+      "reading": "よるごはん",
+      "meaning": "저녁밥",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 585
+    },
+    {
+      "word": "テレビ",
+      "reading": "テレビ",
+      "meaning": "텔레비전",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 586
+    },
+    {
+      "word": "ごぜん",
+      "reading": "ごぜん",
+      "meaning": "오전",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 587
+    },
+    {
+      "word": "ごご",
+      "reading": "ごご",
+      "meaning": "오후",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 588
+    },
+    {
+      "word": "〜だい",
+      "reading": "〜だい",
+      "meaning": "~대, ~식대",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 589
+    },
+    {
+      "word": "もどる",
+      "reading": "もどる",
+      "meaning": "돌아가다 (원래 있던 곳으로 돌아오는 느낌으로, 직전에 있었던 곳으로)",
+      "pos": "동사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 590
+    },
+    {
+      "word": "あいさつ",
+      "reading": "あいさつ",
+      "meaning": "인사말",
+      "pos": "명사",
+      "chapter": 7,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-16",
+      "id": 591
     }
   ]
 }
