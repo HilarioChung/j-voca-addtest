@@ -1,5 +1,5 @@
 {
-  "lastId": 591,
+  "lastId": 613,
   "words": [
     {
       "word": "多い",
@@ -106,7 +106,7 @@
       "antonymMeaning": "굵다"
     },
     {
-      "word": "やすい",
+      "word": "安い",
       "reading": "やすい",
       "meaning": "싸다",
       "pos": "い형용사",
@@ -328,7 +328,7 @@
       "id": 26
     },
     {
-      "word": "まいにち",
+      "word": "毎日",
       "reading": "まいにち",
       "meaning": "매일",
       "pos": "명사",
@@ -1008,7 +1008,7 @@
       "id": 94
     },
     {
-      "word": "りょこう",
+      "word": "旅行",
       "reading": "りょこう",
       "meaning": "여행",
       "pos": "명사",
@@ -5255,16 +5255,6 @@
       "id": 511
     },
     {
-      "word": "私",
-      "reading": "わたし",
-      "meaning": "나",
-      "pos": "명사",
-      "chapter": 7,
-      "textbook": "일본어수업",
-      "createdAt": "2026-06-03",
-      "id": 512
-    },
-    {
       "word": "起きる",
       "reading": "おきる",
       "meaning": "일어나다",
@@ -6053,6 +6043,226 @@
       "textbook": "일본어수업",
       "createdAt": "2026-06-16",
       "id": 591
+    },
+    {
+      "word": "花火大会",
+      "reading": "はなびたいかい",
+      "meaning": "불꽃놀이 축제",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 592
+    },
+    {
+      "word": "お弁当",
+      "reading": "おべんとう",
+      "meaning": "도시락",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 593
+    },
+    {
+      "word": "手伝う",
+      "reading": "てつだう",
+      "meaning": "돕다",
+      "pos": "동사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 594
+    },
+    {
+      "word": "全然",
+      "reading": "ぜんぜん",
+      "meaning": "전혀, 하나도",
+      "pos": "부사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 595
+    },
+    {
+      "word": "本当",
+      "reading": "ほんとう",
+      "meaning": "정말",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 596
+    },
+    {
+      "word": "マジ",
+      "reading": "マジ",
+      "meaning": "정말",
+      "pos": "부사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 597
+    },
+    {
+      "word": "大丈夫だ",
+      "reading": "だいじょうぶだ",
+      "meaning": "괜찮다",
+      "pos": "な형용사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 598
+    },
+    {
+      "word": "すごい",
+      "reading": "すごい",
+      "meaning": "대단한, 굉장한",
+      "pos": "い형용사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 599
+    },
+    {
+      "word": "大変",
+      "reading": "たいへん",
+      "meaning": "힘들다",
+      "pos": "な형용사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 600
+    },
+    {
+      "word": "遊園地",
+      "reading": "ゆうえんち",
+      "meaning": "유원지",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 601
+    },
+    {
+      "word": "遊ぶ",
+      "reading": "あそぶ",
+      "meaning": "놀다",
+      "pos": "동사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 602
+    },
+    {
+      "word": "コンサート",
+      "reading": "コンサート",
+      "meaning": "콘서트",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 603
+    },
+    {
+      "word": "辞書",
+      "reading": "じしょ",
+      "meaning": "사전",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 604
+    },
+    {
+      "word": "よく",
+      "reading": "よく",
+      "meaning": "자주/잘",
+      "pos": "부사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 605
+    },
+    {
+      "word": "体",
+      "reading": "からだ",
+      "meaning": "몸",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 606
+    },
+    {
+      "word": "遅れる",
+      "reading": "おくれる",
+      "meaning": "늦다",
+      "pos": "동사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 607
+    },
+    {
+      "word": "おちつく",
+      "reading": "おちつく",
+      "meaning": "침착하다, 진정하다",
+      "pos": "동사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 608
+    },
+    {
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning": "문제",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 609
+    },
+    {
+      "word": "分かる",
+      "reading": "わかる",
+      "meaning": "알다, 이해하다",
+      "pos": "동사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 610
+    },
+    {
+      "word": "宿題",
+      "reading": "しゅくだい",
+      "meaning": "숙제",
+      "pos": "명사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 611
+    },
+    {
+      "word": "大変だ",
+      "reading": "たいへんだ",
+      "meaning": "힘들다",
+      "pos": "な형용사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 612
+    },
+    {
+      "word": "忙しい",
+      "reading": "いそがしい",
+      "meaning": "바쁘다",
+      "pos": "い형용사",
+      "chapter": 8,
+      "textbook": "일본어수업",
+      "createdAt": "2026-06-28",
+      "id": 613
     }
   ]
 }
