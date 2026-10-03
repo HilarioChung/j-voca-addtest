@@ -5,6 +5,7 @@ import { gradeCard, createInitialReview } from '../lib/fsrs';
 import { getDueWords } from '../lib/review-utils';
 import { shuffle } from '../lib/shuffle';
 import { canConjugate } from '../lib/conjugation';
+import { parseLessonNumber, formatLesson } from '../lib/lesson-utils';
 import FlashCard from './FlashCard';
 import ConjugationCards from './ConjugationCards';
 import AntonymCard from './AntonymCard';
@@ -12,8 +13,10 @@ import AntonymCard from './AntonymCard';
 export default function ReviewSession() {
   const [params] = useSearchParams();
   const location = useLocation();
+  const stepParam = params.get('step');
   const lessonParam = params.get('lesson');
-  const chapter = lessonParam != null ? Number(lessonParam) : undefined;
+  const step = parseLessonNumber(stepParam) || 1;
+  const chapter = parseLessonNumber(lessonParam);
 
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +45,7 @@ export default function ReviewSession() {
   }, [currentIndex, studyMode, queue]);
 
   useEffect(() => {
-    getDueWords(chapter).then(words => {
+    getDueWords(chapter != null ? step : null, chapter).then(words => {
       if (words.length === 0) {
         setNoWords(true);
       } else {
@@ -56,7 +59,7 @@ export default function ReviewSession() {
       setError(err.message || '데이터를 불러올 수 없습니다');
       setLoading(false);
     });
-  }, [chapter, location.key]);
+  }, [step, chapter, location.key]);
 
   const currentWord = queue[currentIndex];
   const done = !loading && queue.length > 0 && currentIndex >= queue.length;
@@ -157,7 +160,7 @@ export default function ReviewSession() {
           </div>
         </div>
         <p className="text-sm text-slate-400">
-          {chapter != null ? `Lesson ${chapter} · ` : ''}{wordCount}개 단어 복습 완료
+          {chapter != null ? `${formatLesson(step, chapter)} · ` : ''}{wordCount}개 단어 복습 완료
         </p>
         <Link to="/lesson-select" className="text-indigo-600 font-medium text-sm inline-block">돌아가기</Link>
       </div>
@@ -173,7 +176,7 @@ export default function ReviewSession() {
     <div className="space-y-4 pt-8">
       <div className="flex justify-between items-center mb-2">
         <h1 className="text-xl font-bold text-slate-800">
-          {chapter != null ? `Lesson ${chapter} 복습` : '복습'}
+          {chapter != null ? `${formatLesson(step, chapter)} 복습` : '복습'}
         </h1>
         <div className="flex items-center gap-3">
           <select

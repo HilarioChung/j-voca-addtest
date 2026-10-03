@@ -24,7 +24,7 @@ export function setModel(model) {
   localStorage.setItem('gemini-model', model);
 }
 
-export async function extractWordsFromImage(base64Image, mimeType, chapter, textbook) {
+export async function extractWordsFromImage(base64Image, mimeType, step, chapter, textbook) {
   const apiKey = getApiKey();
   if (!apiKey) throw new Error('설정에서 Gemini API 키를 먼저 입력해주세요.');
 
@@ -89,6 +89,12 @@ export async function extractWordsFromImage(base64Image, mimeType, chapter, text
     reading: w.reading || '',
     meaning: w.meaning || '',
     pos: w.pos || '기타',
+    ...(w.antonym ? {
+      antonym: w.antonym,
+      antonymReading: w.antonymReading || '',
+      antonymMeaning: w.antonymMeaning || '',
+    } : {}),
+    step: step || 1,
     chapter: chapter || 0,
     textbook: textbook || '',
     createdAt: today,

@@ -1,3 +1,5 @@
+import { getStep, isSameLesson, isValidLessonNumber } from './lesson-utils';
+
 const REPO_OWNER = 'HilarioChung';
 const REPO_NAME = 'j-voca-addtest';
 const FILE_PATH = 'public/data/words.json';
@@ -96,17 +98,23 @@ async function commitFile(data, sha, message) {
 }
 
 export async function addWordsToRepo(newWords) {
+  // 잘못된 step/chapter(0, 음수, 소수)가 저장소로 나가면 깨지므로 미리 검증
+  const invalid = newWords.find(w => !isValidLessonNumber(getStep(w)) || !isValidLessonNumber(w.chapter));
+  if (invalid) throw new Error('Step과 레슨은 1 이상의 정수여야 합니다.');
+
   const { data, sha } = await getFileFromGithub();
 
   // 같은 레슨 내 중복 제거 (word 기준)
+  const targetStep = getStep(newWords[0]);
+  const targetChapter = newWords[0]?.chapter;
   const existingWords = new Set(
-    data.words.filter(w => w.chapter === newWords[0]?.chapter).map(w => w.word)
+    data.words.filter(w => isSameLesson(w, targetStep, targetChapter)).map(w => w.word)
   );
   const unique = newWords.filter(w => !existingWords.has(w.word));
   const skipped = newWords.length - unique.length;
 
   let nextId = data.lastId;
-  const wordsWithIds = unique.map(w => ({ ...w, id: ++nextId }));
+  const wordsWithIds = unique.map(w => ({ ...w, step: getStep(w), id: ++nextId }));
 
   data.words.push(...wordsWithIds);
   data.lastId = nextId;
@@ -139,13 +147,14 @@ export async function deleteWordFromRepo(id) {
   return data;
 }
 
-export async function deleteChapterFromRepo(chapter) {
+export async function deleteChapterFromRepo(step, chapter) {
   const { data, sha } = await getFileFromGithub();
 
-  const deletedIds = data.words.filter(w => w.chapter === chapter).map(w => w.id);
-  data.words = data.words.filter(w => w.chapter !== chapter);
+  const isTarget = w => isSameLesson(w, step, chapter);
+  const deletedIds = data.words.filter(isTarget).map(w => w.id);
+  data.words = data.words.filter(w => !isTarget(w));
 
-  await commitFile(data, sha, `Lesson ${chapter} 단어 ${deletedIds.length}개 삭제`);
+  await commitFile(data, sha, `Step ${step} Lesson ${chapter} 단어 ${deletedIds.length}개 삭제`);
   return { data, deletedIds };
 }
 

@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, syncWordsFromData, deleteReview } from '../lib/db';
 import { hasGithubToken, updateWordInRepo, deleteWordFromRepo, deleteChapterFromRepo } from '../lib/github';
 import { filterWords } from '../lib/word-utils';
+import { getStep, getSteps, getChapters, formatLesson, ALL_STEPS, resolveStepFilter } from '../lib/lesson-utils';
 import BrowseModal from './BrowseModal';
 import { useBrowseMode } from '../hooks/useBrowseMode';
 
 export default function WordList() {
   const words = useLiveQuery(() => db.words.toArray(), [], []);
+  const [selectedStep, setSelectedStep] = useState(null);
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [editingId, setEditingId] = useState(null);
@@ -16,9 +18,24 @@ export default function WordList() {
   const [saving, setSaving] = useState(false);
   const browse = useBrowseMode();
 
-  const chapters = [...new Set(words.map(w => w.chapter))].sort((a, b) => a - b);
-  // 챕터 필터와 검색어를 조합하여 단어 필터링
-  const filtered = filterWords(words, selectedChapter, searchQuery);
+  const steps = getSteps(words);
+  const currentStep = resolveStepFilter(selectedStep, words);
+  const isAllSteps = currentStep == null;
+  const chapters = getChapters(words, currentStep).filter(ch => ch > 0);
+
+  const countByChapter = useMemo(() => {
+    const map = {};
+    if (currentStep == null) return map;
+    for (const w of words) {
+      if (getStep(w) !== currentStep) continue;
+      map[w.chapter] = (map[w.chapter] || 0) + 1;
+    }
+    return map;
+  }, [words, currentStep]);
+
+  const stepWordCount = Object.values(countByChapter).reduce((sum, n) => sum + n, 0);
+  const lessonWordCount = selectedChapter !== null ? (countByChapter[selectedChapter] || 0) : 0;
+  const filtered = filterWords(words, currentStep, isAllSteps ? null : selectedChapter, searchQuery);
 
   const canEdit = hasGithubToken();
 
@@ -53,12 +70,12 @@ export default function WordList() {
   }
 
   async function handleDeleteChapter() {
-    if (selectedChapter === null) return;
-    const count = filtered.length;
-    if (!confirm(`Lesson ${selectedChapter}의 단어 ${count}개를 모두 삭제하시겠습니까?`)) return;
+    if (selectedChapter === null || currentStep === null) return;
+    const count = lessonWordCount;
+    if (!confirm(`Step ${currentStep} Lesson ${selectedChapter}의 단어 ${count}개를 모두 삭제하시겠습니까?`)) return;
     setSaving(true);
     try {
-      const { data, deletedIds } = await deleteChapterFromRepo(selectedChapter);
+      const { data, deletedIds } = await deleteChapterFromRepo(currentStep, selectedChapter);
       await syncWordsFromData(data.words);
       for (const id of deletedIds) await deleteReview(id);
       setSelectedChapter(null);
@@ -66,6 +83,12 @@ export default function WordList() {
       alert(err.message);
     }
     setSaving(false);
+  }
+
+  function selectStep(step) {
+    setSelectedStep(step);
+    setSelectedChapter(null);
+    browse.close();
   }
 
   function selectChapter(ch) {
@@ -94,7 +117,33 @@ export default function WordList() {
         className="w-full px-3 py-2 border border-slate-200 rounded-xl text-sm bg-white text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300"
       />
 
-      {chapters.length > 0 && (
+      {/* Step 선택 칩 (Step이 2개 이상일 때) */}
+      {steps.length > 1 && (
+        <div className="flex gap-1.5 overflow-x-auto pb-1">
+          <button
+            onClick={() => selectStep(ALL_STEPS)}
+            className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+              isAllSteps ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            }`}
+          >
+            전체 Step ({words.length})
+          </button>
+          {steps.map(step => (
+            <button
+              key={step}
+              onClick={() => selectStep(step)}
+              className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+                currentStep === step ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}
+            >
+              Step {step}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Chapter 선택 칩 */}
+      {!isAllSteps && chapters.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-2">
           <button
             onClick={() => selectChapter(null)}
@@ -102,7 +151,7 @@ export default function WordList() {
               selectedChapter === null ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
             }`}
           >
-            전체 ({words.length})
+            전체 ({stepWordCount})
           </button>
           {chapters.map(ch => (
             <button
@@ -112,7 +161,7 @@ export default function WordList() {
                 selectedChapter === ch ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
               }`}
             >
-              Lesson {ch} ({words.filter(w => w.chapter === ch).length})
+              Lesson {ch} ({countByChapter[ch] || 0})
             </button>
           ))}
         </div>
@@ -137,13 +186,13 @@ export default function WordList() {
 
       <BrowseModal browse={browse} />
 
-      {canEdit && selectedChapter !== null && filtered.length > 0 && (
+      {canEdit && !isAllSteps && selectedChapter !== null && filtered.length > 0 && (
         <button
           onClick={handleDeleteChapter}
           disabled={saving}
           className="w-full py-2 border border-red-200 rounded-xl text-sm text-red-500"
         >
-          {saving ? '삭제 중...' : `Lesson ${selectedChapter} 전체 삭제 (${filtered.length}개)`}
+          {saving ? '삭제 중...' : `Step ${currentStep} Lesson ${selectedChapter} 전체 삭제 (${lessonWordCount}개)`}
         </button>
       )}
 

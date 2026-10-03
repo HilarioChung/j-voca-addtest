@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { db } from '../lib/db';
 import { getDueCount, getDueCountByLesson } from '../lib/review-utils';
 import { calculateWeakWords } from '../lib/weak-utils';
+import { getSteps, getChapters, lessonKey, formatLesson } from '../lib/lesson-utils';
 
 export default function LessonSelect() {
   const [words, setWords] = useState([]);
@@ -27,8 +28,8 @@ export default function LessonSelect() {
   const totalWeak = calculateWeakWords(words, reviews, reviewLogs).length;
   const numberCount = words.filter(w => w.pos === '숫자/수사').length;
 
-  // 전체 lesson 목록 (chapter 0인 숫자 연습은 제외)
-  const chapters = [...new Set(words.map(w => w.chapter))].filter(ch => ch > 0).sort((a, b) => a - b);
+  // step 목록을 내림차순으로 — 지금 공부 중인 최신 step 섹션이 화면 위에 오도록
+  const steps = getSteps(words).reverse();
 
   if (words.length === 0) {
     return (
@@ -108,38 +109,44 @@ export default function LessonSelect() {
         </Link>
       )}
 
-      {/* lesson별 복습 */}
-      <div className="space-y-2">
-        {chapters.map(ch => {
-          const counts = byLesson[ch] || { total: 0, reconfirm: 0 };
-          const hasDue = counts.total > 0;
-          return (
-            <Link
-              key={ch}
-              to={hasDue ? `/review?lesson=${ch}` : '#'}
-              className={`block rounded-xl p-4 border ${
-                hasDue
-                  ? 'bg-white border-slate-200 shadow-sm'
-                  : 'bg-slate-50 border-slate-100 pointer-events-none'
-              }`}
-            >
-              <div className="flex justify-between items-center">
-                <span className={`font-medium ${hasDue ? 'text-slate-800' : 'text-slate-400'}`}>
-                  Lesson {ch}
-                </span>
-                <div className="text-right">
-                  <span className={`font-bold ${hasDue ? 'text-indigo-600' : 'text-slate-300'}`}>
-                    {counts.total}개
-                  </span>
-                  {counts.reconfirm > 0 && (
-                    <p className="text-xs text-slate-400">재확인 {counts.reconfirm}</p>
-                  )}
-                </div>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      {/* step별 섹션 안의 lesson 카드 */}
+      {steps.map(step => {
+        const chapters = getChapters(words, step).filter(ch => ch > 0).reverse();
+        return (
+          <div key={step} className="space-y-2">
+            <h2 className="text-sm font-semibold text-slate-500">Step {step}</h2>
+            {chapters.map(ch => {
+              const counts = byLesson[lessonKey(step, ch)] || { total: 0, reconfirm: 0 };
+              const hasDue = counts.total > 0;
+              return (
+                <Link
+                  key={ch}
+                  to={hasDue ? `/review?step=${step}&lesson=${ch}` : '#'}
+                  className={`block rounded-xl p-4 border ${
+                    hasDue
+                      ? 'bg-white border-slate-200 shadow-sm'
+                      : 'bg-slate-50 border-slate-100 pointer-events-none'
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <span className={`font-medium ${hasDue ? 'text-slate-800' : 'text-slate-400'}`}>
+                      {formatLesson(step, ch, { withStep: false })}
+                    </span>
+                    <div className="text-right">
+                      <span className={`font-bold ${hasDue ? 'text-indigo-600' : 'text-slate-300'}`}>
+                        {counts.total}개
+                      </span>
+                      {counts.reconfirm > 0 && (
+                        <p className="text-xs text-slate-400">재확인 {counts.reconfirm}</p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        );
+      })}
 
       {totalDue === 0 && (
         <p className="text-center text-sm text-slate-400 py-4">복습할 단어가 없습니다</p>

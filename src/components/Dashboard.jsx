@@ -4,12 +4,13 @@ import { db } from '../lib/db';
 import { getDueCount } from '../lib/review-utils';
 import { calculateStats } from '../lib/stats';
 import { calculateWeakWords } from '../lib/weak-utils';
-import { getLocalDateString } from '../lib/date-utils';
+import { getStep, getSteps, getLatestStep, lessonKey, formatLesson } from '../lib/lesson-utils';
 
 export default function Dashboard() {
   const [words, setWords] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [reviewLogs, setReviewLogs] = useState([]);
+  const [selectedStep, setSelectedStep] = useState(null);
 
   const loadData = useCallback(async () => {
     const [w, r, l] = await Promise.all([
@@ -35,26 +36,29 @@ export default function Dashboard() {
   const { streak, totalReviews, overallAccuracy } = useMemo(() => calculateStats(reviewLogs), [reviewLogs]);
   const weakCount = useMemo(() => calculateWeakWords(words, reviews, reviewLogs).length, [words, reviews, reviewLogs]);
 
-  const chapters = useMemo(() => {
-    const chapterMap = {};
+  const steps = useMemo(() => getSteps(words), [words]);
+  const currentStep = steps.includes(selectedStep) ? selectedStep : getLatestStep(words);
+
+  const lessons = useMemo(() => {
+    const lessonMap = {};
     for (const w of words) {
-      if (!chapterMap[w.chapter]) chapterMap[w.chapter] = { total: 0, reviewed: 0 };
-      chapterMap[w.chapter].total++;
+      if (w.chapter === 0) continue;
+      const step = getStep(w);
+      const key = lessonKey(step, w.chapter);
+      if (!lessonMap[key]) lessonMap[key] = { step, chapter: w.chapter, total: 0, reviewed: 0 };
+      lessonMap[key].total++;
     }
     const wordById = new Map(words.map(w => [w.id, w]));
     for (const r of reviews) {
       const word = wordById.get(r.wordId);
-      if (word && chapterMap[word.chapter] && r.reps > 0) {
-        chapterMap[word.chapter].reviewed++;
-      }
+      if (!word || !(r.reps > 0)) continue;
+      const key = lessonKey(getStep(word), word.chapter);
+      if (lessonMap[key]) lessonMap[key].reviewed++;
     }
-    const result = [];
-    for (const [ch, data] of Object.entries(chapterMap)) {
-      result.push({ chapter: Number(ch), ...data });
-    }
-    result.sort((a, b) => a.chapter - b.chapter);
-    return result;
-  }, [words, reviews]);
+    return Object.values(lessonMap)
+      .filter(ls => ls.step === currentStep)
+      .sort((a, b) => a.chapter - b.chapter);
+  }, [words, reviews, currentStep]);
 
   return (
     <div className="space-y-8 pb-12 pt-6">
@@ -131,7 +135,7 @@ export default function Dashboard() {
             </div>
             <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-500 shadow-sm">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0017.25 3.75H6.75A2.25 2.25 0 004.5 6v12A2.25 2.25 0 006.75 20.25z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 004.5 6v12A2.25 2.25 0 006.75 20.25z" />
               </svg>
             </div>
           </div>
@@ -166,18 +170,35 @@ export default function Dashboard() {
       </Link>
 
       {/* Progress Section */}
-      {chapters.length > 0 && (
+      {words.length > 0 && lessons.length > 0 && (
         <div className="space-y-4 pt-4">
-          <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center">레슨별 진행률</h2>
+          <div className="flex justify-between items-center px-1">
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest">레슨별 진행률</h2>
+            {steps.length > 1 && (
+              <div className="flex gap-1.5">
+                {steps.map(step => (
+                  <button
+                    key={step}
+                    onClick={() => setSelectedStep(step)}
+                    className={`px-2.5 py-0.5 rounded-full text-xs font-bold transition-colors ${
+                      currentStep === step ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                    }`}
+                  >
+                    Step {step}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <div className="grid gap-4">
-            {chapters.map(ch => {
-              const pct = ch.total > 0 ? Math.round((ch.reviewed / ch.total) * 100) : 0;
+            {lessons.map(ls => {
+              const pct = ls.total > 0 ? Math.round((ls.reviewed / ls.total) * 100) : 0;
               return (
-                <div key={ch.chapter} className="glass rounded-2xl p-4">
+                <div key={lessonKey(ls.step, ls.chapter)} className="glass rounded-2xl p-4">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-black text-slate-700">Lesson {ch.chapter}</span>
+                    <span className="text-sm font-black text-slate-700">{formatLesson(ls.step, ls.chapter, { withStep: false })}</span>
                     <span className="text-[10px] font-bold bg-slate-100 text-slate-500 px-2 py-0.5 rounded-md">
-                      {ch.reviewed} / {ch.total}
+                      {ls.reviewed} / {ls.total}
                     </span>
                   </div>
                   <div className="h-2 bg-slate-100 rounded-full overflow-hidden">

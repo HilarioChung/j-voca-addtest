@@ -28,6 +28,7 @@ src/
   lib/
     db.js                    # Dexie DB (words, reviews, reviewLogs)
     fsrs.js                  # FSRS 래퍼 (gradeCard, isDue, createInitialReview)
+    lesson-utils.js          # Step/Chapter 2단계 레슨 유틸리티
     review-utils.js          # 복습 큐 생성
     gemini.js                # Gemini Vision API 호출
     github.js                # GitHub Contents API CRUD
@@ -44,7 +45,7 @@ public/
 ```
 
 ## DB Schema (Dexie v3)
-- **words**: `id, chapter, textbook, createdAt` — 단어 데이터
+- **words**: `id, chapter, textbook, createdAt` — 단어 데이터 (step 필드 포함)
 - **reviews**: `wordId, due, last_review, state` — FSRS 카드 상태
 - **reviewLogs**: `++id, wordId, review_date, grade` — 복습 이력
 
@@ -58,6 +59,7 @@ npm run test:watch       # Vitest 워치 모드
 
 ## Key Patterns
 - 컴포넌트는 `lazy()` + `Suspense`로 코드 스플리팅
+- 교재 구조: `step` > `chapter` (Step 2부터 chapter 1 재시작하므로 복합 식별 필요, 누락 시 기본값 1)
 - Vite base path: `/j-voca/`
 - 복습 평가: again(모름) / good(애매) / easy(앎) 3단계
 - DB 마이그레이션: SM-2 → FSRS (v2→v3)
