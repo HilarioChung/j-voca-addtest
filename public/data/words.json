@@ -1,5 +1,5 @@
 {
-  "lastId": 1109,
+  "lastId": 1116,
   "words": [
     {
       "word": "多い",
@@ -5026,7 +5026,7 @@
     {
       "word": "つまらない",
       "reading": "つまらない",
-      "meaning": "재미없다. (시시하다)",
+      "meaning": "재미없다(시시하다)",
       "pos": "い형용사",
       "chapter": 6,
       "textbook": "일본어수업",
@@ -12291,34 +12291,6 @@
       "id": 1063
     },
     {
-      "word": "書いて",
-      "reading": "かいて",
-      "meaning": "쓰고 나서",
-      "pos": "동사",
-      "step": 2,
-      "chapter": 2,
-      "textbook": "일본어수업",
-      "createdAt": "2026-09-21",
-      "id": 1064,
-      "verbGroup": null,
-      "isDictionaryForm": false,
-      "potentialAllowed": false
-    },
-    {
-      "word": "提出して",
-      "reading": "ていしゅつして",
-      "meaning": "제출하고 나서",
-      "pos": "동사",
-      "step": 2,
-      "chapter": 2,
-      "textbook": "일본어수업",
-      "createdAt": "2026-09-21",
-      "id": 1065,
-      "verbGroup": null,
-      "isDictionaryForm": false,
-      "potentialAllowed": false
-    },
-    {
       "word": "てつだう",
       "reading": "てつだう",
       "meaning": "도와주다",
@@ -12897,6 +12869,92 @@
       "textbook": "일본어수업",
       "createdAt": "2026-09-30",
       "id": 1109
+    },
+    {
+      "word": "たいくつ",
+      "reading": "たいくつ",
+      "meaning": "재미없다(지루하다)",
+      "pos": "な형용사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "id": 1110
+    },
+    {
+      "word": "夜遅く",
+      "reading": "よるおそく",
+      "meaning": "밤늦게",
+      "pos": "부사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "id": 1111
+    },
+    {
+      "word": "寝坊をする",
+      "reading": "ねぼうをする",
+      "meaning": "늦잠을 자다",
+      "pos": "동사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "verbGroup": 3,
+      "isDictionaryForm": true,
+      "potentialAllowed": true,
+      "id": 1112
+    },
+    {
+      "word": "お金",
+      "reading": "おかね",
+      "meaning": "돈",
+      "pos": "명사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "id": 1113
+    },
+    {
+      "word": "疲れる",
+      "reading": "つかれる",
+      "meaning": "지치다, 피곤하다",
+      "pos": "동사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "verbGroup": 2,
+      "isDictionaryForm": true,
+      "potentialAllowed": true,
+      "id": 1114
+    },
+    {
+      "word": "おそい",
+      "reading": "おそい",
+      "meaning": "늦은,늦다,느리다",
+      "pos": "い형용사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "id": 1115
+    },
+    {
+      "word": "つかれた",
+      "reading": "つかれた",
+      "meaning": "지쳤다,피곤하다(과거형을 현재형으로 쓴다)",
+      "pos": "동사",
+      "step": 2,
+      "chapter": 2,
+      "textbook": "일본어수업",
+      "createdAt": "2026-10-07",
+      "verbGroup": null,
+      "isDictionaryForm": false,
+      "potentialAllowed": false,
+      "id": 1116
     }
   ]
 }
